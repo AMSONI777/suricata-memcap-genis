@@ -1,0 +1,2 @@
+capture,runs_compared,run_names,identical,hash_prefix
+attack-dos-hulk,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,ff5a853908fb8e38

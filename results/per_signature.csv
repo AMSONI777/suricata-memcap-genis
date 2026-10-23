@@ -1,0 +1,96 @@
+capture,level,policy,sid,signature,ref_count,run_count
+attack-bruteforce-ssh,L0,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,6,6
+attack-bruteforce-ssh,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,7,7
+attack-bruteforce-ssh,L0,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,2,2
+attack-bruteforce-ssh,L1,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,6,6
+attack-bruteforce-ssh,L1,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,7,7
+attack-bruteforce-ssh,L1,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,2,2
+attack-bruteforce-ssh,L2,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,6,6
+attack-bruteforce-ssh,L2,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,7,7
+attack-bruteforce-ssh,L2,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,2,2
+attack-bruteforce-ssh,L3,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,6,6
+attack-bruteforce-ssh,L3,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,7,7
+attack-bruteforce-ssh,L3,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,2,2
+attack-bruteforce-ssh,L4,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,6,6
+attack-bruteforce-ssh,L4,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,7,7
+attack-bruteforce-ssh,L4,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,2,2
+attack-dos-hulk,L0,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,18,18
+attack-dos-hulk,L0,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,1,1
+attack-dos-hulk,L0,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,43,43
+attack-dos-hulk,L0,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,182,182
+attack-dos-hulk,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,168,168
+attack-dos-hulk,L0,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,4,4
+attack-dos-hulk,L0,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,4,4
+attack-dos-hulk,L0,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,4,4
+attack-dos-hulk,L0,ignore,2210029,SURICATA STREAM ESTABLISHED invalid ack,6,6
+attack-dos-hulk,L0,ignore,2210030,SURICATA STREAM FIN invalid ack,10,10
+attack-dos-hulk,L0,ignore,2210038,SURICATA STREAM FIN out of window,6,6
+attack-dos-hulk,L0,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,28,28
+attack-dos-hulk,L0,ignore,2210045,SURICATA STREAM Packet with invalid ack,21,21
+attack-dos-hulk,L0,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,13,13
+attack-dos-hulk,L0,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,2437,2437
+attack-dos-hulk,L0,ignore,2221010,SURICATA HTTP unable to match response to request,59,59
+attack-dos-hulk,L1,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,18,18
+attack-dos-hulk,L1,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,1,1
+attack-dos-hulk,L1,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,43,43
+attack-dos-hulk,L1,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,182,182
+attack-dos-hulk,L1,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,168,168
+attack-dos-hulk,L1,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,4,4
+attack-dos-hulk,L1,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,4,4
+attack-dos-hulk,L1,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,4,4
+attack-dos-hulk,L1,ignore,2210029,SURICATA STREAM ESTABLISHED invalid ack,6,6
+attack-dos-hulk,L1,ignore,2210030,SURICATA STREAM FIN invalid ack,10,10
+attack-dos-hulk,L1,ignore,2210038,SURICATA STREAM FIN out of window,6,6
+attack-dos-hulk,L1,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,28,28
+attack-dos-hulk,L1,ignore,2210045,SURICATA STREAM Packet with invalid ack,21,21
+attack-dos-hulk,L1,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,13,13
+attack-dos-hulk,L1,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,2437,2437
+attack-dos-hulk,L1,ignore,2221010,SURICATA HTTP unable to match response to request,59,59
+attack-dos-hulk,L2,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,18,18
+attack-dos-hulk,L2,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,1,1
+attack-dos-hulk,L2,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,43,43
+attack-dos-hulk,L2,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,182,182
+attack-dos-hulk,L2,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,168,168
+attack-dos-hulk,L2,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,4,4
+attack-dos-hulk,L2,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,4,4
+attack-dos-hulk,L2,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,4,4
+attack-dos-hulk,L2,ignore,2210029,SURICATA STREAM ESTABLISHED invalid ack,6,6
+attack-dos-hulk,L2,ignore,2210030,SURICATA STREAM FIN invalid ack,10,10
+attack-dos-hulk,L2,ignore,2210038,SURICATA STREAM FIN out of window,6,6
+attack-dos-hulk,L2,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,28,28
+attack-dos-hulk,L2,ignore,2210045,SURICATA STREAM Packet with invalid ack,21,21
+attack-dos-hulk,L2,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,13,13
+attack-dos-hulk,L2,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,2437,2437
+attack-dos-hulk,L2,ignore,2221010,SURICATA HTTP unable to match response to request,59,1549
+attack-dos-hulk,L3,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,18,14
+attack-dos-hulk,L3,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,1,1
+attack-dos-hulk,L3,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,43,33
+attack-dos-hulk,L3,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,182,134
+attack-dos-hulk,L3,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,168,91
+attack-dos-hulk,L3,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,4,2
+attack-dos-hulk,L3,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,4,2
+attack-dos-hulk,L3,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,4,2
+attack-dos-hulk,L3,ignore,2210029,SURICATA STREAM ESTABLISHED invalid ack,6,3
+attack-dos-hulk,L3,ignore,2210030,SURICATA STREAM FIN invalid ack,10,7
+attack-dos-hulk,L3,ignore,2210038,SURICATA STREAM FIN out of window,6,4
+attack-dos-hulk,L3,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,28,19
+attack-dos-hulk,L3,ignore,2210045,SURICATA STREAM Packet with invalid ack,21,13
+attack-dos-hulk,L3,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,13,9
+attack-dos-hulk,L3,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,2437,1
+attack-dos-hulk,L3,ignore,2221010,SURICATA HTTP unable to match response to request,59,1664
+attack-dos-hulk,L4,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,18,0
+attack-dos-hulk,L4,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,1,1
+attack-dos-hulk,L4,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,43,3
+attack-dos-hulk,L4,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,182,21
+attack-dos-hulk,L4,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,168,23
+attack-dos-hulk,L4,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,4,0
+attack-dos-hulk,L4,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,4,0
+attack-dos-hulk,L4,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,4,0
+attack-dos-hulk,L4,ignore,2210029,SURICATA STREAM ESTABLISHED invalid ack,6,0
+attack-dos-hulk,L4,ignore,2210030,SURICATA STREAM FIN invalid ack,10,0
+attack-dos-hulk,L4,ignore,2210038,SURICATA STREAM FIN out of window,6,0
+attack-dos-hulk,L4,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,28,5
+attack-dos-hulk,L4,ignore,2210045,SURICATA STREAM Packet with invalid ack,21,0
+attack-dos-hulk,L4,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,13,0
+attack-dos-hulk,L4,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,2437,0
+attack-dos-hulk,L4,ignore,2221010,SURICATA HTTP unable to match response to request,59,183
