@@ -1,0 +1,8 @@
+data/
+*.pcap
+*.pcapng
+*.zip
+results/**/*.log
+results/**/*.json
+__pycache__/
+*.pyc
