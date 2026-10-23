@@ -1,0 +1,13 @@
+Memory-exhaustion check on attack-dos-hulk.pcapng
+Date: 2026-10-23 15:39   Image: jasonish/suricata@sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+counter                        L0 (1G/4G)     L4 (1M/4M)    
+decoder.pkts                   586843         586843        
+tcp.sessions                   50823          10904         
+tcp.ssn_memcap_drop            absent         124707        
+tcp.segment_memcap_drop        absent         absent        
+tcp.reassembly_gap             43             14            
+tcp.stream_depth_reached       absent         absent        
+tcp.memuse                     69008          66272         
+tcp.reassembly_memuse          11480          13160         
+flow.memuse                    14453072       14264224      
+VERDICT: memcap counters rose at L4 -> memcap design is usable as written.

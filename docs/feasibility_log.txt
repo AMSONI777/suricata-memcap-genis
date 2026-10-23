@@ -1,0 +1,53 @@
+[1/4] Container check
+This is Suricata version 8.0.5 RELEASE
+[2/4] Reference run L0 (1 GiB / 4 GiB)
+  L0 done in 5 s (stream.memcap=1gb, reassembly.memcap=4gb)
+[3/4] Constrained run L4 (1 MiB / 4 MiB)
+  L4 done in 2 s (stream.memcap=1mb, reassembly.memcap=4mb)
+[4/4] Result
+Memory-exhaustion check on attack-dos-hulk.pcapng
+Date: 2026-10-23 15:39   Image: jasonish/suricata@sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+counter                        L0 (1G/4G)     L4 (1M/4M)    
+decoder.pkts                   586843         586843        
+tcp.sessions                   50823          10904         
+tcp.ssn_memcap_drop            absent         124707        
+tcp.segment_memcap_drop        absent         absent        
+tcp.reassembly_gap             43             14            
+tcp.stream_depth_reached       absent         absent        
+tcp.memuse                     69008          66272         
+tcp.reassembly_memuse          11480          13160         
+flow.memuse                    14453072       14264224      
+VERDICT: memcap counters rose at L4 -> memcap design is usable as written.
+
+Base config saved: configs/base_image.yaml (2362 lines)
+89:outputs:
+98:  - eve-log:
+179:      types:
+246:            types:
+473:  - stats:
+988:      # memcap: 64 MiB
+1101:      #   memcap: 100 MiB
+1104:      # memcap:                   Maximum memory capacity for HTTP
+1289:    #memcap: 100 MiB
+1385:# Number of packets preallocated per thread. The default is 1024. A higher number 
+1509:defrag:
+1510:  memcap: 32 MiB
+1515:  prealloc: yes
+1538:# At startup, the engine can preallocate a number of flows, to get better
+1539:# performance. The number of flows preallocated is 10000 by default.
+1554:flow:
+1555:  memcap: 128 MiB
+1558:  prealloc: 10000
+1638:#   memcap: 64 MiB              # Can be specified in KiB, MiB, GiB.  Just a
+1652:#   prealloc-sessions: 2048     # 2k sessions prealloc'd per stream thread
+1669:#     memcap: 256 MiB           # Can be specified in KiB, MiB, GiB. Just a number
+1696:#     segment-prealloc: 2048    # number of segments preallocated per thread
+1709:stream:
+1710:  memcap: 64 MiB
+1720:    memcap: 256 MiB
+1728:    #segment-prealloc: 2048
+1737:  prealloc: 1000
+1738:  memcap: 32 MiB
+1746:#  prealloc: 1000
+1747:#  memcap: 32 MiB
+1848:    memcap: 16 MiB
