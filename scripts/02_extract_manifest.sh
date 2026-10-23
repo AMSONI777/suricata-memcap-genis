@@ -40,8 +40,8 @@ for c in $ORDER; do
   info="$(capinfos -M -c -u -a -e "$f")"
   pk="$(echo "$info" | awk -F': *' '/^Number of packets/{print $2}')"
   du="$(echo "$info" | awk -F': *' '/^Capture duration/{split($2,a," "); print a[1]}')"
-  t1="$(echo "$info" | awk -F': *' 'tolower($0) ~ /^(earliest|first) packet time/{print $2}')"
-  t2="$(echo "$info" | awk -F': *' 'tolower($0) ~ /^(latest|last) packet time/{print $2}')"
+  t1="$(echo "$info" | awk 'tolower($0) ~ /^(earliest|first) packet time/{sub(/^[^:]*: */,""); print}')"
+  t2="$(echo "$info" | awk 'tolower($0) ~ /^(latest|last) packet time/{sub(/^[^:]*: */,""); print}')"
   echo "$c,${SIZE[$c]},$sha,$pk,$du,$t1,$t2" >> "$OUT"
 done
 
