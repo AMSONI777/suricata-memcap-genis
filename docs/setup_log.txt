@@ -1,0 +1,59 @@
+[1/4] Suricata image
+8.0.5: Pulling from jasonish/suricata
+f571be4479d0: Pulling fs layer
+9c6a9cbd500e: Pulling fs layer
+cf366b487c57: Pulling fs layer
+d8609859d0b4: Pulling fs layer
+7ac707a0c3a0: Pulling fs layer
+fc6ef2e24a25: Pulling fs layer
+c3a18738c61e: Pulling fs layer
+25486ddaa5df: Pulling fs layer
+77d752d24aeb: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+fc6ef2e24a25: Waiting
+c3a18738c61e: Waiting
+25486ddaa5df: Waiting
+77d752d24aeb: Waiting
+4f4fb700ef54: Waiting
+d8609859d0b4: Waiting
+7ac707a0c3a0: Waiting
+9c6a9cbd500e: Verifying Checksum
+9c6a9cbd500e: Download complete
+d8609859d0b4: Download complete
+f571be4479d0: Verifying Checksum
+f571be4479d0: Download complete
+7ac707a0c3a0: Download complete
+cf366b487c57: Verifying Checksum
+cf366b487c57: Download complete
+fc6ef2e24a25: Verifying Checksum
+fc6ef2e24a25: Download complete
+c3a18738c61e: Verifying Checksum
+c3a18738c61e: Download complete
+25486ddaa5df: Verifying Checksum
+25486ddaa5df: Download complete
+77d752d24aeb: Download complete
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+f571be4479d0: Pull complete
+9c6a9cbd500e: Pull complete
+cf366b487c57: Pull complete
+d8609859d0b4: Pull complete
+7ac707a0c3a0: Pull complete
+fc6ef2e24a25: Pull complete
+c3a18738c61e: Pull complete
+25486ddaa5df: Pull complete
+77d752d24aeb: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+Status: Downloaded newer image for jasonish/suricata:8.0.5
+docker.io/jasonish/suricata:8.0.5
+jasonish/suricata@sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+Warning: running as root due to missing capabilities
+This is Suricata version 8.0.5 RELEASE
+[2/4] GeNIS archive
+--2026-10-23 15:00:21--  https://zenodo.org/records/14919237/files/1-packets.zip?download=1
+Resolving zenodo.org (zenodo.org)... 137.138.121.78, 188.185.40.132, 188.185.42.113, ...
+Connecting to zenodo.org (zenodo.org)|137.138.121.78|:443... connected.
+ERROR: cannot verify zenodo.org's certificate, issued by ‘CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB’:
+  Unable to locally verify the issuer's authority.
+To connect to zenodo.org insecurely, use `--no-check-certificate'.
