@@ -1,0 +1,12 @@
+capture                    level policy          ref    run retention   new  lostS  ET kept
+attack-bruteforce-ssh      L0    ignore          644    644    100.0%     0   0/11  629/629
+attack-bruteforce-ssh      L1    ignore          644    644     94.9%    33   0/11  596/629
+attack-bruteforce-ssh      L2    ignore          644    644     92.7%    47   0/11  582/629
+attack-bruteforce-ssh      L3    ignore          644    644     93.8%    40   0/11  589/629
+attack-bruteforce-ssh      L4    ignore          644    538     81.7%    12   0/11  511/629
+attack-dos-hulk            L0    ignore         6116   6116    100.0%     0   0/22 3112/3112
+attack-dos-hulk            L1    ignore         6116   6116     99.6%    26   0/22 3086/3112
+attack-dos-hulk            L2    ignore         6116   7130     88.8%  1702   0/22 2438/3112
+attack-dos-hulk            L3    ignore         6116   2933     20.2%  1696   0/22  863/3112
+attack-dos-hulk            L4    ignore         6116    463      4.5%   185  10/22  222/3112
+Wrote results/retention.csv, results/per_signature.csv

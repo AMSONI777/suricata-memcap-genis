@@ -7,3 +7,6 @@ results/**/*.json
 __pycache__/
 *.pyc
 rules/update/
+results/runs/
+results/feasibility/
+results/pilot1_default_netvars/

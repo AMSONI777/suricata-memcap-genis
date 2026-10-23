@@ -9,6 +9,7 @@ def indent(line):
     return len(line) - len(line.lstrip(' '))
 
 
+# 1. Limit eve.json output to alert, flow and stats events
 i = next(k for k, l in enumerate(lines) if re.match(r'^  - eve-log:\s*$', l))
 t = next(k for k in range(i + 1, len(lines)) if re.match(r'^      types:\s*$', lines[k]))
 e = t + 1
@@ -28,9 +29,21 @@ new = [
     '            threads: no',
     '            deltas: no',
 ]
-out = lines[:t] + new + lines[e:]
-open(dst, 'w').write('\n'.join(out))
+lines = lines[:t] + new + lines[e:]
 print('eve-log found at line %d; types block lines %d-%d replaced (%d lines removed)' % (i + 1, t + 1, e, e - t))
-print('Resulting eve-log types:')
-for l in new:
-    print(l)
+
+# 2. EXTERNAL_NET = any (all hosts in the testbed, attackers included, use private addresses)
+for k, l in enumerate(lines):
+    if re.match(r'^\s+EXTERNAL_NET:', l):
+        print('EXTERNAL_NET before: ' + l.strip())
+        lines[k] = ' ' * indent(l) + 'EXTERNAL_NET: "any"'
+        print('EXTERNAL_NET after : ' + lines[k].strip())
+        break
+else:
+    sys.exit('EXTERNAL_NET line not found')
+for l in lines:
+    if re.match(r'^\s+HOME_NET:', l):
+        print('HOME_NET           : ' + l.strip())
+        break
+
+open(dst, 'w').write('\n'.join(lines))

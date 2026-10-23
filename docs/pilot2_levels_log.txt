@@ -1,0 +1,8 @@
+done   attack-dos-hulk            L1_ignore            73s  sessions=50823 ssn_drop=0 alerts=6116
+done   attack-dos-hulk            L2_ignore            83s  sessions=50823 ssn_drop=0 alerts=7130
+done   attack-dos-hulk            L3_ignore            73s  sessions=34535 ssn_drop=62284 alerts=2933
+done   attack-dos-hulk            L4_ignore            71s  sessions=11087 ssn_drop=125714 alerts=463
+done   attack-bruteforce-ssh      L1_ignore            66s  sessions=4234 ssn_drop=0 alerts=644
+done   attack-bruteforce-ssh      L2_ignore            68s  sessions=4234 ssn_drop=0 alerts=644
+done   attack-bruteforce-ssh      L3_ignore            74s  sessions=4234 ssn_drop=0 alerts=644
+done   attack-bruteforce-ssh      L4_ignore            59s  sessions=4234 ssn_drop=0 alerts=538

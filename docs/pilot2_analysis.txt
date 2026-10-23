@@ -1,0 +1,4 @@
+capture                    level policy          ref    run retention   new  lostS  ET kept
+attack-bruteforce-ssh      L0    ignore          644    644    100.0%     0   0/11  629/629
+attack-dos-hulk            L0    ignore         6116   6116    100.0%     0   0/22 3112/3112
+Wrote results/retention.csv, results/per_signature.csv

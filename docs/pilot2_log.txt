@@ -1,0 +1,2 @@
+done   attack-dos-hulk            L0_ignore            70s  sessions=50823 ssn_drop=0 alerts=6116
+done   attack-bruteforce-ssh      L0_ignore            68s  sessions=4234 ssn_drop=0 alerts=644

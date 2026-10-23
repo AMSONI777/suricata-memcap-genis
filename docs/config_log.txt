@@ -1,14 +1,8 @@
 [1/3] Limiting eve.json output to alert, flow and stats events
 eve-log found at line 98; types block lines 179-394 replaced (216 lines removed)
-Resulting eve-log types:
-      types:
-        - alert:
-            tagged-packets: no
-        - flow
-        - stats:
-            totals: yes
-            threads: no
-            deltas: no
+EXTERNAL_NET before: EXTERNAL_NET: "!$HOME_NET"
+EXTERNAL_NET after : EXTERNAL_NET: "any"
+HOME_NET           : HOME_NET: "[192.168.0.0/16,10.0.0.0/8,172.16.0.0/12]"
 [2/3] Testing the config together with the ET Open rules (30-90 s)
 i: suricata: This is Suricata version 8.0.5 RELEASE running in SYSTEM mode
 i: suricata: Configuration provided was successfully loaded. Exiting.
