@@ -1,0 +1,5 @@
+capture,level,policy,rep,exit,wall_s,packets,sessions,ssn_memcap_drop,seg_memcap_drop,reassembly_gap,alerts
+attack-dos-hulk,L0,ignore,1,0,53,586843,50823,0,0,64,3004
+attack-dos-hulk,L4,ignore,1,0,35,586843,11070,125330,0,16,236
+attack-bruteforce-ssh,L0,ignore,1,0,33,88342,4234,0,0,3,15
+attack-bruteforce-ssh,L4,ignore,1,0,34,88342,4234,0,0,3,15
