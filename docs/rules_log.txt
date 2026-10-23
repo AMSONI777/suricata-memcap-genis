@@ -1,0 +1,56 @@
+[1/2] Downloading ET Open ruleset (one-time snapshot)
+23/10/2026 -- 19:45:44 - <Info> -- Loading /etc/suricata/update.yaml
+23/10/2026 -- 19:45:44 - <Info> -- Using data-directory /var/lib/suricata.
+23/10/2026 -- 19:45:44 - <Info> -- Using Suricata configuration /etc/suricata/suricata.yaml
+23/10/2026 -- 19:45:44 - <Info> -- Using /usr/share/suricata/rules for Suricata provided rules.
+23/10/2026 -- 19:45:44 - <Info> -- Found Suricata version 8.0.5 at /usr/bin/suricata.
+23/10/2026 -- 19:45:44 - <Info> -- Loading /etc/suricata/suricata.yaml
+23/10/2026 -- 19:45:44 - <Info> -- Disabling rules for protocol pgsql
+23/10/2026 -- 19:45:44 - <Info> -- Disabling rules for protocol modbus
+23/10/2026 -- 19:45:44 - <Info> -- Disabling rules for protocol dnp3
+23/10/2026 -- 19:45:44 - <Info> -- Disabling rules for protocol enip
+23/10/2026 -- 19:45:44 - <Info> -- No sources configured, will use Emerging Threats Open
+23/10/2026 -- 19:45:44 - <Info> -- Fetching https://rules.emergingthreats.net/open/suricata-8.0.5/emerging.rules.tar.gz.
+23/10/2026 -- 19:45:45 - <Info> -- Done.
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/app-layer-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/decoder-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dhcp-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dnp3-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dns-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/files.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/http2-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/http-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ipsec-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/kerberos-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/modbus-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/mqtt-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/nfs-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ntp-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/quic-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/rfb-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/smb-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/smtp-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ssh-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/stream-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/tls-events.rules
+23/10/2026 -- 19:45:45 - <Info> -- Ignoring file 1bf1204688c10c58ada16cce98fbcc15/rules/emerging-deleted.rules
+23/10/2026 -- 19:45:48 - <Info> -- Loaded 69218 rules.
+23/10/2026 -- 19:45:48 - <Info> -- Disabled 16 rules.
+23/10/2026 -- 19:45:48 - <Info> -- Enabled 0 rules.
+23/10/2026 -- 19:45:48 - <Info> -- Modified 0 rules.
+23/10/2026 -- 19:45:48 - <Info> -- Dropped 0 rules.
+23/10/2026 -- 19:45:49 - <Info> -- Enabled 136 rules for flowbit dependencies.
+23/10/2026 -- 19:45:49 - <Info> -- Creating directory /var/lib/suricata/rules.
+23/10/2026 -- 19:45:49 - <Info> -- Backing up current rules.
+23/10/2026 -- 19:45:49 - <Info> -- Writing rules to /var/lib/suricata/rules/suricata.rules: total: 69218; enabled: 53250; added: 69218; removed 0; modified: 0
+23/10/2026 -- 19:45:49 - <Info> -- Writing /var/lib/suricata/rules/classification.config
+23/10/2026 -- 19:45:49 - <Info> -- Skipping test, disabled by configuration.
+23/10/2026 -- 19:45:49 - <Info> -- Done.
+[2/2] Recording the snapshot
+ET Open ruleset snapshot
+Downloaded: 2026-10-23 15:45
+Image: jasonish/suricata@sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+File: rules/rules/suricata.rules
+SHA-256: 8af270698febc17d222ec1a4d2b7d9a7ff46ab274b621344fb6093e996d93a85
+Size: 44M
+Enabled rules: 53249

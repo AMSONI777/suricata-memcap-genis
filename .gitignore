@@ -6,3 +6,4 @@ results/**/*.log
 results/**/*.json
 __pycache__/
 *.pyc
+rules/update/

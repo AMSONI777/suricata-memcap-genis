@@ -1,0 +1,7 @@
+ET Open ruleset snapshot
+Downloaded: 2026-10-23 15:45
+Image: jasonish/suricata@sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+File: rules/rules/suricata.rules
+SHA-256: 8af270698febc17d222ec1a4d2b7d9a7ff46ab274b621344fb6093e996d93a85
+Size: 44M
+Enabled rules: 53249
