@@ -1,0 +1,17 @@
+Archive:  /home/seed/suricata-memcap-genis/data/1-packets.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2025-02-21 17:06   1-packets/
+ 16418576  2025-02-19 18:06   1-packets/attack-bruteforce-smb.pcapng
+ 30262616  2025-02-19 18:06   1-packets/attack-bruteforce-ssh-ftp.pcapng
+ 18518420  2025-02-19 18:06   1-packets/attack-bruteforce-ssh.pcapng
+165985552  2025-02-19 18:06   1-packets/attack-dos-hulk.pcapng
+1393590264  2025-02-19 18:06   1-packets/attack-dos-icmp.pcapng
+939892368  2025-02-19 18:09   1-packets/attack-dos-pushack.pcapng
+ 95941252  2025-02-19 18:10   1-packets/attack-dos-slowloris.pcapng
+936166388  2025-02-19 18:10   1-packets/attack-dos-udp.pcapng
+  1514016  2025-02-19 18:06   1-packets/benign-admin-activity.pcapng
+ 29711488  2025-02-19 18:06   1-packets/benign-background-activity.pcapng
+319471568  2025-02-19 18:07   1-packets/benign-user-activity.pcapng
+---------                     -------
+3947472508                     12 files

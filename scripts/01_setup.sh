@@ -13,7 +13,7 @@ docker inspect --format '{{index .RepoDigests 0}}' "$IMAGE" | tee "$ROOT/docs/im
 docker run --rm "$IMAGE" --build-info | grep -m1 'This is Suricata'
 
 echo "[2/4] GeNIS archive"
-if [ ! -f "$ZIP" ]; then wget -c -O "$ZIP" "$ZIP_URL"; fi
+if [ ! -f "$ZIP" ]; then wget ${WGET_OPTS:-} -c -O "$ZIP.part" "$ZIP_URL" && mv "$ZIP.part" "$ZIP"; fi
 GOT="$(md5sum "$ZIP" | cut -d' ' -f1)"
 if [ "$GOT" = "$ZIP_MD5" ]; then echo "MD5 OK ($GOT)"; else
   echo "MD5 MISMATCH (got $GOT). Delete $ZIP and run this script again."; exit 1; fi

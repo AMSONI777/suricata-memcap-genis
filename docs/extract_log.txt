@@ -1,0 +1,21 @@
+[1/3] Extracting the 8 TCP captures
+  ok  attack-dos-hulk (165985552 bytes)
+  ok  attack-dos-slowloris (95941252 bytes)
+  ok  attack-bruteforce-ssh (18518420 bytes)
+  ok  attack-bruteforce-ssh-ftp (30262616 bytes)
+  ok  attack-bruteforce-smb (16418576 bytes)
+  ok  benign-admin-activity (1514016 bytes)
+  ok  benign-background-activity (29711488 bytes)
+  ok  benign-user-activity (319471568 bytes)
+[2/3] Building manifest
+[3/3] Manifest
+capture                     size_bytes  sha256                                                            packets  duration_s       first_packet   last_packet
+attack-dos-hulk             165985552   a28c6351e9a7c02db955ce8ce914d108d0d3b5c7d736d1eec367bbd1579709a4  586843   2067.899272047   2025-02-12 11  2025-02-12 11
+attack-dos-slowloris        95941252    aaa2ef54330989a83e702b4005a8c3d05bd2cb7e6b29df210c9ba48840918acf  701787   18229.179358046  2025-02-11 03  2025-02-11 08
+attack-bruteforce-ssh       18518420    20497f24d492aa936ce44fcdfdeed1ee2413ab5cbf7f58dbb2144bad9b00c658  88342    9247.697900216   2025-02-10 03  2025-02-10 06
+attack-bruteforce-ssh-ftp   30262616    438ad2779972904c5e75be8c626d4b32ec618e23a1c9261223ef8c2f1faad7b9  213806   5675.724167502   2025-02-10 06  2025-02-10 08
+attack-bruteforce-smb       16418576    3895bd463bce4863642ed53924c66c53c7f475bebe042b0356fb21924847fc6c  112746   3888.342224176   2025-02-10 08  2025-02-10 09
+benign-admin-activity       1514016     98eed6135bdb835d5a9926abe0af648f8613577328d21edd5e459b247fc0e6ee  8908     28505.216920732  2025-02-06 04  2025-02-06 11
+benign-background-activity  29711488    ad1713f44c4b532d90512136aba3283350a09e7bac717bdd938c54752746282b  112184   28796.694034812  2025-02-08 04  2025-02-08 12
+benign-user-activity        319471568   85a8ac847ae2ab7f92b6d178175948739499b8105d3fea6f85588d595ef2925d  316903   28798.515419759  2025-02-07 04  2025-02-07 12
+TOTAL: 2141519 packets, 677.8 MB across 8 captures
