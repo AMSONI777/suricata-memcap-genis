@@ -1,11 +1,11 @@
-capture,level,policy,ref_alerts,run_alerts,matched,new_unmatched,retention,ref_signatures,signatures_lost,ep_flows,ep_detail
-attack-bruteforce-ssh,L0,ignore,15,15,15,0,1.0,3,0,32,null x32
-attack-bruteforce-ssh,L1,ignore,15,15,15,0,1.0,3,0,24,null x24
-attack-bruteforce-ssh,L2,ignore,15,15,15,0,1.0,3,0,12,null x12
-attack-bruteforce-ssh,L3,ignore,15,15,15,0,1.0,3,0,26,null x26
-attack-bruteforce-ssh,L4,ignore,15,15,15,0,1.0,3,0,35,null x35
-attack-dos-hulk,L0,ignore,3004,3004,3004,0,1.0,16,0,52,null x52
-attack-dos-hulk,L1,ignore,3004,3004,3004,0,1.0,16,0,52,null x52
-attack-dos-hulk,L2,ignore,3004,4494,2991,1503,0.9957,16,0,15628,null x15628
-attack-dos-hulk,L3,ignore,3004,1999,341,1658,0.1135,16,0,94506,null x94506
-attack-dos-hulk,L4,ignore,3004,236,56,180,0.0186,16,10,131894,null x131894
+capture,level,policy,ref_alerts,run_alerts,matched,new_unmatched,retention,ref_signatures,signatures_lost,ep_flows,ep_detail,ref_et_alerts,matched_et_alerts
+attack-bruteforce-ssh,L0,ignore,15,15,15,0,1.0,3,0,32,null x32,0,0
+attack-bruteforce-ssh,L1,ignore,15,15,15,0,1.0,3,0,24,null x24,0,0
+attack-bruteforce-ssh,L2,ignore,15,15,15,0,1.0,3,0,12,null x12,0,0
+attack-bruteforce-ssh,L3,ignore,15,15,15,0,1.0,3,0,26,null x26,0,0
+attack-bruteforce-ssh,L4,ignore,15,15,15,0,1.0,3,0,35,null x35,0,0
+attack-dos-hulk,L0,ignore,3004,3004,3004,0,1.0,16,0,52,null x52,0,0
+attack-dos-hulk,L1,ignore,3004,3004,3004,0,1.0,16,0,52,null x52,0,0
+attack-dos-hulk,L2,ignore,3004,4494,2991,1503,0.9957,16,0,15628,null x15628,0,0
+attack-dos-hulk,L3,ignore,3004,1999,341,1658,0.1135,16,0,94506,null x94506,0,0
+attack-dos-hulk,L4,ignore,3004,236,56,180,0.0186,16,10,131894,null x131894,0,0
