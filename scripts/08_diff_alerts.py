@@ -38,6 +38,16 @@ def main():
     print('%s: %s alerts=%d | %s alerts=%d' % (capture, la, sum(a.values()), lb, sum(b.values())))
     print('only in %s: %d | only in %s: %d' % (la, len(only_a), lb, len(only_b)))
 
+    ea, eb = Counter(), Counter()
+    for k, n in a.items():
+        ea[(k[0], k[1], k[2], k[4], k[5])] += n
+    for k, n in b.items():
+        eb[(k[0], k[1], k[2], k[4], k[5])] += n
+    diffs = [(k, ea[k], eb[k]) for k in sorted(set(ea) | set(eb), key=lambda x: tuple(str(i) for i in x)) if ea[k] != eb[k]]
+    print('Endpoint-level differences (signature, proto, client, server, port): %d' % len(diffs))
+    for k, x, y in diffs[:12]:
+        print('  %s  %d -> %d' % (k, x, y))
+
     pool = list(only_b)
     tally = Counter()
     pairs = []

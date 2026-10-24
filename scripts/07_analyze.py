@@ -114,11 +114,14 @@ def main():
         for base, members in sorted(groups.items()):
             if len(members) > 1:
                 members = sorted(members)
-                flags = []
+                flags, devs = [], []
+                first = get((cap, members[0]))[0]
                 for t in range(len(TIERS)):
                     flags.append(len({digest(get((cap, n))[0][t]) for n in members}) == 1)
-                det_rows.append([cap, base, len(members), ';'.join(members)] + flags +
-                                [digest(get((cap, members[0]))[0][PRIMARY])[:16]])
+                    devs.append(max(max(sum((first[t] - get((cap, n))[0][t]).values()),
+                                        sum((get((cap, n))[0][t] - first[t]).values())) for n in members))
+                det_rows.append([cap, base, len(members), ';'.join(members)] + flags + devs +
+                                [digest(first[PRIMARY])[:16]])
 
         for (c, name), _path in sorted(runs.items()):
             if c != cap:
@@ -160,14 +163,14 @@ def main():
         with open(OUT_DET, 'w', newline='') as fh:
             w = csv.writer(fh)
             w.writerow(['capture', 'config', 'runs_compared', 'run_names'] +
-                       ['identical_' + t for t in TIERS] + ['hash_prefix'])
+                       ['identical_' + t for t in TIERS] + ['max_unmatched_' + t for t in TIERS] + ['hash_prefix'])
             w.writerows(det_rows)
 
     print('%-24s %-5s %-12s %6s %6s %9s %7s %7s %5s %6s %9s' % ('capture', 'level', 'policy', 'ref', 'run', 'retention', 'no_ts', 'strict', 'new', 'lostS', 'ET kept'))
     for r in ret_rows:
         print('%-24s %-5s %-12s %6d %6d %8.1f%% %6.1f%% %6.1f%% %5d %3d/%-2d %5d/%d' % (r[0], r[1], r[2], r[3], r[4], r[7] * 100, r[14] * 100, r[15] * 100, r[6], r[9], r[8], r[13], r[12]))
     for r in det_rows:
-        print('determinism %-22s %-10s %d runs identical: endpoint=%s no_ts=%s strict=%s' % (r[0], r[1], r[2], r[4], r[5], r[6]))
+        print('determinism %-22s %-10s %d runs identical: endpoint=%s no_ts=%s strict=%s | max unmatched alerts: endpoint=%d no_ts=%d strict=%d' % (r[0], r[1], r[2], r[4], r[5], r[6], r[7], r[8], r[9]))
     print('Wrote results/retention.csv, results/per_signature.csv' + (', results/determinism.csv' if det_rows else ''))
 
 
