@@ -1,19 +1,92 @@
 capture,level,policy,sid,signature,origin,ref_count,run_count
+attack-bruteforce-smb,L0,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-smb,L0,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,2,2
+attack-bruteforce-smb,L0,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,2,2
+attack-bruteforce-smb,L0,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,2,2
+attack-bruteforce-smb,L0,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,2,2
+attack-bruteforce-smb,L0,ignore,2102924,GPL NETBIOS SMB-DS repeated logon failure,ET-Open,998,998
+attack-bruteforce-smb,L0,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,33,33
+attack-bruteforce-smb,L0,ignore,2210038,SURICATA STREAM FIN out of window,suricata-builtin,3,3
+attack-bruteforce-smb,L0,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,1,1
+attack-bruteforce-smb,L0,ignore,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,1,1
+attack-bruteforce-smb,L0,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,1,1
+attack-bruteforce-ssh,L0,ignore,2001219,ET SCAN Potential SSH Scan,ET-Open,48,48
+attack-bruteforce-ssh,L0,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-ssh,L0,ignore,2003068,ET SCAN Potential SSH Scan OUTBOUND,ET-Open,428,428
+attack-bruteforce-ssh,L0,ignore,2006546,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack,ET-Open,144,144
+attack-bruteforce-ssh,L0,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,2,2
+attack-bruteforce-ssh,L0,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,2,2
+attack-bruteforce-ssh,L0,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,2,2
+attack-bruteforce-ssh,L0,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,2,2
 attack-bruteforce-ssh,L0,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,6,6
 attack-bruteforce-ssh,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,7,7
 attack-bruteforce-ssh,L0,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,2,2
+attack-bruteforce-ssh,L1,ignore,2001219,ET SCAN Potential SSH Scan,ET-Open,48,48
+attack-bruteforce-ssh,L1,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-ssh,L1,ignore,2003068,ET SCAN Potential SSH Scan OUTBOUND,ET-Open,428,428
+attack-bruteforce-ssh,L1,ignore,2006546,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack,ET-Open,144,144
+attack-bruteforce-ssh,L1,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,2,2
+attack-bruteforce-ssh,L1,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,2,2
+attack-bruteforce-ssh,L1,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,2,2
+attack-bruteforce-ssh,L1,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,2,2
 attack-bruteforce-ssh,L1,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,6,6
 attack-bruteforce-ssh,L1,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,7,7
 attack-bruteforce-ssh,L1,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,2,2
+attack-bruteforce-ssh,L2,ignore,2001219,ET SCAN Potential SSH Scan,ET-Open,48,48
+attack-bruteforce-ssh,L2,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-ssh,L2,ignore,2003068,ET SCAN Potential SSH Scan OUTBOUND,ET-Open,428,428
+attack-bruteforce-ssh,L2,ignore,2006546,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack,ET-Open,144,144
+attack-bruteforce-ssh,L2,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,2,2
+attack-bruteforce-ssh,L2,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,2,2
+attack-bruteforce-ssh,L2,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,2,2
+attack-bruteforce-ssh,L2,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,2,2
 attack-bruteforce-ssh,L2,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,6,6
 attack-bruteforce-ssh,L2,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,7,7
 attack-bruteforce-ssh,L2,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,2,2
+attack-bruteforce-ssh,L3,ignore,2001219,ET SCAN Potential SSH Scan,ET-Open,48,48
+attack-bruteforce-ssh,L3,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-ssh,L3,ignore,2003068,ET SCAN Potential SSH Scan OUTBOUND,ET-Open,428,428
+attack-bruteforce-ssh,L3,ignore,2006546,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack,ET-Open,144,144
+attack-bruteforce-ssh,L3,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,2,2
+attack-bruteforce-ssh,L3,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,2,2
+attack-bruteforce-ssh,L3,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,2,2
+attack-bruteforce-ssh,L3,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,2,2
 attack-bruteforce-ssh,L3,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,6,6
 attack-bruteforce-ssh,L3,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,7,7
 attack-bruteforce-ssh,L3,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,2,2
+attack-bruteforce-ssh,L4,ignore,2001219,ET SCAN Potential SSH Scan,ET-Open,48,48
+attack-bruteforce-ssh,L4,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-ssh,L4,ignore,2003068,ET SCAN Potential SSH Scan OUTBOUND,ET-Open,428,428
+attack-bruteforce-ssh,L4,ignore,2006546,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack,ET-Open,144,38
+attack-bruteforce-ssh,L4,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,2,2
+attack-bruteforce-ssh,L4,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,2,2
+attack-bruteforce-ssh,L4,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,2,2
+attack-bruteforce-ssh,L4,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,2,2
 attack-bruteforce-ssh,L4,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,6,6
 attack-bruteforce-ssh,L4,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,7,7
 attack-bruteforce-ssh,L4,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,2,2
+attack-bruteforce-ssh-ftp,L0,ignore,2001219,ET SCAN Potential SSH Scan,ET-Open,21,21
+attack-bruteforce-ssh-ftp,L0,ignore,2002383,ET SCAN Potential FTP Brute-Force attempt response,ET-Open,1999,1999
+attack-bruteforce-ssh-ftp,L0,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,1,1
+attack-bruteforce-ssh-ftp,L0,ignore,2003068,ET SCAN Potential SSH Scan OUTBOUND,ET-Open,485,485
+attack-bruteforce-ssh-ftp,L0,ignore,2006546,ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack,ET-Open,76,76
+attack-bruteforce-ssh-ftp,L0,ignore,2010642,ET SCAN Multiple FTP Root Login Attempts from Single Source - Possible Brute Force Attempt,ET-Open,3326,3326
+attack-bruteforce-ssh-ftp,L0,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,5,5
+attack-bruteforce-ssh-ftp,L0,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,5,5
+attack-bruteforce-ssh-ftp,L0,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,5,5
+attack-bruteforce-ssh-ftp,L0,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,5,5
+attack-bruteforce-ssh-ftp,L0,ignore,2048676,ET SCADA [nsacyber/ELITEWOLF] Schweitzer Engineering Laboratories SEL FTP Server Activity - Default Password otter,ET-Open,1,1
+attack-bruteforce-ssh-ftp,L0,ignore,2210002,SURICATA STREAM 3way handshake right seq wrong ack evasion,suricata-builtin,2,2
+attack-bruteforce-ssh-ftp,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,27,27
+attack-bruteforce-ssh-ftp,L0,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,3,3
+attack-bruteforce-ssh-ftp,L0,ignore,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,1,1
+attack-bruteforce-ssh-ftp,L0,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,1,1
+attack-dos-hulk,L0,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L0,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L0,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L0,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L0,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L0,ignore,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,3094
 attack-dos-hulk,L0,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,18
 attack-dos-hulk,L0,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
 attack-dos-hulk,L0,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,43
@@ -30,6 +103,12 @@ attack-dos-hulk,L0,ignore,2210045,SURICATA STREAM Packet with invalid ack,surica
 attack-dos-hulk,L0,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,13
 attack-dos-hulk,L0,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,2437
 attack-dos-hulk,L0,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,59
+attack-dos-hulk,L1,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L1,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L1,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L1,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L1,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L1,ignore,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,3094
 attack-dos-hulk,L1,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,18
 attack-dos-hulk,L1,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
 attack-dos-hulk,L1,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,43
@@ -46,6 +125,12 @@ attack-dos-hulk,L1,ignore,2210045,SURICATA STREAM Packet with invalid ack,surica
 attack-dos-hulk,L1,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,13
 attack-dos-hulk,L1,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,2437
 attack-dos-hulk,L1,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,59
+attack-dos-hulk,L2,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L2,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L2,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L2,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L2,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L2,ignore,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,2439
 attack-dos-hulk,L2,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,18
 attack-dos-hulk,L2,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
 attack-dos-hulk,L2,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,43
@@ -61,28 +146,40 @@ attack-dos-hulk,L2,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,
 attack-dos-hulk,L2,ignore,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,21
 attack-dos-hulk,L2,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,13
 attack-dos-hulk,L2,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,2437
-attack-dos-hulk,L2,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1549
+attack-dos-hulk,L2,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1728
+attack-dos-hulk,L3,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L3,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L3,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L3,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L3,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L3,ignore,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,852
 attack-dos-hulk,L3,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,14
 attack-dos-hulk,L3,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
-attack-dos-hulk,L3,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,33
-attack-dos-hulk,L3,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,134
-attack-dos-hulk,L3,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,91
-attack-dos-hulk,L3,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,2
-attack-dos-hulk,L3,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,2
-attack-dos-hulk,L3,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,2
+attack-dos-hulk,L3,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,38
+attack-dos-hulk,L3,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,132
+attack-dos-hulk,L3,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,94
+attack-dos-hulk,L3,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,1
+attack-dos-hulk,L3,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,3
+attack-dos-hulk,L3,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,3
 attack-dos-hulk,L3,ignore,2210029,SURICATA STREAM ESTABLISHED invalid ack,suricata-builtin,6,3
 attack-dos-hulk,L3,ignore,2210030,SURICATA STREAM FIN invalid ack,suricata-builtin,10,7
-attack-dos-hulk,L3,ignore,2210038,SURICATA STREAM FIN out of window,suricata-builtin,6,4
-attack-dos-hulk,L3,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,28,19
-attack-dos-hulk,L3,ignore,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,13
-attack-dos-hulk,L3,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,9
-attack-dos-hulk,L3,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,1
-attack-dos-hulk,L3,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1664
+attack-dos-hulk,L3,ignore,2210038,SURICATA STREAM FIN out of window,suricata-builtin,6,3
+attack-dos-hulk,L3,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,28,20
+attack-dos-hulk,L3,ignore,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,15
+attack-dos-hulk,L3,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,11
+attack-dos-hulk,L3,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,46
+attack-dos-hulk,L3,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1672
+attack-dos-hulk,L4,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L4,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L4,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L4,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L4,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L4,ignore,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,206
 attack-dos-hulk,L4,ignore,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,0
 attack-dos-hulk,L4,ignore,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
 attack-dos-hulk,L4,ignore,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,3
-attack-dos-hulk,L4,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,21
-attack-dos-hulk,L4,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,23
+attack-dos-hulk,L4,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,20
+attack-dos-hulk,L4,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,24
 attack-dos-hulk,L4,ignore,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,0
 attack-dos-hulk,L4,ignore,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,0
 attack-dos-hulk,L4,ignore,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,0
@@ -93,4 +190,20 @@ attack-dos-hulk,L4,ignore,2210044,SURICATA STREAM Packet with invalid timestamp,
 attack-dos-hulk,L4,ignore,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,0
 attack-dos-hulk,L4,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,0
 attack-dos-hulk,L4,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,0
-attack-dos-hulk,L4,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,183
+attack-dos-hulk,L4,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,186
+attack-dos-slowloris,L0,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-slowloris,L0,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-slowloris,L0,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-slowloris,L0,ignore,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,3,3
+attack-dos-slowloris,L0,ignore,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-slowloris,L0,ignore,2012870,ET INFO HTTP Outbound Request contains pw,ET-Open,259,259
+attack-dos-slowloris,L0,ignore,2045882,ET WEB_SPECIFIC_APPS WordPress - Attempted Check for Malicious posts-layout (post-layout Doppelganger) Plugin,ET-Open,6,6
+attack-dos-slowloris,L0,ignore,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,3,3
+benign-admin-activity,L0,ignore,2067085,ET INFO NTLM Session Setup Request - Negotiate,ET-Open,2,2
+benign-admin-activity,L0,ignore,2067086,ET INFO NTLMv1 Session Setup Response - Challenge,ET-Open,2,2
+benign-admin-activity,L0,ignore,2067087,ET INFO NTLM Session Setup Request - Auth,ET-Open,2,2
+benign-background-activity,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,1,1
+benign-user-activity,L0,ignore,2013504,ET INFO GNU/Linux APT User-Agent Outbound likely related to package management,ET-Open,68,68
+benign-user-activity,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,6,6
+benign-user-activity,L0,ignore,2210054,SURICATA STREAM excessive retransmissions,suricata-builtin,4,4
+benign-user-activity,L0,ignore,2221036,SURICATA HTTP Response excessive header repetition,suricata-builtin,2,2

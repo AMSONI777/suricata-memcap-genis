@@ -1,0 +1,24 @@
+skip   attack-dos-hulk L0_ignore (already done)
+skip   attack-dos-slowloris L0_ignore (already done)
+skip   attack-bruteforce-ssh L0_ignore (already done)
+skip   attack-bruteforce-ssh-ftp L0_ignore (already done)
+skip   attack-bruteforce-smb L0_ignore (already done)
+skip   benign-admin-activity L0_ignore (already done)
+skip   benign-background-activity L0_ignore (already done)
+done   benign-user-activity       L0_ignore            35s  sessions=1452 ssn_drop=0 alerts=80
+skip   attack-dos-hulk L0_ignore_r2 (already done)
+done   attack-dos-slowloris       L0_ignore_r2         38s  sessions=17315 ssn_drop=0 alerts=285
+skip   attack-bruteforce-ssh L0_ignore_r2 (already done)
+done   attack-bruteforce-ssh-ftp  L0_ignore_r2         34s  sessions=14324 ssn_drop=0 alerts=5963
+done   attack-bruteforce-smb      L0_ignore_r2         33s  sessions=11989 ssn_drop=0 alerts=1046
+done   benign-admin-activity      L0_ignore_r2         32s  sessions=35 ssn_drop=0 alerts=6
+done   benign-background-activity L0_ignore_r2         34s  sessions=239 ssn_drop=0 alerts=1
+done   benign-user-activity       L0_ignore_r2         47s  sessions=1452 ssn_drop=0 alerts=80
+done   attack-dos-hulk            L0_ignore_r3         81s  sessions=50823 ssn_drop=0 alerts=6116
+done   attack-dos-slowloris       L0_ignore_r3         58s  sessions=17315 ssn_drop=0 alerts=285
+done   attack-bruteforce-ssh      L0_ignore_r3         38s  sessions=4234 ssn_drop=0 alerts=644
+done   attack-bruteforce-ssh-ftp  L0_ignore_r3         72s  sessions=14324 ssn_drop=0 alerts=5966
+done   attack-bruteforce-smb      L0_ignore_r3         54s  sessions=11989 ssn_drop=0 alerts=1046
+done   benign-admin-activity      L0_ignore_r3         64s  sessions=35 ssn_drop=0 alerts=6
+done   benign-background-activity L0_ignore_r3         73s  sessions=239 ssn_drop=0 alerts=1
+done   benign-user-activity       L0_ignore_r3         65s  sessions=1452 ssn_drop=0 alerts=80

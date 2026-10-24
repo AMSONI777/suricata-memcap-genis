@@ -1,0 +1,16 @@
+capture                    level policy          ref    run retention    strict   new  lostS   ET kept
+attack-bruteforce-ssh      L0    ignore          644    644    100.0%    100.0%     0   0/11   629/629
+attack-bruteforce-ssh      L1    ignore          644    644     95.0%     94.9%    32   0/11   597/629
+attack-bruteforce-ssh      L2    ignore          644    644     92.9%     92.7%    46   0/11   583/629
+attack-bruteforce-ssh      L3    ignore          644    644     93.8%     93.8%    40   0/11   589/629
+attack-bruteforce-ssh      L4    ignore          644    538     81.7%     81.7%    12   0/11   511/629
+attack-dos-hulk            L0    ignore         6116   6116    100.0%    100.0%     0   0/22  3112/3112
+attack-dos-hulk            L1    ignore         6116   6116    100.0%     99.6%     0   0/22  3112/3112
+attack-dos-hulk            L2    ignore         6116   7130     89.1%     88.8%  1682   0/22  2457/3112
+attack-dos-hulk            L3    ignore         6116   2933     20.7%     20.2%  1665   0/22   870/3112
+attack-dos-hulk            L4    ignore         6116    463      4.6%      4.5%   183  10/22   224/3112
+determinism attack-bruteforce-ssh    L0_ignore  2 runs identical(relaxed)=False identical(strict)=False
+determinism attack-bruteforce-ssh    L1_ignore  2 runs identical(relaxed)=False identical(strict)=False
+determinism attack-dos-hulk          L0_ignore  2 runs identical(relaxed)=True identical(strict)=False
+determinism attack-dos-hulk          L1_ignore  2 runs identical(relaxed)=True identical(strict)=False
+Wrote results/retention.csv, results/per_signature.csv, results/determinism.csv

@@ -5,13 +5,26 @@ import hashlib
 import json
 import os
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 RUNS = os.path.join(ROOT, 'results', 'runs')
 OUT_RET = os.path.join(ROOT, 'results', 'retention.csv')
 OUT_SIG = os.path.join(ROOT, 'results', 'per_signature.csv')
 OUT_DET = os.path.join(ROOT, 'results', 'determinism.csv')
+
+# Alert identity at three levels of detail. Event key layout:
+# (sid, proto, src_ip, src_port, dest_ip, dest_port, timestamp)
+TIERS = ('endpoint', 'no_ts', 'strict')
+PRIMARY = 0
+
+
+def tier_keys(k):
+    return (
+        (k[0], k[1], k[2], k[4], k[5]),   # endpoint: signature, client host, server host:port
+        k[:-1],                           # no_ts: adds the client source port
+        k,                                # strict: adds the timestamp
+    )
 
 
 def parse_name(name):
@@ -21,9 +34,14 @@ def parse_name(name):
     return level, policy, rep
 
 
+def base_name(name):
+    level, policy, _ = parse_name(name)
+    return '%s_%s' % (level, policy)
+
+
 def load_run(path):
-    """Return (alert Counter keyed by event, signature names, ep flow count, ep detail Counter)."""
-    alerts = Counter()
+    """Return (list of Counters, one per tier, signature names, exception-policy flow count, detail Counter)."""
+    counters = [Counter() for _ in TIERS]
     names = {}
     ep_flows = 0
     ep_detail = Counter()
@@ -34,13 +52,14 @@ def load_run(path):
                 a = ev['alert']
                 key = (a['signature_id'], ev.get('proto'), ev.get('src_ip'), ev.get('src_port'),
                        ev.get('dest_ip'), ev.get('dest_port'), ev.get('timestamp'))
-                alerts[key] += 1
+                for c, k in zip(counters, tier_keys(key)):
+                    c[k] += 1
                 names[a['signature_id']] = a.get('signature', '')
             elif '"event_type":"flow"' in line and '"exception_policy"' in line:
                 ev = json.loads(line)
                 ep_flows += 1
                 ep_detail[json.dumps(ev.get('exception_policy'), sort_keys=True)] += 1
-    return alerts, names, ep_flows, ep_detail
+    return counters, names, ep_flows, ep_detail
 
 
 def digest(alerts):
@@ -48,6 +67,10 @@ def digest(alerts):
     for k in sorted(alerts, key=lambda x: tuple(str(i) for i in x)):
         h.update((repr(k) + ':' + str(alerts[k]) + '\n').encode())
     return h.hexdigest()
+
+
+def matched_count(run, ref, sids=None):
+    return sum(min(n, ref.get(k, 0)) for k, n in run.items() if sids is None or k[0] in sids)
 
 
 def main():
@@ -70,23 +93,32 @@ def main():
         return cache[key]
 
     ret_rows, sig_rows, det_rows = [], [], []
-    caps = sorted({c for c, _ in runs})
-    for cap in caps:
+    for cap in sorted({c for c, _ in runs}):
         ref_key = (cap, 'L0_ignore')
         if ref_key not in runs:
             print('No L0_ignore reference for', cap, '- skipped')
             continue
-        ref, ref_names, _, _ = get(ref_key)
-        ref_total = sum(ref.values())
+        ref_c, ref_names, _, _ = get(ref_key)
+        ref_p = ref_c[PRIMARY]
+        ref_total = sum(ref_p.values())
         ref_by_sig = Counter()
-        for k, n in ref.items():
+        for k, n in ref_p.items():
             ref_by_sig[k[0]] += n
+        et_sids = {x for x, nm in ref_names.items() if not nm.startswith('SURICATA')}
+        et_ref = sum(n for k, n in ref_p.items() if k[0] in et_sids)
 
-        reps = sorted(n for c, n in runs if c == cap and n.startswith('L0_ignore'))
-        if len(reps) > 1:
-            hashes = {n: digest(get((cap, n))[0]) for n in reps}
-            det_rows.append([cap, len(reps), ';'.join(reps), len(set(hashes.values())) == 1,
-                             list(hashes.values())[0][:16]])
+        groups = defaultdict(list)
+        for (c, name) in runs:
+            if c == cap:
+                groups[base_name(name)].append(name)
+        for base, members in sorted(groups.items()):
+            if len(members) > 1:
+                members = sorted(members)
+                flags = []
+                for t in range(len(TIERS)):
+                    flags.append(len({digest(get((cap, n))[0][t]) for n in members}) == 1)
+                det_rows.append([cap, base, len(members), ';'.join(members)] + flags +
+                                [digest(get((cap, members[0]))[0][PRIMARY])[:16]])
 
         for (c, name), _path in sorted(runs.items()):
             if c != cap:
@@ -94,22 +126,21 @@ def main():
             level, policy, rep = parse_name(name)
             if rep != 1:
                 continue
-            alerts, names, ep_flows, ep_detail = get((c, name))
-            matched = sum(min(n, ref.get(k, 0)) for k, n in alerts.items())
-            run_total = sum(alerts.values())
+            counters, names, ep_flows, ep_detail = get((c, name))
+            run_p = counters[PRIMARY]
+            matched = matched_count(run_p, ref_p)
+            run_total = sum(run_p.values())
             new = run_total - matched
             run_by_sig = Counter()
-            for k, n in alerts.items():
+            for k, n in run_p.items():
                 run_by_sig[k[0]] += n
             lost = [s for s in ref_by_sig if run_by_sig.get(s, 0) == 0]
-            et_sids = {x for x, nm in ref_names.items() if not nm.startswith('SURICATA')}
-            et_ref = sum(n for k, n in ref.items() if k[0] in et_sids)
-            et_matched = sum(min(n, ref.get(k, 0)) for k, n in alerts.items() if k[0] in et_sids)
-            retention = (matched / ref_total) if ref_total else 1.0
+            et_matched = matched_count(run_p, ref_p, et_sids)
+            alt = [matched_count(counters[t], ref_c[t]) / (sum(ref_c[t].values()) or 1) for t in range(len(TIERS))]
             ret_rows.append([cap, level, policy, ref_total, run_total, matched, new,
-                             round(retention, 4), len(ref_by_sig), len(lost), ep_flows,
-                             '; '.join('%s x%d' % (k, v) for k, v in ep_detail.most_common(3)),
-                             et_ref, et_matched])
+                             round(matched / ref_total if ref_total else 1.0, 4), len(ref_by_sig), len(lost),
+                             ep_flows, '; '.join('%s x%d' % (k, v) for k, v in ep_detail.most_common(3)),
+                             et_ref, et_matched, round(alt[1], 4), round(alt[2], 4)])
             for s in sorted(set(ref_by_sig) | set(run_by_sig)):
                 nm = ref_names.get(s, names.get(s, ''))
                 origin = 'suricata-builtin' if nm.startswith('SURICATA') else 'ET-Open'
@@ -119,7 +150,7 @@ def main():
         w = csv.writer(fh)
         w.writerow(['capture', 'level', 'policy', 'ref_alerts', 'run_alerts', 'matched', 'new_unmatched',
                     'retention', 'ref_signatures', 'signatures_lost', 'ep_flows', 'ep_detail',
-                    'ref_et_alerts', 'matched_et_alerts'])
+                    'ref_et_alerts', 'matched_et_alerts', 'retention_no_ts', 'retention_strict'])
         w.writerows(ret_rows)
     with open(OUT_SIG, 'w', newline='') as fh:
         w = csv.writer(fh)
@@ -128,15 +159,17 @@ def main():
     if det_rows:
         with open(OUT_DET, 'w', newline='') as fh:
             w = csv.writer(fh)
-            w.writerow(['capture', 'runs_compared', 'run_names', 'identical', 'hash_prefix'])
+            w.writerow(['capture', 'config', 'runs_compared', 'run_names'] +
+                       ['identical_' + t for t in TIERS] + ['hash_prefix'])
             w.writerows(det_rows)
 
-    print('%-26s %-5s %-12s %6s %6s %9s %5s %6s %8s' % ('capture', 'level', 'policy', 'ref', 'run', 'retention', 'new', 'lostS', 'ET kept'))
+    print('%-24s %-5s %-12s %6s %6s %9s %7s %7s %5s %6s %9s' % ('capture', 'level', 'policy', 'ref', 'run', 'retention', 'no_ts', 'strict', 'new', 'lostS', 'ET kept'))
     for r in ret_rows:
-        print('%-26s %-5s %-12s %6d %6d %8.1f%% %5d %3d/%-2d %4d/%d' % (r[0], r[1], r[2], r[3], r[4], r[7] * 100, r[6], r[9], r[8], r[13], r[12]))
+        print('%-24s %-5s %-12s %6d %6d %8.1f%% %6.1f%% %6.1f%% %5d %3d/%-2d %5d/%d' % (r[0], r[1], r[2], r[3], r[4], r[7] * 100, r[14] * 100, r[15] * 100, r[6], r[9], r[8], r[13], r[12]))
     for r in det_rows:
-        print('determinism %-24s %d runs identical=%s' % (r[0], r[1], r[3]))
+        print('determinism %-22s %-10s %d runs identical: endpoint=%s no_ts=%s strict=%s' % (r[0], r[1], r[2], r[4], r[5], r[6]))
     print('Wrote results/retention.csv, results/per_signature.csv' + (', results/determinism.csv' if det_rows else ''))
 
 
-main()
+if __name__ == '__main__':
+    main()

@@ -1,11 +1,17 @@
-capture,level,policy,ref_alerts,run_alerts,matched,new_unmatched,retention,ref_signatures,signatures_lost,ep_flows,ep_detail,ref_et_alerts,matched_et_alerts
-attack-bruteforce-ssh,L0,ignore,15,15,15,0,1.0,3,0,32,null x32,0,0
-attack-bruteforce-ssh,L1,ignore,15,15,15,0,1.0,3,0,24,null x24,0,0
-attack-bruteforce-ssh,L2,ignore,15,15,15,0,1.0,3,0,12,null x12,0,0
-attack-bruteforce-ssh,L3,ignore,15,15,15,0,1.0,3,0,26,null x26,0,0
-attack-bruteforce-ssh,L4,ignore,15,15,15,0,1.0,3,0,35,null x35,0,0
-attack-dos-hulk,L0,ignore,3004,3004,3004,0,1.0,16,0,52,null x52,0,0
-attack-dos-hulk,L1,ignore,3004,3004,3004,0,1.0,16,0,52,null x52,0,0
-attack-dos-hulk,L2,ignore,3004,4494,2991,1503,0.9957,16,0,15628,null x15628,0,0
-attack-dos-hulk,L3,ignore,3004,1999,341,1658,0.1135,16,0,94506,null x94506,0,0
-attack-dos-hulk,L4,ignore,3004,236,56,180,0.0186,16,10,131894,null x131894,0,0
+capture,level,policy,ref_alerts,run_alerts,matched,new_unmatched,retention,ref_signatures,signatures_lost,ep_flows,ep_detail,ref_et_alerts,matched_et_alerts,retention_no_ts,retention_strict
+attack-bruteforce-smb,L0,ignore,1046,1046,1046,0,1.0,11,0,3,null x3,1007,1007,1.0,1.0
+attack-bruteforce-ssh,L0,ignore,644,644,644,0,1.0,11,0,47,null x47,629,629,1.0,1.0
+attack-bruteforce-ssh,L1,ignore,644,644,644,0,1.0,11,0,6,null x6,629,629,0.9503,0.9488
+attack-bruteforce-ssh,L2,ignore,644,644,644,0,1.0,11,0,16,null x16,629,629,0.9286,0.927
+attack-bruteforce-ssh,L3,ignore,644,644,644,0,1.0,11,0,22,null x22,629,629,0.9379,0.9379
+attack-bruteforce-ssh,L4,ignore,644,538,538,0,0.8354,11,0,1762,null x1762,629,523,0.8168,0.8168
+attack-bruteforce-ssh-ftp,L0,ignore,5963,5963,5963,0,1.0,16,0,549,null x549,5929,5929,1.0,1.0
+attack-dos-hulk,L0,ignore,6116,6116,6116,0,1.0,22,0,51,null x51,3112,3112,1.0,1.0
+attack-dos-hulk,L1,ignore,6116,6116,6116,0,1.0,22,0,54,null x54,3112,3112,1.0,0.9957
+attack-dos-hulk,L2,ignore,6116,7130,5448,1682,0.8908,22,0,17379,null x17379,3112,2457,0.8908,0.8875
+attack-dos-hulk,L3,ignore,6116,2933,1268,1665,0.2073,22,0,88590,null x88590,3112,870,0.2073,0.2023
+attack-dos-hulk,L4,ignore,6116,463,280,183,0.0458,22,10,132318,null x132318,3112,224,0.0458,0.0455
+attack-dos-slowloris,L0,ignore,285,285,285,0,1.0,8,0,131,null x131,282,282,1.0,1.0
+benign-admin-activity,L0,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-background-activity,L0,ignore,1,1,1,0,1.0,1,0,81,null x81,0,0,1.0,1.0
+benign-user-activity,L0,ignore,80,80,80,0,1.0,4,0,220,null x220,68,68,1.0,1.0
