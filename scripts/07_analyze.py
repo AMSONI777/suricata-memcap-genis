@@ -57,8 +57,11 @@ def load_run(path):
                 names[a['signature_id']] = a.get('signature', '')
             elif '"event_type":"flow"' in line and '"exception_policy"' in line:
                 ev = json.loads(line)
-                ep_flows += 1
-                ep_detail[json.dumps(ev.get('exception_policy'), sort_keys=True)] += 1
+                eps = ev.get('flow', {}).get('exception_policy') or []
+                if eps:
+                    ep_flows += 1
+                for ep in eps:
+                    ep_detail['%s:%s' % (ep.get('target'), ep.get('policy'))] += 1
     return counters, names, ep_flows, ep_detail
 
 
@@ -142,7 +145,7 @@ def main():
             alt = [matched_count(counters[t], ref_c[t]) / (sum(ref_c[t].values()) or 1) for t in range(len(TIERS))]
             ret_rows.append([cap, level, policy, ref_total, run_total, matched, new,
                              round(matched / ref_total if ref_total else 1.0, 4), len(ref_by_sig), len(lost),
-                             ep_flows, '; '.join('%s x%d' % (k, v) for k, v in ep_detail.most_common(3)),
+                             ep_flows, '; '.join('%s x%d' % (k, v) for k, v in ep_detail.most_common(6)),
                              et_ref, et_matched, round(alt[1], 4), round(alt[2], 4)])
             for s in sorted(set(ref_by_sig) | set(run_by_sig)):
                 nm = ref_names.get(s, names.get(s, ''))

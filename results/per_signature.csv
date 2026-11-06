@@ -147,6 +147,72 @@ attack-dos-hulk,L2,ignore,2210045,SURICATA STREAM Packet with invalid ack,surica
 attack-dos-hulk,L2,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,13
 attack-dos-hulk,L2,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,2437
 attack-dos-hulk,L2,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1728
+attack-dos-hulk,L3,bypass,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L3,bypass,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L3,bypass,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L3,bypass,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L3,bypass,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L3,bypass,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,620
+attack-dos-hulk,L3,bypass,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,12
+attack-dos-hulk,L3,bypass,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
+attack-dos-hulk,L3,bypass,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,28
+attack-dos-hulk,L3,bypass,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,98
+attack-dos-hulk,L3,bypass,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,28
+attack-dos-hulk,L3,bypass,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,1
+attack-dos-hulk,L3,bypass,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,3
+attack-dos-hulk,L3,bypass,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,3
+attack-dos-hulk,L3,bypass,2210029,SURICATA STREAM ESTABLISHED invalid ack,suricata-builtin,6,3
+attack-dos-hulk,L3,bypass,2210030,SURICATA STREAM FIN invalid ack,suricata-builtin,10,6
+attack-dos-hulk,L3,bypass,2210038,SURICATA STREAM FIN out of window,suricata-builtin,6,2
+attack-dos-hulk,L3,bypass,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,28,16
+attack-dos-hulk,L3,bypass,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,12
+attack-dos-hulk,L3,bypass,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,8
+attack-dos-hulk,L3,bypass,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,99
+attack-dos-hulk,L3,bypass,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,9
+attack-dos-hulk,L3,drop-flow,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L3,drop-flow,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L3,drop-flow,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L3,drop-flow,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L3,drop-flow,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L3,drop-flow,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,411
+attack-dos-hulk,L3,drop-flow,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,14
+attack-dos-hulk,L3,drop-flow,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
+attack-dos-hulk,L3,drop-flow,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,38
+attack-dos-hulk,L3,drop-flow,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,133
+attack-dos-hulk,L3,drop-flow,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,20
+attack-dos-hulk,L3,drop-flow,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,1
+attack-dos-hulk,L3,drop-flow,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,3
+attack-dos-hulk,L3,drop-flow,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,3
+attack-dos-hulk,L3,drop-flow,2210029,SURICATA STREAM ESTABLISHED invalid ack,suricata-builtin,6,3
+attack-dos-hulk,L3,drop-flow,2210030,SURICATA STREAM FIN invalid ack,suricata-builtin,10,7
+attack-dos-hulk,L3,drop-flow,2210038,SURICATA STREAM FIN out of window,suricata-builtin,6,1
+attack-dos-hulk,L3,drop-flow,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,28,20
+attack-dos-hulk,L3,drop-flow,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,15
+attack-dos-hulk,L3,drop-flow,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,11
+attack-dos-hulk,L3,drop-flow,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,46
+attack-dos-hulk,L3,drop-flow,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1
+attack-dos-hulk,L3,drop-packet,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L3,drop-packet,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L3,drop-packet,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L3,drop-packet,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L3,drop-packet,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L3,drop-packet,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,872
+attack-dos-hulk,L3,drop-packet,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,14
+attack-dos-hulk,L3,drop-packet,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
+attack-dos-hulk,L3,drop-packet,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,38
+attack-dos-hulk,L3,drop-packet,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,132
+attack-dos-hulk,L3,drop-packet,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,96
+attack-dos-hulk,L3,drop-packet,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,1
+attack-dos-hulk,L3,drop-packet,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,3
+attack-dos-hulk,L3,drop-packet,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,3
+attack-dos-hulk,L3,drop-packet,2210029,SURICATA STREAM ESTABLISHED invalid ack,suricata-builtin,6,3
+attack-dos-hulk,L3,drop-packet,2210030,SURICATA STREAM FIN invalid ack,suricata-builtin,10,7
+attack-dos-hulk,L3,drop-packet,2210038,SURICATA STREAM FIN out of window,suricata-builtin,6,3
+attack-dos-hulk,L3,drop-packet,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,28,20
+attack-dos-hulk,L3,drop-packet,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,15
+attack-dos-hulk,L3,drop-packet,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,11
+attack-dos-hulk,L3,drop-packet,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,46
+attack-dos-hulk,L3,drop-packet,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1670
 attack-dos-hulk,L3,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
 attack-dos-hulk,L3,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
 attack-dos-hulk,L3,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
@@ -169,6 +235,28 @@ attack-dos-hulk,L3,ignore,2210045,SURICATA STREAM Packet with invalid ack,surica
 attack-dos-hulk,L3,ignore,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,11
 attack-dos-hulk,L3,ignore,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,46
 attack-dos-hulk,L3,ignore,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1672
+attack-dos-hulk,L3,pass-flow,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
+attack-dos-hulk,L3,pass-flow,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
+attack-dos-hulk,L3,pass-flow,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4
+attack-dos-hulk,L3,pass-flow,2010937,ET SCAN Suspicious inbound to mySQL port 3306,ET-Open,4,4
+attack-dos-hulk,L3,pass-flow,2010939,ET SCAN Suspicious inbound to PostgreSQL port 5432,ET-Open,4,4
+attack-dos-hulk,L3,pass-flow,2012801,ET MALWARE Spoofed MSIE 7 User-Agent Likely Ponmocup,ET-Open,3094,391
+attack-dos-hulk,L3,pass-flow,2210004,SURICATA STREAM 3way handshake SYNACK resend with different ack,suricata-builtin,18,14
+attack-dos-hulk,L3,pass-flow,2210007,SURICATA STREAM 3way handshake SYNACK with wrong ack,suricata-builtin,1,1
+attack-dos-hulk,L3,pass-flow,2210008,SURICATA STREAM 3way handshake SYN resend different seq on SYN recv,suricata-builtin,43,38
+attack-dos-hulk,L3,pass-flow,2210010,SURICATA STREAM 3way handshake wrong seq wrong ack,suricata-builtin,182,132
+attack-dos-hulk,L3,pass-flow,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,168,16
+attack-dos-hulk,L3,pass-flow,2210020,SURICATA STREAM ESTABLISHED packet out of window,suricata-builtin,4,1
+attack-dos-hulk,L3,pass-flow,2210023,SURICATA STREAM ESTABLISHED SYNACK resend with different ACK,suricata-builtin,4,3
+attack-dos-hulk,L3,pass-flow,2210027,SURICATA STREAM ESTABLISHED SYN resend with different seq,suricata-builtin,4,3
+attack-dos-hulk,L3,pass-flow,2210029,SURICATA STREAM ESTABLISHED invalid ack,suricata-builtin,6,3
+attack-dos-hulk,L3,pass-flow,2210030,SURICATA STREAM FIN invalid ack,suricata-builtin,10,7
+attack-dos-hulk,L3,pass-flow,2210038,SURICATA STREAM FIN out of window,suricata-builtin,6,1
+attack-dos-hulk,L3,pass-flow,2210044,SURICATA STREAM Packet with invalid timestamp,suricata-builtin,28,20
+attack-dos-hulk,L3,pass-flow,2210045,SURICATA STREAM Packet with invalid ack,suricata-builtin,21,15
+attack-dos-hulk,L3,pass-flow,2210046,SURICATA STREAM SHUTDOWN RST invalid ack,suricata-builtin,13,11
+attack-dos-hulk,L3,pass-flow,2210063,SURICATA STREAM 3way handshake excessive different SYNs,suricata-builtin,2437,47
+attack-dos-hulk,L3,pass-flow,2221010,SURICATA HTTP unable to match response to request,suricata-builtin,59,1
 attack-dos-hulk,L4,ignore,2002910,ET SCAN Potential VNC Scan 5800-5820,ET-Open,2,2
 attack-dos-hulk,L4,ignore,2010935,ET SCAN Suspicious inbound to MSSQL port 1433,ET-Open,4,4
 attack-dos-hulk,L4,ignore,2010936,ET SCAN Suspicious inbound to Oracle SQL port 1521,ET-Open,4,4

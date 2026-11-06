@@ -1,0 +1,4 @@
+done   attack-dos-hulk            L3_drop-packet       79s  sessions=34260 ssn_drop=63348 alerts=2953
+done   attack-dos-hulk            L3_drop-flow         44s  sessions=34719 ssn_drop=63574 alerts=746
+done   attack-dos-hulk            L3_pass-flow         52s  sessions=34411 ssn_drop=62582 alerts=722
+done   attack-dos-hulk            L3_bypass            64s  sessions=22889 ssn_drop=69655 alerts=967

@@ -33,3 +33,7 @@ attack-bruteforce-smb,L0,ignore,3,0,54,112746,11989,0,0,13,1046
 benign-admin-activity,L0,ignore,3,0,64,8908,35,0,0,0,6
 benign-background-activity,L0,ignore,3,0,73,112184,239,0,0,2,1
 benign-user-activity,L0,ignore,3,0,65,316903,1452,0,0,45,80
+attack-dos-hulk,L3,drop-packet,1,0,79,586843,34260,63348,0,622,2953
+attack-dos-hulk,L3,drop-flow,1,0,44,586843,34719,63574,0,7,746
+attack-dos-hulk,L3,pass-flow,1,0,52,586843,34411,62582,188,619,722
+attack-dos-hulk,L3,bypass,1,0,64,586843,22889,69655,0,10,967
