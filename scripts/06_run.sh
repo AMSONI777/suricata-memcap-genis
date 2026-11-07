@@ -24,7 +24,10 @@ done
 for cap in $CAPS; do [ -f "$ROOT/data/raw/$cap.pcapng" ] || { echo "Missing capture: $cap"; exit 1; }; done
 
 mkdir -p "$ROOT/results/runs"
-[ -f "$SUMMARY" ] || echo "capture,level,policy,rep,exit,wall_s,packets,sessions,ssn_memcap_drop,seg_memcap_drop,reassembly_gap,alerts" > "$SUMMARY"
+[ -f "$SUMMARY" ] || echo "capture,level,policy,rep,exit,wall_s,packets,sessions,ssn_memcap_drop,seg_memcap_drop,reassembly_gap,alerts,peak_mem_kb" > "$SUMMARY"
+if ! head -n 1 "$SUMMARY" | grep -q peak_mem_kb; then
+  awk 'NR==1{print $0",peak_mem_kb"; next} {print $0","}' "$SUMMARY" > "$SUMMARY.tmp" && mv "$SUMMARY.tmp" "$SUMMARY"
+fi
 
 for cap in $CAPS; do
   for lv in $LEVELS; do
@@ -36,7 +39,16 @@ for cap in $CAPS; do
       rm -rf "$dir"; mkdir -p "$dir"
       cmd=(docker run --rm -e "OWN=$(id -u):$(id -g)" -e "OUTDIR=/work/results/runs/$cap/$name"
         --entrypoint sh -v "$ROOT":/work "$IMAGE" -c
-        'suricata "$@"; rc=$?; chown -R "$OWN" "$OUTDIR"; exit $rc' sh
+        'suricata "$@" & pid=$!; peak=0
+         while kill -0 "$pid" 2>/dev/null; do
+           if [ -r "/proc/$pid/status" ]; then
+             while read -r k v r; do if [ "$k" = "VmHWM:" ]; then peak=$v; break; fi; done < "/proc/$pid/status"
+           fi
+           sleep 0.5
+         done
+         wait "$pid"; rc=$?
+         echo "$peak" > "$OUTDIR/peak_mem_kb.txt"
+         chown -R "$OWN" "$OUTDIR"; exit $rc' sh
         -r "/work/data/raw/$cap.pcapng" -c /work/configs/suricata.yaml -S /work/rules/rules/suricata.rules
         -k none --runmode single -l "/work/results/runs/$cap/$name"
         --set "classification-file=/work/rules/rules/classification.config"
@@ -54,10 +66,11 @@ for cap in $CAPS; do
       st="$dir/stats.log"
       cnt() { awk -v k="$1" '$1==k {v=$NF} END{print (v==""?0:v)}' "$st"; }
       alerts="$(grep -c '"event_type":"alert"' "$dir/eve.json" || true)"
+      peak="$(cat "$dir/peak_mem_kb.txt" 2>/dev/null || true)"
       gzip -f "$dir/eve.json"
       touch "$dir/DONE"
-      echo "$cap,$lv,$pol,${REP:-1},$rc,$wall,$(cnt decoder.pkts),$(cnt tcp.sessions),$(cnt tcp.ssn_memcap_drop),$(cnt tcp.segment_memcap_drop),$(cnt tcp.reassembly_gap),$alerts" >> "$SUMMARY"
-      printf 'done   %-26s %-18s %4ss  sessions=%s ssn_drop=%s alerts=%s\n' "$cap" "$name" "$wall" "$(cnt tcp.sessions)" "$(cnt tcp.ssn_memcap_drop)" "$alerts"
+      echo "$cap,$lv,$pol,${REP:-1},$rc,$wall,$(cnt decoder.pkts),$(cnt tcp.sessions),$(cnt tcp.ssn_memcap_drop),$(cnt tcp.segment_memcap_drop),$(cnt tcp.reassembly_gap),$alerts,$peak" >> "$SUMMARY"
+      printf 'done   %-26s %-18s %4ss  sessions=%s ssn_drop=%s alerts=%s peak=%sMB\n' "$cap" "$name" "$wall" "$(cnt tcp.sessions)" "$(cnt tcp.ssn_memcap_drop)" "$alerts" "$((${peak:-0} / 1024))"
     done
   done
 done
