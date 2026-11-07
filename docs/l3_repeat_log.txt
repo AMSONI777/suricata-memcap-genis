@@ -1,0 +1,2 @@
+done   attack-dos-hulk            L3_ignore_r2         55s  sessions=34703 ssn_drop=62506 alerts=2940 peak=588MB
+done   attack-dos-hulk            L3_drop-packet_r2    59s  sessions=34620 ssn_drop=62589 alerts=2935 peak=589MB

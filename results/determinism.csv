@@ -5,6 +5,8 @@ attack-bruteforce-ssh,L1_ignore,2,L1_ignore;L1_ignore_r2,True,False,False,0,3,3,
 attack-bruteforce-ssh-ftp,L0_ignore,10,L0_ignore;L0_ignore_r10;L0_ignore_r2;L0_ignore_r3;L0_ignore_r4;L0_ignore_r5;L0_ignore_r6;L0_ignore_r7;L0_ignore_r8;L0_ignore_r9,False,False,False,5,1310,2795,831794412224f8f8
 attack-dos-hulk,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,False,0,0,25,33d56109a38a40dd
 attack-dos-hulk,L1_ignore,2,L1_ignore;L1_ignore_r2,True,True,False,0,0,29,33d56109a38a40dd
+attack-dos-hulk,L3_drop-packet,2,L3_drop-packet;L3_drop-packet_r2,False,False,False,52,67,107,23f10f321e1b8708
+attack-dos-hulk,L3_ignore,2,L3_ignore;L3_ignore_r2,False,False,False,21,37,49,ddfb9e40bc9870f3
 attack-dos-slowloris,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,False,0,0,251,d9205863f2193145
 benign-admin-activity,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,True,0,0,0,f01bbce550053ef6
 benign-background-activity,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,True,0,0,0,9dac60d9c884f8dd

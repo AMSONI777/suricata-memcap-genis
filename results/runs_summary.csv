@@ -45,3 +45,5 @@ attack-bruteforce-ssh-ftp,L0,ignore,7,0,56,213806,14324,0,0,5,5966,539848
 attack-bruteforce-ssh-ftp,L0,ignore,8,0,67,213806,14324,0,0,5,5963,539824
 attack-bruteforce-ssh-ftp,L0,ignore,9,0,62,213806,14324,0,0,5,5958,567440
 attack-bruteforce-ssh-ftp,L0,ignore,10,0,64,213806,14324,0,0,5,5966,557416
+attack-dos-hulk,L3,ignore,2,0,55,586843,34703,62506,234,621,2940,602732
+attack-dos-hulk,L3,drop-packet,2,0,59,586843,34620,62589,103,623,2935,604104
