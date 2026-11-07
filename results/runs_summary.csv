@@ -38,3 +38,10 @@ attack-dos-hulk,L3,drop-flow,1,0,44,586843,34719,63574,0,7,746,
 attack-dos-hulk,L3,pass-flow,1,0,52,586843,34411,62582,188,619,722,
 attack-dos-hulk,L3,bypass,1,0,64,586843,22889,69655,0,10,967,
 benign-admin-activity,L4,ignore,1,0,52,8908,35,0,0,0,6,538732
+attack-bruteforce-ssh-ftp,L0,ignore,4,0,54,213806,14324,0,0,5,5964,551320
+attack-bruteforce-ssh-ftp,L0,ignore,5,0,66,213806,14324,0,0,5,5964,522408
+attack-bruteforce-ssh-ftp,L0,ignore,6,0,68,213806,14324,0,0,5,5965,557972
+attack-bruteforce-ssh-ftp,L0,ignore,7,0,56,213806,14324,0,0,5,5966,539848
+attack-bruteforce-ssh-ftp,L0,ignore,8,0,67,213806,14324,0,0,5,5963,539824
+attack-bruteforce-ssh-ftp,L0,ignore,9,0,62,213806,14324,0,0,5,5958,567440
+attack-bruteforce-ssh-ftp,L0,ignore,10,0,64,213806,14324,0,0,5,5966,557416

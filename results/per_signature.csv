@@ -290,6 +290,9 @@ attack-dos-slowloris,L0,ignore,2210010,SURICATA STREAM 3way handshake wrong seq 
 benign-admin-activity,L0,ignore,2067085,ET INFO NTLM Session Setup Request - Negotiate,ET-Open,2,2
 benign-admin-activity,L0,ignore,2067086,ET INFO NTLMv1 Session Setup Response - Challenge,ET-Open,2,2
 benign-admin-activity,L0,ignore,2067087,ET INFO NTLM Session Setup Request - Auth,ET-Open,2,2
+benign-admin-activity,L4,ignore,2067085,ET INFO NTLM Session Setup Request - Negotiate,ET-Open,2,2
+benign-admin-activity,L4,ignore,2067086,ET INFO NTLMv1 Session Setup Response - Challenge,ET-Open,2,2
+benign-admin-activity,L4,ignore,2067087,ET INFO NTLM Session Setup Request - Auth,ET-Open,2,2
 benign-background-activity,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,1,1
 benign-user-activity,L0,ignore,2013504,ET INFO GNU/Linux APT User-Agent Outbound likely related to package management,ET-Open,68,68
 benign-user-activity,L0,ignore,2210016,SURICATA STREAM CLOSEWAIT FIN out of window,suricata-builtin,6,6

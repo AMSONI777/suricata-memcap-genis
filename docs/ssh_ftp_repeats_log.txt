@@ -1,0 +1,7 @@
+done   attack-bruteforce-ssh-ftp  L0_ignore_r4         54s  sessions=14324 ssn_drop=0 alerts=5964 peak=538MB
+done   attack-bruteforce-ssh-ftp  L0_ignore_r5         66s  sessions=14324 ssn_drop=0 alerts=5964 peak=510MB
+done   attack-bruteforce-ssh-ftp  L0_ignore_r6         68s  sessions=14324 ssn_drop=0 alerts=5965 peak=544MB
+done   attack-bruteforce-ssh-ftp  L0_ignore_r7         56s  sessions=14324 ssn_drop=0 alerts=5966 peak=527MB
+done   attack-bruteforce-ssh-ftp  L0_ignore_r8         67s  sessions=14324 ssn_drop=0 alerts=5963 peak=527MB
+done   attack-bruteforce-ssh-ftp  L0_ignore_r9         62s  sessions=14324 ssn_drop=0 alerts=5958 peak=554MB
+done   attack-bruteforce-ssh-ftp  L0_ignore_r10        64s  sessions=14324 ssn_drop=0 alerts=5966 peak=544MB

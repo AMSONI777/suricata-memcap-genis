@@ -2,7 +2,7 @@ capture,config,runs_compared,run_names,identical_endpoint,identical_no_ts,identi
 attack-bruteforce-smb,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,True,0,0,0,dcf6afe939070480
 attack-bruteforce-ssh,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,False,False,0,50,50,c90e7b33aee69d05
 attack-bruteforce-ssh,L1_ignore,2,L1_ignore;L1_ignore_r2,True,False,False,0,3,3,c90e7b33aee69d05
-attack-bruteforce-ssh-ftp,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,False,False,False,3,1259,2630,831794412224f8f8
+attack-bruteforce-ssh-ftp,L0_ignore,10,L0_ignore;L0_ignore_r10;L0_ignore_r2;L0_ignore_r3;L0_ignore_r4;L0_ignore_r5;L0_ignore_r6;L0_ignore_r7;L0_ignore_r8;L0_ignore_r9,False,False,False,5,1310,2795,831794412224f8f8
 attack-dos-hulk,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,False,0,0,25,33d56109a38a40dd
 attack-dos-hulk,L1_ignore,2,L1_ignore;L1_ignore_r2,True,True,False,0,0,29,33d56109a38a40dd
 attack-dos-slowloris,L0_ignore,3,L0_ignore;L0_ignore_r2;L0_ignore_r3,True,True,False,0,0,251,d9205863f2193145

@@ -17,5 +17,6 @@ attack-dos-hulk,L3,pass-flow,6116,722,722,0,0.1181,22,0,88745,stream_memcap:pass
 attack-dos-hulk,L4,ignore,6116,463,280,183,0.0458,22,10,132318,stream_memcap:ignore x126629; stream_midstream:ignore x77522; stream_reassembly_memcap:ignore x6639,3112,224,0.0458,0.0455
 attack-dos-slowloris,L0,ignore,285,285,285,0,1.0,8,0,131,stream_midstream:ignore x131,282,282,1.0,1.0
 benign-admin-activity,L0,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L4,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
 benign-background-activity,L0,ignore,1,1,1,0,1.0,1,0,81,stream_midstream:ignore x54; app_layer_error:ignore x27,0,0,1.0,1.0
 benign-user-activity,L0,ignore,80,80,80,0,1.0,4,0,220,app_layer_error:ignore x195; stream_midstream:ignore x25,68,68,1.0,1.0
