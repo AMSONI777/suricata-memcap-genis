@@ -1,0 +1,29 @@
+[1/4] Checking inputs
+  ok  Suricata image jasonish/suricata@sha256:93fadbb0771d0003d32c627069bc8bf26ebced13f2748e9cd7cf958dd1802f7e
+  ok  ET Open snapshot 8af270698febc17d222ec1a4d2b7d9a7ff46ab274b621344fb6093e996d93a85
+  ok  configs/suricata.yaml
+  ok  benign-admin-activity capture
+  ok  attack-bruteforce-smb capture
+  ok  attack-dos-hulk capture
+[2/4] Reference runs with plenty of memory (L0)
+done   benign-admin-activity      L0_ignore            37s  sessions=35 ssn_drop=0 alerts=6 peak=512MB
+done   attack-bruteforce-smb      L0_ignore            35s  sessions=11989 ssn_drop=0 alerts=1046 peak=720MB
+done   attack-dos-hulk            L0_ignore            39s  sessions=50823 ssn_drop=0 alerts=6116 peak=775MB
+[3/4] Hulk with constrained memory (L1, L4, S4, R4)
+done   attack-dos-hulk            L1_ignore            41s  sessions=50823 ssn_drop=0 alerts=6116 peak=801MB
+done   attack-dos-hulk            L4_ignore            36s  sessions=11073 ssn_drop=126007 alerts=466 peak=560MB
+done   attack-dos-hulk            S4_ignore            37s  sessions=11089 ssn_drop=125164 alerts=565 peak=544MB
+done   attack-dos-hulk            R4_ignore            36s  sessions=50823 ssn_drop=0 alerts=3480 peak=554MB
+[4/4] Comparing with the recorded results
+check                                      recorded                     this run                             result
+benign-admin-activity L0 reference         alerts=6 sessions=35         alerts=6 sessions=35                 MATCH
+attack-bruteforce-smb L0 reference         alerts=1046 sessions=11989   alerts=1046 sessions=11989           MATCH
+attack-dos-hulk L0 reference               alerts=6116 sessions=50823   alerts=6116 sessions=50823           MATCH
+Hulk L1 (defaults) retention               >= 99.9 %                    100.0 % (limit hit by 0 flows)       MATCH
+Hulk L4 retention                          3.6-5.7 %                    4.6 % (limit hit by 134255 flows)    MATCH
+Hulk S4 (sessions only) retention          7.7-10.0 %                   9.2 %                                MATCH
+Hulk S4 signatures lost                    10                           10                                   MATCH
+Hulk R4 (reassembly only) ET retention     5.6-9.8 %                    6.3 %                                MATCH
+
+8 of 8 checks match.
+REPRODUCED

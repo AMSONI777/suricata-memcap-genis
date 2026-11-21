@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Usage: scripts/06_run.sh "<captures>" "<levels>" "<policies>"
 # Example: scripts/06_run.sh "attack-dos-hulk" "L0 L4" "ignore"
-# Environment: REP=2 (repeat reference runs), FORCE=1 (redo finished runs)
+# Environment: REP=2 (repeat reference runs), FORCE=1 (redo finished runs),
+#   RUNS_SUB / SUMMARY_FILE (output folder and summary file, relative to the repo; used by reproduce.sh and demo.sh)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 IMAGE="jasonish/suricata:8.0.5"
@@ -13,7 +14,8 @@ REP="${REP:-}"
 
 declare -A SM=([L0]=1gb [L1]=64mb [L2]=16mb [L3]=4mb [L4]=1mb [S3]=4mb [R3]=1gb [S4]=1mb [R4]=1gb)
 declare -A RM=([L0]=4gb [L1]=256mb [L2]=64mb [L3]=16mb [L4]=4mb [S3]=4gb [R3]=16mb [S4]=4gb [R4]=4mb)
-SUMMARY="$ROOT/results/runs_summary.csv"
+RUNS_SUB="${RUNS_SUB:-results/runs}"
+SUMMARY="$ROOT/${SUMMARY_FILE:-results/runs_summary.csv}"
 
 [ -f "$ROOT/configs/suricata.yaml" ] || { echo "Missing configs/suricata.yaml. Run scripts/05_make_config.sh first."; exit 1; }
 [ -s "$ROOT/rules/rules/suricata.rules" ] || { echo "Missing rules. Run scripts/04_rules.sh first."; exit 1; }
@@ -23,7 +25,7 @@ for pol in $POLICIES; do
 done
 for cap in $CAPS; do [ -f "$ROOT/data/raw/$cap.pcapng" ] || { echo "Missing capture: $cap"; exit 1; }; done
 
-mkdir -p "$ROOT/results/runs"
+mkdir -p "$ROOT/$RUNS_SUB"
 [ -f "$SUMMARY" ] || echo "capture,level,policy,rep,exit,wall_s,packets,sessions,ssn_memcap_drop,seg_memcap_drop,reassembly_gap,alerts,peak_mem_kb" > "$SUMMARY"
 if ! head -n 1 "$SUMMARY" | grep -q peak_mem_kb; then
   awk 'NR==1{print $0",peak_mem_kb"; next} {print $0","}' "$SUMMARY" > "$SUMMARY.tmp" && mv "$SUMMARY.tmp" "$SUMMARY"
@@ -34,10 +36,10 @@ for cap in $CAPS; do
     for pol in $POLICIES; do
       if [ "$lv" = "L0" ] && [ "$pol" != "ignore" ]; then continue; fi
       name="${lv}_${pol}${REP:+_r$REP}"
-      dir="$ROOT/results/runs/$cap/$name"
+      dir="$ROOT/$RUNS_SUB/$cap/$name"
       if [ -f "$dir/DONE" ] && [ -z "${FORCE:-}" ]; then echo "skip   $cap $name (already done)"; continue; fi
       rm -rf "$dir"; mkdir -p "$dir"
-      cmd=(docker run --rm -e "OWN=$(id -u):$(id -g)" -e "OUTDIR=/work/results/runs/$cap/$name"
+      cmd=(docker run --rm -e "OWN=$(id -u):$(id -g)" -e "OUTDIR=/work/$RUNS_SUB/$cap/$name"
         --entrypoint sh -v "$ROOT":/work "$IMAGE" -c
         'suricata "$@" & pid=$!; peak=0
          while kill -0 "$pid" 2>/dev/null; do
@@ -50,7 +52,7 @@ for cap in $CAPS; do
          echo "$peak" > "$OUTDIR/peak_mem_kb.txt"
          chown -R "$OWN" "$OUTDIR"; exit $rc' sh
         -r "/work/data/raw/$cap.pcapng" -c /work/configs/suricata.yaml -S /work/rules/rules/suricata.rules
-        -k none --runmode single -l "/work/results/runs/$cap/$name"
+        -k none --runmode single -l "/work/$RUNS_SUB/$cap/$name"
         --set "classification-file=/work/rules/rules/classification.config"
         --set "stream.memcap=${SM[$lv]}" --set "stream.reassembly.memcap=${RM[$lv]}"
         --set "stream.memcap-policy=$pol" --set "stream.reassembly.memcap-policy=$pol"

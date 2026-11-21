@@ -10,3 +10,5 @@ rules/update/
 results/runs/
 results/feasibility/
 results/pilot1_default_netvars/
+verify/
+demo/
