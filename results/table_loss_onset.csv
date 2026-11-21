@@ -1,0 +1,9 @@
+capture,first_level_with_loss_ignore,first_level_with_loss_drop-packet,first_level_with_loss_drop-flow,first_level_with_loss_pass-flow,first_level_with_loss_bypass
+attack-dos-hulk,L2 (2/2),L2 (2/2),L2 (2/2),L2 (2/2),L2 (2/2)
+attack-dos-slowloris,L4 (4/4),L4 (1/4),L4 (1/4),L4 (2/4),none
+attack-bruteforce-ssh,L4 (2/4),L4 (1/4),L4 (1/4),L4 (2/4),none
+attack-bruteforce-ssh-ftp,L3 (1/4),L4 (4/4),L3 (2/4),L3 (1/4),L3 (1/4)
+attack-bruteforce-smb,L3 (3/4),L3 (4/4),L3 (4/4),L3 (4/4),L3 (4/4)
+benign-admin-activity,none,none,none,none,none
+benign-background-activity,none,none,none,none,none
+benign-user-activity,L4 (1/4),none,none,L4 (2/4),L4 (2/4)
