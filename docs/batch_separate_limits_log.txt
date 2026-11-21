@@ -1,0 +1,25 @@
+nohup: ignoring input
+done   attack-dos-hulk            S3_ignore_r1         45s  sessions=34811 ssn_drop=63151 alerts=2471 peak=701MB
+done   attack-dos-hulk            R3_ignore_r1         36s  sessions=50823 ssn_drop=0 alerts=5905 peak=595MB
+done   attack-dos-hulk            S4_ignore_r1         36s  sessions=11016 ssn_drop=125034 alerts=550 peak=568MB
+done   attack-dos-hulk            R4_ignore_r1         36s  sessions=50823 ssn_drop=0 alerts=3544 peak=567MB
+done   attack-bruteforce-smb      S3_ignore_r1         34s  sessions=11989 ssn_drop=0 alerts=1046 peak=727MB
+done   attack-bruteforce-smb      R3_ignore_r1         34s  sessions=11989 ssn_drop=0 alerts=1047 peak=691MB
+done   attack-bruteforce-smb      S4_ignore_r1         34s  sessions=9720 ssn_drop=2269 alerts=807 peak=667MB
+done   attack-bruteforce-smb      R4_ignore_r1         34s  sessions=11989 ssn_drop=0 alerts=1048 peak=548MB
+done   attack-dos-slowloris       S3_ignore_r1         42s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       R3_ignore_r1         40s  sessions=17315 ssn_drop=0 alerts=285 peak=561MB
+done   attack-dos-slowloris       S4_ignore_r1         37s  sessions=11540 ssn_drop=12532 alerts=204 peak=565MB
+done   attack-dos-slowloris       R4_ignore_r1         41s  sessions=17315 ssn_drop=0 alerts=285 peak=547MB
+done   attack-dos-hulk            S3_ignore_r2         39s  sessions=34635 ssn_drop=62884 alerts=2447 peak=700MB
+done   attack-dos-hulk            R3_ignore_r2         37s  sessions=50823 ssn_drop=0 alerts=5940 peak=596MB
+done   attack-dos-hulk            S4_ignore_r2         36s  sessions=10009 ssn_drop=129169 alerts=533 peak=568MB
+done   attack-dos-hulk            R4_ignore_r2         35s  sessions=50823 ssn_drop=0 alerts=3808 peak=566MB
+done   attack-bruteforce-smb      S3_ignore_r2         34s  sessions=11989 ssn_drop=0 alerts=1046 peak=702MB
+done   attack-bruteforce-smb      R3_ignore_r2         34s  sessions=11989 ssn_drop=0 alerts=1047 peak=681MB
+done   attack-bruteforce-smb      S4_ignore_r2         34s  sessions=9734 ssn_drop=2255 alerts=811 peak=684MB
+done   attack-bruteforce-smb      R4_ignore_r2         34s  sessions=11989 ssn_drop=0 alerts=1050 peak=564MB
+done   attack-dos-slowloris       S3_ignore_r2         44s  sessions=17315 ssn_drop=0 alerts=285 peak=581MB
+done   attack-dos-slowloris       R3_ignore_r2         41s  sessions=17315 ssn_drop=0 alerts=285 peak=548MB
+done   attack-dos-slowloris       S4_ignore_r2         41s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       R4_ignore_r2         38s  sessions=17315 ssn_drop=0 alerts=168 peak=553MB

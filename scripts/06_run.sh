@@ -11,8 +11,8 @@ LEVELS="${2:-L0 L1 L2 L3 L4}"
 POLICIES="${3:-ignore drop-packet drop-flow pass-flow bypass}"
 REP="${REP:-}"
 
-declare -A SM=([L0]=1gb [L1]=64mb [L2]=16mb [L3]=4mb [L4]=1mb)
-declare -A RM=([L0]=4gb [L1]=256mb [L2]=64mb [L3]=16mb [L4]=4mb)
+declare -A SM=([L0]=1gb [L1]=64mb [L2]=16mb [L3]=4mb [L4]=1mb [S3]=4mb [R3]=1gb [S4]=1mb [R4]=1gb)
+declare -A RM=([L0]=4gb [L1]=256mb [L2]=64mb [L3]=16mb [L4]=4mb [S3]=4gb [R3]=16mb [S4]=4gb [R4]=4mb)
 SUMMARY="$ROOT/results/runs_summary.csv"
 
 [ -f "$ROOT/configs/suricata.yaml" ] || { echo "Missing configs/suricata.yaml. Run scripts/05_make_config.sh first."; exit 1; }

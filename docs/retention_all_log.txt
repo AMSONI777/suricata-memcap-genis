@@ -9,6 +9,10 @@ attack-bruteforce-smb      L4  drop-flow      4   16.2  14.2  14.0  14.1   8949 
 attack-bruteforce-smb      L4  drop-packet    4   12.4  15.1  11.7  15.5   8381 8893 8391 8897
 attack-bruteforce-smb      L4  ignore         4   43.0  43.8  41.2  41.9   8900 8893 8882 8916
 attack-bruteforce-smb      L4  pass-flow      4   14.6  12.3  16.4  14.0   9023 8398 9017 8978
+attack-bruteforce-smb      R3  ignore         2   63.1  90.0   2166 2168
+attack-bruteforce-smb      R4  ignore         2   63.7  67.2   8144 8177
+attack-bruteforce-smb      S3  ignore         2  100.0 100.0   0 0
+attack-bruteforce-smb      S4  ignore         2   42.4  42.7   3139 3074
 attack-bruteforce-ssh      L1  ignore         2  100.0 100.0   0 0
 attack-bruteforce-ssh      L4  bypass         4  100.0 100.0 100.0 100.0   0 0 0 0
 attack-bruteforce-ssh      L4  drop-flow      4  100.0  82.3 100.0 100.0   0 1714 0 0
@@ -41,11 +45,19 @@ attack-dos-hulk            L4  drop-flow      2    2.4   2.3   129207 132544
 attack-dos-hulk            L4  drop-packet    2    4.5   4.6   133838 133022
 attack-dos-hulk            L4  ignore         2    4.6   4.7   133268 133404
 attack-dos-hulk            L4  pass-flow      2    2.4   2.6   132358 134087
+attack-dos-hulk            R3  ignore         2   63.9  64.2   39761 39746
+attack-dos-hulk            R4  ignore         2   51.5  52.6   42605 43012
+attack-dos-hulk            S3  ignore         2   40.4  40.0   66650 66216
+attack-dos-hulk            S4  ignore         2    9.0   8.7   126373 129660
 attack-dos-slowloris       L4  bypass         4  100.0 100.0 100.0 100.0   0 0 0 0
 attack-dos-slowloris       L4  drop-flow      4  100.0 100.0  22.8 100.0   0 0 26862 0
 attack-dos-slowloris       L4  drop-packet    4  100.0 100.0 100.0  89.8   0 0 0 704
 attack-dos-slowloris       L4  ignore         4   50.2  24.6  66.7  24.6   16754 23491 15114 23160
 attack-dos-slowloris       L4  pass-flow      4   22.5  86.3 100.0 100.0   22278 17258 0 0
+attack-dos-slowloris       R3  ignore         2  100.0 100.0   403 0
+attack-dos-slowloris       R4  ignore         2  100.0  57.2   0 9800
+attack-dos-slowloris       S3  ignore         2  100.0 100.0   0 0
+attack-dos-slowloris       S4  ignore         2   71.6 100.0   15203 0
 benign-user-activity       L3  bypass         2  100.0 100.0   275 0
 benign-user-activity       L3  drop-flow      2  100.0 100.0   0 0
 benign-user-activity       L3  drop-packet    2  100.0 100.0   0 0
@@ -56,4 +68,4 @@ benign-user-activity       L4  drop-flow      4  100.0 100.0 100.0 100.0   0 0 0
 benign-user-activity       L4  drop-packet    4  100.0 100.0 100.0 100.0   0 860 0 0
 benign-user-activity       L4  ignore         4  100.0 100.0 100.0  15.0   625 0 0 1227
 benign-user-activity       L4  pass-flow      4  100.0   6.2  96.2 100.0   0 1228 1183 0
-Wrote results/retention_all.csv (325 runs)
+Wrote results/retention_all.csv (349 runs)
