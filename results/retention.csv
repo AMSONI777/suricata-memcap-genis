@@ -1,22 +1,169 @@
 capture,level,policy,ref_alerts,run_alerts,matched,new_unmatched,retention,ref_signatures,signatures_lost,ep_flows,ep_detail,ref_et_alerts,matched_et_alerts,retention_no_ts,retention_strict
 attack-bruteforce-smb,L0,ignore,1046,1046,1046,0,1.0,11,0,3,stream_midstream:ignore x3,1007,1007,1.0,1.0
+attack-bruteforce-smb,L1,bypass,1046,1046,1046,0,1.0,11,0,1,stream_midstream:ignore x1,1007,1007,1.0,1.0
+attack-bruteforce-smb,L1,drop-flow,1046,1046,1046,0,1.0,11,0,1,stream_midstream:ignore x1,1007,1007,1.0,1.0
+attack-bruteforce-smb,L1,drop-packet,1046,1046,1046,0,1.0,11,0,3,stream_midstream:ignore x3,1007,1007,1.0,1.0
+attack-bruteforce-smb,L1,ignore,1046,1046,1046,0,1.0,11,0,2,stream_midstream:ignore x2,1007,1007,1.0,1.0
+attack-bruteforce-smb,L1,pass-flow,1046,1046,1046,0,1.0,11,0,1,stream_midstream:ignore x1,1007,1007,1.0,1.0
+attack-bruteforce-smb,L2,bypass,1046,1046,1046,0,1.0,11,0,3,stream_midstream:ignore x3,1007,1007,1.0,1.0
+attack-bruteforce-smb,L2,drop-flow,1046,1046,1046,0,1.0,11,0,2,stream_midstream:ignore x2,1007,1007,1.0,1.0
+attack-bruteforce-smb,L2,drop-packet,1046,1046,1046,0,1.0,11,0,1,stream_midstream:ignore x1,1007,1007,1.0,1.0
+attack-bruteforce-smb,L2,ignore,1046,1046,1046,0,1.0,11,0,2,stream_midstream:ignore x2,1007,1007,1.0,1.0
+attack-bruteforce-smb,L2,pass-flow,1046,1046,1046,0,1.0,11,0,2,stream_midstream:ignore x2,1007,1007,1.0,1.0
+attack-bruteforce-smb,L3,bypass,1046,841,537,304,0.5134,11,0,1469,stream_reassembly_memcap:bypass x1465; stream_midstream:ignore x4,1007,498,0.5134,0.4981
+attack-bruteforce-smb,L3,drop-flow,1046,599,498,101,0.4761,11,0,4671,stream_reassembly_memcap:drop_flow x4669; stream_midstream:ignore x4,1007,460,0.4761,0.4713
+attack-bruteforce-smb,L3,drop-packet,1046,883,513,370,0.4904,11,0,2220,stream_reassembly_memcap:drop_packet x2217; stream_midstream:ignore x3,1007,474,0.4904,0.4713
+attack-bruteforce-smb,L3,ignore,1046,1047,959,88,0.9168,11,0,2182,stream_reassembly_memcap:ignore x2178; stream_midstream:ignore x4,1007,920,0.9168,0.9168
+attack-bruteforce-smb,L3,pass-flow,1046,847,509,338,0.4866,11,0,2674,stream_reassembly_memcap:pass_flow x2672; stream_midstream:ignore x2,1007,470,0.4866,0.4656
+attack-bruteforce-smb,L4,bypass,1046,241,131,110,0.1252,11,3,7361,stream_memcap:bypass x4928; stream_reassembly_memcap:bypass x2432; stream_midstream:ignore x2,1007,118,0.1252,0.1224
+attack-bruteforce-smb,L4,drop-flow,1046,259,170,89,0.1625,11,1,8145,stream_reassembly_memcap:drop_flow x5675; stream_midstream:ignore x3277; stream_memcap:drop_flow x3274,1007,143,0.1625,0.1587
+attack-bruteforce-smb,L4,drop-packet,1046,180,130,50,0.1243,11,0,8382,stream_midstream:ignore x5340; stream_memcap:drop_packet x5339; stream_reassembly_memcap:drop_packet x3042,1007,120,0.1243,0.1205
+attack-bruteforce-smb,L4,ignore,1046,812,450,362,0.4302,11,0,8172,stream_reassembly_memcap:ignore x5770; stream_midstream:ignore x3132; stream_memcap:ignore x3130,1007,418,0.4302,0.4054
+attack-bruteforce-smb,L4,pass-flow,1046,265,153,112,0.1463,11,1,8371,stream_reassembly_memcap:pass_flow x5753; stream_midstream:ignore x3273; stream_memcap:pass_flow x3270,1007,129,0.1463,0.1338
 attack-bruteforce-ssh,L0,ignore,644,644,644,0,1.0,11,0,47,app_layer_error:ignore x35; stream_midstream:ignore x12,629,629,1.0,1.0
+attack-bruteforce-ssh,L1,bypass,644,644,644,0,1.0,11,0,30,app_layer_error:ignore x16; stream_midstream:ignore x14,629,629,0.9286,0.9286
+attack-bruteforce-ssh,L1,drop-flow,644,644,644,0,1.0,11,0,38,app_layer_error:ignore x23; stream_midstream:ignore x15,629,629,0.9379,0.9379
+attack-bruteforce-ssh,L1,drop-packet,644,644,644,0,1.0,11,0,28,app_layer_error:ignore x20; stream_midstream:ignore x8,629,629,0.9224,0.9224
 attack-bruteforce-ssh,L1,ignore,644,644,644,0,1.0,11,0,6,stream_midstream:ignore x3; app_layer_error:ignore x3,629,629,0.9503,0.9488
+attack-bruteforce-ssh,L1,pass-flow,644,644,644,0,1.0,11,0,7,app_layer_error:ignore x4; stream_midstream:ignore x3,629,629,0.9503,0.9503
+attack-bruteforce-ssh,L2,bypass,644,644,644,0,1.0,11,0,28,app_layer_error:ignore x24; stream_midstream:ignore x4,629,629,0.9457,0.9457
+attack-bruteforce-ssh,L2,drop-flow,644,644,644,0,1.0,11,0,10,app_layer_error:ignore x6; stream_midstream:ignore x4,629,629,0.9441,0.9441
+attack-bruteforce-ssh,L2,drop-packet,644,644,644,0,1.0,11,0,38,app_layer_error:ignore x25; stream_midstream:ignore x13,629,629,0.941,0.941
 attack-bruteforce-ssh,L2,ignore,644,644,644,0,1.0,11,0,16,app_layer_error:ignore x11; stream_midstream:ignore x5,629,629,0.9286,0.927
+attack-bruteforce-ssh,L2,pass-flow,644,644,644,0,1.0,11,0,33,app_layer_error:ignore x26; stream_midstream:ignore x7,629,629,0.9348,0.9332
+attack-bruteforce-ssh,L3,bypass,644,644,644,0,1.0,11,0,22,stream_midstream:ignore x11; app_layer_error:ignore x11,629,629,0.9348,0.9348
+attack-bruteforce-ssh,L3,drop-flow,644,644,644,0,1.0,11,0,35,app_layer_error:ignore x23; stream_midstream:ignore x12,629,629,0.9394,0.9394
+attack-bruteforce-ssh,L3,drop-packet,644,644,644,0,1.0,11,0,22,app_layer_error:ignore x16; stream_midstream:ignore x6,629,629,0.9394,0.9394
 attack-bruteforce-ssh,L3,ignore,644,644,644,0,1.0,11,0,22,app_layer_error:ignore x15; stream_midstream:ignore x7,629,629,0.9379,0.9379
+attack-bruteforce-ssh,L3,pass-flow,644,644,644,0,1.0,11,0,18,app_layer_error:ignore x15; stream_midstream:ignore x3,629,629,0.9472,0.9472
+attack-bruteforce-ssh,L4,bypass,644,644,644,0,1.0,11,0,28,app_layer_error:ignore x23; stream_midstream:ignore x5,629,629,0.9348,0.9348
+attack-bruteforce-ssh,L4,drop-flow,644,644,644,0,1.0,11,0,28,app_layer_error:ignore x18; stream_midstream:ignore x10,629,629,0.9441,0.9441
+attack-bruteforce-ssh,L4,drop-packet,644,640,640,0,0.9938,11,0,284,stream_reassembly_memcap:drop_packet x267; app_layer_error:ignore x14; stream_midstream:ignore x4,629,625,0.9379,0.9379
 attack-bruteforce-ssh,L4,ignore,644,538,538,0,0.8354,11,0,1762,stream_reassembly_memcap:ignore x1758; app_layer_error:ignore x4; stream_midstream:ignore x3,629,523,0.8168,0.8168
+attack-bruteforce-ssh,L4,pass-flow,644,644,644,0,1.0,11,0,39,app_layer_error:ignore x22; stream_midstream:ignore x17,629,629,0.9519,0.9519
 attack-bruteforce-ssh-ftp,L0,ignore,5963,5963,5963,0,1.0,16,0,549,stream_midstream:ignore x522; app_layer_error:ignore x27,5929,5929,1.0,1.0
+attack-bruteforce-ssh-ftp,L1,bypass,5963,5960,5960,0,0.9995,16,0,660,stream_midstream:ignore x655; app_layer_error:ignore x5,5929,5926,0.7986,0.5517
+attack-bruteforce-ssh-ftp,L1,drop-flow,5963,5965,5963,2,1.0,16,0,791,stream_midstream:ignore x767; app_layer_error:ignore x24,5929,5929,0.7862,0.5442
+attack-bruteforce-ssh-ftp,L1,drop-packet,5963,5960,5960,0,0.9995,16,0,707,stream_midstream:ignore x702; app_layer_error:ignore x5,5929,5926,0.7996,0.5516
+attack-bruteforce-ssh-ftp,L1,ignore,5963,5965,5963,2,1.0,16,0,825,stream_midstream:ignore x801; app_layer_error:ignore x25,5929,5929,0.7867,0.561
+attack-bruteforce-ssh-ftp,L1,pass-flow,5963,5965,5963,2,1.0,16,0,1185,stream_midstream:ignore x1174; app_layer_error:ignore x23,5929,5929,0.7887,0.5762
+attack-bruteforce-ssh-ftp,L2,bypass,5963,5964,5963,1,1.0,16,0,1057,stream_midstream:ignore x1032; app_layer_error:ignore x25,5929,5929,0.7934,0.5449
+attack-bruteforce-ssh-ftp,L2,drop-flow,5963,5965,5963,2,1.0,16,0,988,stream_midstream:ignore x967; app_layer_error:ignore x27,5929,5929,0.784,0.568
+attack-bruteforce-ssh-ftp,L2,drop-packet,5963,5960,5960,0,0.9995,16,0,738,stream_midstream:ignore x731; app_layer_error:ignore x7,5929,5926,0.7962,0.5537
+attack-bruteforce-ssh-ftp,L2,ignore,5963,5963,5963,0,1.0,16,0,1732,stream_midstream:ignore x1706; app_layer_error:ignore x26,5929,5929,0.7795,0.5442
+attack-bruteforce-ssh-ftp,L2,pass-flow,5963,5963,5963,0,1.0,16,0,541,stream_midstream:ignore x520; app_layer_error:ignore x21,5929,5929,0.7855,0.5428
+attack-bruteforce-ssh-ftp,L3,bypass,5963,5965,5963,2,1.0,16,0,1357,stream_midstream:ignore x1339; app_layer_error:ignore x29,5929,5929,0.7909,0.565
+attack-bruteforce-ssh-ftp,L3,drop-flow,5963,4945,4944,1,0.8291,16,1,2747,stream_reassembly_memcap:drop_flow x2223; stream_midstream:ignore x538; app_layer_error:ignore x2,5929,4925,0.679,0.4771
+attack-bruteforce-ssh-ftp,L3,drop-packet,5963,5965,5963,2,1.0,16,0,1435,stream_midstream:ignore x1419; app_layer_error:ignore x22,5929,5929,0.7867,0.563
+attack-bruteforce-ssh-ftp,L3,ignore,5963,5966,5963,3,1.0,16,0,1044,stream_midstream:ignore x1012; app_layer_error:ignore x32,5929,5929,0.786,0.5489
+attack-bruteforce-ssh-ftp,L3,pass-flow,5963,5964,5963,1,1.0,16,0,556,stream_midstream:ignore x525; app_layer_error:ignore x31,5929,5929,0.782,0.5613
+attack-bruteforce-ssh-ftp,L4,bypass,5963,5850,5165,685,0.8662,16,1,7780,stream_memcap:bypass x7059; stream_midstream:ignore x697; app_layer_error:ignore x34,5929,5131,0.645,0.1784
+attack-bruteforce-ssh-ftp,L4,drop-flow,5963,5851,5409,442,0.9071,16,1,8657,stream_memcap:drop_flow x7871; stream_midstream:ignore x870; app_layer_error:ignore x32,5929,5375,0.6311,0.2526
+attack-bruteforce-ssh-ftp,L4,drop-packet,5963,5931,4706,1225,0.7892,16,1,6702,stream_memcap:drop_packet x6079; stream_midstream:ignore x612; app_layer_error:ignore x31,5929,4672,0.5584,0.1603
+attack-bruteforce-ssh-ftp,L4,ignore,5963,5940,4716,1224,0.7909,16,0,8813,stream_memcap:ignore x7958; stream_midstream:ignore x881; app_layer_error:ignore x32,5929,4682,0.5725,0.2017
+attack-bruteforce-ssh-ftp,L4,pass-flow,5963,5883,5641,242,0.946,16,1,7785,stream_memcap:pass_flow x7071; stream_midstream:ignore x763; app_layer_error:ignore x30,5929,5607,0.7196,0.3902
 attack-dos-hulk,L0,ignore,6116,6116,6116,0,1.0,22,0,51,stream_midstream:ignore x51,3112,3112,1.0,1.0
+attack-dos-hulk,L1,bypass,6116,6116,6116,0,1.0,22,0,49,stream_midstream:ignore x49,3112,3112,1.0,0.9967
+attack-dos-hulk,L1,drop-flow,6116,6116,6116,0,1.0,22,0,54,stream_midstream:ignore x54,3112,3112,1.0,0.9956
+attack-dos-hulk,L1,drop-packet,6116,6116,6116,0,1.0,22,0,51,stream_midstream:ignore x51,3112,3112,1.0,0.9964
 attack-dos-hulk,L1,ignore,6116,6116,6116,0,1.0,22,0,54,stream_midstream:ignore x54,3112,3112,1.0,0.9957
+attack-dos-hulk,L1,pass-flow,6116,6116,6116,0,1.0,22,0,51,stream_midstream:ignore x51,3112,3112,1.0,0.9962
+attack-dos-hulk,L2,bypass,6116,5178,5178,0,0.8466,22,0,8146,stream_reassembly_memcap:bypass x8105; stream_midstream:ignore x48,3112,2314,0.8466,0.8432
+attack-dos-hulk,L2,drop-flow,6116,5061,5061,0,0.8275,22,0,15847,stream_reassembly_memcap:drop_flow x15805; stream_midstream:ignore x54,3112,2134,0.8275,0.8247
+attack-dos-hulk,L2,drop-packet,6116,7094,5592,1502,0.9143,22,0,15625,stream_reassembly_memcap:drop_packet x15586; stream_midstream:ignore x53,3112,2600,0.9143,0.9094
 attack-dos-hulk,L2,ignore,6116,7130,5448,1682,0.8908,22,0,17379,stream_reassembly_memcap:ignore x17339; stream_midstream:ignore x50,3112,2457,0.8908,0.8875
+attack-dos-hulk,L2,pass-flow,6116,5068,5068,0,0.8286,22,0,15797,stream_reassembly_memcap:pass_flow x15756; stream_midstream:ignore x51,3112,2141,0.8286,0.8254
 attack-dos-hulk,L3,bypass,6116,967,967,0,0.1581,22,0,80773,stream_memcap:bypass x71103; stream_reassembly_memcap:bypass x9742; stream_midstream:ignore x88,3112,638,0.1581,0.1535
 attack-dos-hulk,L3,drop-flow,6116,746,746,0,0.122,22,0,89916,stream_memcap:drop_flow x67026; stream_midstream:ignore x29163; stream_reassembly_memcap:drop_flow x24711,3112,429,0.122,0.1182
 attack-dos-hulk,L3,drop-packet,6116,2953,1290,1663,0.2109,22,0,89330,stream_memcap:drop_packet x66192; stream_midstream:ignore x28891; stream_reassembly_memcap:drop_packet x24414,3112,890,0.2109,0.206
 attack-dos-hulk,L3,ignore,6116,2933,1268,1665,0.2073,22,0,88590,stream_memcap:ignore x65303; stream_midstream:ignore x28585; stream_reassembly_memcap:ignore x24495,3112,870,0.2073,0.2023
 attack-dos-hulk,L3,pass-flow,6116,722,722,0,0.1181,22,0,88745,stream_memcap:pass_flow x65463; stream_midstream:ignore x28643; stream_reassembly_memcap:pass_flow x24768,3112,409,0.1181,0.1149
+attack-dos-hulk,L4,bypass,6116,172,172,0,0.0281,22,11,130931,stream_memcap:bypass x128564; stream_reassembly_memcap:bypass x2406; stream_midstream:ignore x122,3112,152,0.0281,0.0276
+attack-dos-hulk,L4,drop-flow,6116,145,145,0,0.0237,22,11,128466,stream_memcap:drop_flow x126881; stream_midstream:ignore x81177; stream_reassembly_memcap:drop_flow x2326,3112,119,0.0237,0.0237
+attack-dos-hulk,L4,drop-packet,6116,457,276,181,0.0451,22,10,132445,stream_memcap:drop_packet x127143; stream_midstream:ignore x77653; stream_reassembly_memcap:drop_packet x6695,3112,220,0.0451,0.0448
 attack-dos-hulk,L4,ignore,6116,463,280,183,0.0458,22,10,132318,stream_memcap:ignore x126629; stream_midstream:ignore x77522; stream_reassembly_memcap:ignore x6639,3112,224,0.0458,0.0455
+attack-dos-hulk,L4,pass-flow,6116,144,144,0,0.0235,22,10,131116,stream_memcap:pass_flow x125940; stream_midstream:ignore x76905; stream_reassembly_memcap:pass_flow x6418,3112,108,0.0235,0.0232
 attack-dos-slowloris,L0,ignore,285,285,285,0,1.0,8,0,131,stream_midstream:ignore x131,282,282,1.0,1.0
+attack-dos-slowloris,L1,bypass,285,285,285,0,1.0,8,0,118,stream_midstream:ignore x118,282,282,1.0,0.1193
+attack-dos-slowloris,L1,drop-flow,285,285,285,0,1.0,8,0,126,stream_midstream:ignore x126,282,282,1.0,0.1193
+attack-dos-slowloris,L1,drop-packet,285,285,285,0,1.0,8,0,259,stream_midstream:ignore x259,282,282,1.0,0.1228
+attack-dos-slowloris,L1,ignore,285,285,285,0,1.0,8,0,98,stream_midstream:ignore x98,282,282,1.0,0.1193
+attack-dos-slowloris,L1,pass-flow,285,285,285,0,1.0,8,0,108,stream_midstream:ignore x108,282,282,1.0,0.1193
+attack-dos-slowloris,L2,bypass,285,285,285,0,1.0,8,0,116,stream_midstream:ignore x116,282,282,1.0,0.1263
+attack-dos-slowloris,L2,drop-flow,285,285,285,0,1.0,8,0,130,stream_midstream:ignore x130,282,282,1.0,0.1193
+attack-dos-slowloris,L2,drop-packet,285,285,285,0,1.0,8,0,118,stream_midstream:ignore x118,282,282,1.0,0.1193
+attack-dos-slowloris,L2,ignore,285,285,285,0,1.0,8,0,107,stream_midstream:ignore x107,282,282,1.0,0.1228
+attack-dos-slowloris,L2,pass-flow,285,285,285,0,1.0,8,0,141,stream_midstream:ignore x141,282,282,1.0,0.1228
+attack-dos-slowloris,L3,bypass,285,285,285,0,1.0,8,0,123,stream_midstream:ignore x123,282,282,1.0,0.1193
+attack-dos-slowloris,L3,drop-flow,285,285,285,0,1.0,8,0,96,stream_midstream:ignore x96,282,282,1.0,0.1193
+attack-dos-slowloris,L3,drop-packet,285,285,285,0,1.0,8,0,109,stream_midstream:ignore x109,282,282,1.0,0.1193
+attack-dos-slowloris,L3,ignore,285,285,285,0,1.0,8,0,194,stream_midstream:ignore x194,282,282,1.0,0.1193
+attack-dos-slowloris,L3,pass-flow,285,285,285,0,1.0,8,0,129,stream_midstream:ignore x129,282,282,1.0,0.1193
+attack-dos-slowloris,L4,bypass,285,285,285,0,1.0,8,0,135,stream_midstream:ignore x135,282,282,1.0,0.1193
+attack-dos-slowloris,L4,drop-flow,285,285,285,0,1.0,8,0,135,stream_midstream:ignore x135,282,282,1.0,0.1193
+attack-dos-slowloris,L4,drop-packet,285,285,285,0,1.0,8,0,122,stream_midstream:ignore x122,282,282,1.0,0.1193
+attack-dos-slowloris,L4,ignore,285,366,143,223,0.5018,8,0,17299,stream_memcap:ignore x10290; stream_midstream:ignore x7061; stream_reassembly_memcap:ignore x6464,282,141,0.5018,0.1158
+attack-dos-slowloris,L4,pass-flow,285,64,64,0,0.2246,8,0,22462,stream_memcap:pass_flow x16876; stream_midstream:ignore x10592; stream_reassembly_memcap:pass_flow x5402,282,63,0.2246,0.0632
 benign-admin-activity,L0,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L1,bypass,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L1,drop-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L1,drop-packet,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L1,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L1,pass-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L2,bypass,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L2,drop-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L2,drop-packet,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L2,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L2,pass-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L3,bypass,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L3,drop-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L3,drop-packet,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L3,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L3,pass-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L4,bypass,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L4,drop-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L4,drop-packet,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
 benign-admin-activity,L4,ignore,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
+benign-admin-activity,L4,pass-flow,6,6,6,0,1.0,3,0,0,,6,6,1.0,1.0
 benign-background-activity,L0,ignore,1,1,1,0,1.0,1,0,81,stream_midstream:ignore x54; app_layer_error:ignore x27,0,0,1.0,1.0
+benign-background-activity,L1,bypass,1,1,1,0,1.0,1,0,66,stream_midstream:ignore x50; app_layer_error:ignore x16,0,0,1.0,1.0
+benign-background-activity,L1,drop-flow,1,1,1,0,1.0,1,0,78,stream_midstream:ignore x53; app_layer_error:ignore x25,0,0,1.0,1.0
+benign-background-activity,L1,drop-packet,1,1,1,0,1.0,1,0,77,stream_midstream:ignore x53; app_layer_error:ignore x24,0,0,1.0,1.0
+benign-background-activity,L1,ignore,1,1,1,0,1.0,1,0,78,stream_midstream:ignore x57; app_layer_error:ignore x21,0,0,1.0,1.0
+benign-background-activity,L1,pass-flow,1,1,1,0,1.0,1,0,83,stream_midstream:ignore x57; app_layer_error:ignore x26,0,0,1.0,1.0
+benign-background-activity,L2,bypass,1,1,1,0,1.0,1,0,6,stream_midstream:ignore x4; app_layer_error:ignore x2,0,0,1.0,1.0
+benign-background-activity,L2,drop-flow,1,1,1,0,1.0,1,0,65,stream_midstream:ignore x46; app_layer_error:ignore x19,0,0,1.0,1.0
+benign-background-activity,L2,drop-packet,1,1,1,0,1.0,1,0,6,stream_midstream:ignore x4; app_layer_error:ignore x2,0,0,1.0,1.0
+benign-background-activity,L2,ignore,1,1,1,0,1.0,1,0,78,stream_midstream:ignore x54; app_layer_error:ignore x24,0,0,1.0,1.0
+benign-background-activity,L2,pass-flow,1,1,1,0,1.0,1,0,79,stream_midstream:ignore x52; app_layer_error:ignore x27,0,0,1.0,1.0
+benign-background-activity,L3,bypass,1,1,1,0,1.0,1,0,8,stream_midstream:ignore x5; app_layer_error:ignore x3,0,0,1.0,1.0
+benign-background-activity,L3,drop-flow,1,1,1,0,1.0,1,0,13,stream_midstream:ignore x9; app_layer_error:ignore x4,0,0,1.0,1.0
+benign-background-activity,L3,drop-packet,1,1,1,0,1.0,1,0,18,stream_midstream:ignore x12; app_layer_error:ignore x6,0,0,1.0,1.0
+benign-background-activity,L3,ignore,1,1,1,0,1.0,1,0,6,stream_midstream:ignore x4; app_layer_error:ignore x2,0,0,1.0,1.0
+benign-background-activity,L3,pass-flow,1,1,1,0,1.0,1,0,12,stream_midstream:ignore x7; app_layer_error:ignore x5,0,0,1.0,1.0
+benign-background-activity,L4,bypass,1,1,1,0,1.0,1,0,79,stream_midstream:ignore x53; app_layer_error:ignore x26,0,0,1.0,1.0
+benign-background-activity,L4,drop-flow,1,1,1,0,1.0,1,0,81,stream_midstream:ignore x56; app_layer_error:ignore x25,0,0,1.0,1.0
+benign-background-activity,L4,drop-packet,1,1,1,0,1.0,1,0,95,stream_midstream:ignore x65; app_layer_error:ignore x30,0,0,1.0,1.0
+benign-background-activity,L4,ignore,1,1,1,0,1.0,1,0,82,stream_midstream:ignore x54; app_layer_error:ignore x28,0,0,1.0,1.0
+benign-background-activity,L4,pass-flow,1,1,1,0,1.0,1,0,80,stream_midstream:ignore x57; app_layer_error:ignore x23,0,0,1.0,1.0
 benign-user-activity,L0,ignore,80,80,80,0,1.0,4,0,220,app_layer_error:ignore x195; stream_midstream:ignore x25,68,68,1.0,1.0
+benign-user-activity,L1,bypass,80,80,80,0,1.0,4,0,204,app_layer_error:ignore x181; stream_midstream:ignore x23,68,68,1.0,1.0
+benign-user-activity,L1,drop-flow,80,80,80,0,1.0,4,0,250,app_layer_error:ignore x223; stream_midstream:ignore x29,68,68,1.0,1.0
+benign-user-activity,L1,drop-packet,80,80,80,0,1.0,4,0,39,app_layer_error:ignore x37; stream_midstream:ignore x2,68,68,1.0,1.0
+benign-user-activity,L1,ignore,80,80,80,0,1.0,4,0,229,app_layer_error:ignore x205; stream_midstream:ignore x24,68,68,1.0,1.0
+benign-user-activity,L1,pass-flow,80,80,80,0,1.0,4,0,232,app_layer_error:ignore x204; stream_midstream:ignore x28,68,68,1.0,1.0
+benign-user-activity,L2,bypass,80,80,80,0,1.0,4,0,213,app_layer_error:ignore x193; stream_midstream:ignore x20,68,68,1.0,1.0
+benign-user-activity,L2,drop-flow,80,80,80,0,1.0,4,0,220,app_layer_error:ignore x192; stream_midstream:ignore x28,68,68,1.0,1.0
+benign-user-activity,L2,drop-packet,80,80,80,0,1.0,4,0,29,app_layer_error:ignore x27; stream_midstream:ignore x2,68,68,1.0,1.0
+benign-user-activity,L2,ignore,80,80,80,0,1.0,4,0,227,app_layer_error:ignore x210; stream_midstream:ignore x17,68,68,1.0,1.0
+benign-user-activity,L2,pass-flow,80,80,80,0,1.0,4,0,218,app_layer_error:ignore x201; stream_midstream:ignore x17,68,68,1.0,1.0
+benign-user-activity,L3,bypass,80,80,80,0,1.0,4,0,299,stream_reassembly_memcap:bypass x275; app_layer_error:ignore x22; stream_midstream:ignore x2,68,68,1.0,1.0
+benign-user-activity,L3,drop-flow,80,80,80,0,1.0,4,0,231,app_layer_error:ignore x194; stream_midstream:ignore x37,68,68,1.0,1.0
+benign-user-activity,L3,drop-packet,80,80,80,0,1.0,4,0,218,app_layer_error:ignore x190; stream_midstream:ignore x28,68,68,1.0,1.0
+benign-user-activity,L3,ignore,80,80,80,0,1.0,4,0,205,app_layer_error:ignore x175; stream_midstream:ignore x30,68,68,1.0,1.0
+benign-user-activity,L3,pass-flow,80,80,80,0,1.0,4,0,220,app_layer_error:ignore x193; stream_midstream:ignore x27,68,68,1.0,1.0
+benign-user-activity,L4,bypass,80,7,7,0,0.0875,4,2,597,stream_reassembly_memcap:bypass x475; app_layer_error:ignore x117; stream_midstream:ignore x12,68,0,0.0875,0.0875
+benign-user-activity,L4,drop-flow,80,80,80,0,1.0,4,0,247,app_layer_error:ignore x216; stream_midstream:ignore x31,68,68,1.0,1.0
+benign-user-activity,L4,drop-packet,80,80,80,0,1.0,4,0,252,app_layer_error:ignore x226; stream_midstream:ignore x26,68,68,1.0,1.0
+benign-user-activity,L4,ignore,80,80,80,0,1.0,4,0,722,stream_reassembly_memcap:ignore x625; app_layer_error:ignore x81; stream_midstream:ignore x18,68,68,1.0,1.0
+benign-user-activity,L4,pass-flow,80,80,80,0,1.0,4,0,278,app_layer_error:ignore x250; stream_midstream:ignore x28,68,68,1.0,1.0

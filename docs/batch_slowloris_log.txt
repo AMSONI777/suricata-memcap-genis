@@ -1,0 +1,21 @@
+nohup: ignoring input
+done   attack-dos-slowloris       L1_ignore            63s  sessions=17315 ssn_drop=0 alerts=285 peak=549MB
+done   attack-dos-slowloris       L1_drop-packet       61s  sessions=17315 ssn_drop=0 alerts=285 peak=531MB
+done   attack-dos-slowloris       L1_drop-flow         88s  sessions=17315 ssn_drop=0 alerts=285 peak=570MB
+done   attack-dos-slowloris       L1_pass-flow         56s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       L1_bypass            81s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       L2_ignore            84s  sessions=17315 ssn_drop=0 alerts=285 peak=512MB
+done   attack-dos-slowloris       L2_drop-packet       90s  sessions=17315 ssn_drop=0 alerts=285 peak=548MB
+done   attack-dos-slowloris       L2_drop-flow         85s  sessions=17315 ssn_drop=0 alerts=285 peak=529MB
+done   attack-dos-slowloris       L2_pass-flow        164s  sessions=17315 ssn_drop=0 alerts=285 peak=529MB
+done   attack-dos-slowloris       L2_bypass            78s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       L3_ignore            64s  sessions=17315 ssn_drop=0 alerts=285 peak=533MB
+done   attack-dos-slowloris       L3_drop-packet       81s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       L3_drop-flow         70s  sessions=17315 ssn_drop=0 alerts=285 peak=547MB
+done   attack-dos-slowloris       L3_pass-flow         72s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       L3_bypass            88s  sessions=17315 ssn_drop=0 alerts=285 peak=548MB
+done   attack-dos-slowloris       L4_ignore            79s  sessions=13113 ssn_drop=8694 alerts=366 peak=549MB
+done   attack-dos-slowloris       L4_drop-packet       84s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB
+done   attack-dos-slowloris       L4_drop-flow         85s  sessions=17315 ssn_drop=0 alerts=285 peak=510MB
+done   attack-dos-slowloris       L4_pass-flow         71s  sessions=9680 ssn_drop=14998 alerts=64 peak=556MB
+done   attack-dos-slowloris       L4_bypass            81s  sessions=17315 ssn_drop=0 alerts=285 peak=530MB

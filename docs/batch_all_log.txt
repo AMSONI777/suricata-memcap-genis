@@ -1,0 +1,141 @@
+nohup: ignoring input
+skip   attack-dos-hulk L1_ignore (already done)
+done   attack-dos-hulk            L1_drop-packet       42s  sessions=50823 ssn_drop=0 alerts=6116 peak=787MB
+done   attack-dos-hulk            L1_drop-flow         40s  sessions=50823 ssn_drop=0 alerts=6116 peak=805MB
+done   attack-dos-hulk            L1_pass-flow         39s  sessions=50823 ssn_drop=0 alerts=6116 peak=787MB
+done   attack-dos-hulk            L1_bypass            38s  sessions=50823 ssn_drop=0 alerts=6116 peak=806MB
+skip   attack-dos-hulk L2_ignore (already done)
+done   attack-dos-hulk            L2_drop-packet       38s  sessions=50823 ssn_drop=0 alerts=7094 peak=733MB
+done   attack-dos-hulk            L2_drop-flow         38s  sessions=50823 ssn_drop=0 alerts=5061 peak=690MB
+done   attack-dos-hulk            L2_pass-flow         38s  sessions=50823 ssn_drop=0 alerts=5068 peak=720MB
+done   attack-dos-hulk            L2_bypass            74s  sessions=47102 ssn_drop=0 alerts=5178 peak=709MB
+skip   attack-dos-hulk L3_ignore (already done)
+skip   attack-dos-hulk L3_drop-packet (already done)
+skip   attack-dos-hulk L3_drop-flow (already done)
+skip   attack-dos-hulk L3_pass-flow (already done)
+skip   attack-dos-hulk L3_bypass (already done)
+skip   attack-dos-hulk L4_ignore (already done)
+done   attack-dos-hulk            L4_drop-packet       70s  sessions=11046 ssn_drop=125894 alerts=457 peak=543MB
+done   attack-dos-hulk            L4_drop-flow         57s  sessions=8281 ssn_drop=125384 alerts=145 peak=559MB
+done   attack-dos-hulk            L4_pass-flow         50s  sessions=11061 ssn_drop=124560 alerts=144 peak=561MB
+done   attack-dos-hulk            L4_bypass            51s  sessions=8076 ssn_drop=128113 alerts=172 peak=532MB
+skip   attack-bruteforce-ssh L1_ignore (already done)
+done   attack-bruteforce-ssh      L1_drop-packet       47s  sessions=4234 ssn_drop=0 alerts=644 peak=535MB
+done   attack-bruteforce-ssh      L1_drop-flow         48s  sessions=4234 ssn_drop=0 alerts=644 peak=523MB
+done   attack-bruteforce-ssh      L1_pass-flow         47s  sessions=4234 ssn_drop=0 alerts=644 peak=553MB
+done   attack-bruteforce-ssh      L1_bypass            48s  sessions=4234 ssn_drop=0 alerts=644 peak=539MB
+skip   attack-bruteforce-ssh L2_ignore (already done)
+done   attack-bruteforce-ssh      L2_drop-packet       44s  sessions=4234 ssn_drop=0 alerts=644 peak=540MB
+done   attack-bruteforce-ssh      L2_drop-flow         45s  sessions=4234 ssn_drop=0 alerts=644 peak=539MB
+done   attack-bruteforce-ssh      L2_pass-flow         45s  sessions=4234 ssn_drop=0 alerts=644 peak=522MB
+done   attack-bruteforce-ssh      L2_bypass            40s  sessions=4234 ssn_drop=0 alerts=644 peak=507MB
+skip   attack-bruteforce-ssh L3_ignore (already done)
+done   attack-bruteforce-ssh      L3_drop-packet       39s  sessions=4234 ssn_drop=0 alerts=644 peak=522MB
+done   attack-bruteforce-ssh      L3_drop-flow         34s  sessions=4234 ssn_drop=0 alerts=644 peak=536MB
+done   attack-bruteforce-ssh      L3_pass-flow         34s  sessions=4234 ssn_drop=0 alerts=644 peak=528MB
+done   attack-bruteforce-ssh      L3_bypass            33s  sessions=4234 ssn_drop=0 alerts=644 peak=523MB
+skip   attack-bruteforce-ssh L4_ignore (already done)
+done   attack-bruteforce-ssh      L4_drop-packet       34s  sessions=4234 ssn_drop=0 alerts=640 peak=526MB
+done   attack-bruteforce-ssh      L4_drop-flow         34s  sessions=4234 ssn_drop=0 alerts=644 peak=540MB
+done   attack-bruteforce-ssh      L4_pass-flow         33s  sessions=4234 ssn_drop=0 alerts=644 peak=535MB
+done   attack-bruteforce-ssh      L4_bypass            34s  sessions=4234 ssn_drop=0 alerts=644 peak=538MB
+done   attack-bruteforce-ssh-ftp  L1_ignore            34s  sessions=14324 ssn_drop=0 alerts=5965 peak=526MB
+done   attack-bruteforce-ssh-ftp  L1_drop-packet       33s  sessions=14324 ssn_drop=0 alerts=5960 peak=572MB
+done   attack-bruteforce-ssh-ftp  L1_drop-flow         33s  sessions=14324 ssn_drop=0 alerts=5965 peak=526MB
+done   attack-bruteforce-ssh-ftp  L1_pass-flow         35s  sessions=14324 ssn_drop=0 alerts=5965 peak=545MB
+done   attack-bruteforce-ssh-ftp  L1_bypass            33s  sessions=14324 ssn_drop=0 alerts=5960 peak=543MB
+done   attack-bruteforce-ssh-ftp  L2_ignore            33s  sessions=14324 ssn_drop=0 alerts=5963 peak=506MB
+done   attack-bruteforce-ssh-ftp  L2_drop-packet       34s  sessions=14324 ssn_drop=0 alerts=5960 peak=554MB
+done   attack-bruteforce-ssh-ftp  L2_drop-flow         34s  sessions=14324 ssn_drop=0 alerts=5965 peak=544MB
+done   attack-bruteforce-ssh-ftp  L2_pass-flow         33s  sessions=14324 ssn_drop=0 alerts=5963 peak=526MB
+done   attack-bruteforce-ssh-ftp  L2_bypass            34s  sessions=14324 ssn_drop=0 alerts=5964 peak=544MB
+done   attack-bruteforce-ssh-ftp  L3_ignore            34s  sessions=14324 ssn_drop=0 alerts=5966 peak=544MB
+done   attack-bruteforce-ssh-ftp  L3_drop-packet       34s  sessions=14324 ssn_drop=0 alerts=5965 peak=529MB
+done   attack-bruteforce-ssh-ftp  L3_drop-flow         34s  sessions=14324 ssn_drop=0 alerts=4945 peak=543MB
+done   attack-bruteforce-ssh-ftp  L3_pass-flow         34s  sessions=14324 ssn_drop=0 alerts=5964 peak=525MB
+done   attack-bruteforce-ssh-ftp  L3_bypass            34s  sessions=14324 ssn_drop=0 alerts=5965 peak=525MB
+done   attack-bruteforce-ssh-ftp  L4_ignore            33s  sessions=9214 ssn_drop=5110 alerts=5940 peak=524MB
+done   attack-bruteforce-ssh-ftp  L4_drop-packet       34s  sessions=9226 ssn_drop=5098 alerts=5931 peak=526MB
+done   attack-bruteforce-ssh-ftp  L4_drop-flow         33s  sessions=9155 ssn_drop=5169 alerts=5851 peak=525MB
+done   attack-bruteforce-ssh-ftp  L4_pass-flow         34s  sessions=9186 ssn_drop=5138 alerts=5883 peak=539MB
+done   attack-bruteforce-ssh-ftp  L4_bypass            33s  sessions=9164 ssn_drop=5160 alerts=5850 peak=525MB
+done   attack-bruteforce-smb      L1_ignore            34s  sessions=11989 ssn_drop=0 alerts=1046 peak=743MB
+done   attack-bruteforce-smb      L1_drop-packet       33s  sessions=11989 ssn_drop=0 alerts=1046 peak=743MB
+done   attack-bruteforce-smb      L1_drop-flow         34s  sessions=11989 ssn_drop=0 alerts=1046 peak=757MB
+done   attack-bruteforce-smb      L1_pass-flow         34s  sessions=11989 ssn_drop=0 alerts=1046 peak=775MB
+done   attack-bruteforce-smb      L1_bypass            34s  sessions=11989 ssn_drop=0 alerts=1046 peak=759MB
+done   attack-bruteforce-smb      L2_ignore            34s  sessions=11989 ssn_drop=0 alerts=1046 peak=737MB
+done   attack-bruteforce-smb      L2_drop-packet       34s  sessions=11989 ssn_drop=0 alerts=1046 peak=772MB
+done   attack-bruteforce-smb      L2_drop-flow         34s  sessions=11989 ssn_drop=0 alerts=1046 peak=724MB
+done   attack-bruteforce-smb      L2_pass-flow         34s  sessions=11989 ssn_drop=0 alerts=1046 peak=759MB
+done   attack-bruteforce-smb      L2_bypass            34s  sessions=11989 ssn_drop=0 alerts=1046 peak=724MB
+done   attack-bruteforce-smb      L3_ignore            34s  sessions=11989 ssn_drop=0 alerts=1047 peak=687MB
+done   attack-bruteforce-smb      L3_drop-packet       34s  sessions=11989 ssn_drop=0 alerts=883 peak=667MB
+done   attack-bruteforce-smb      L3_drop-flow         34s  sessions=11989 ssn_drop=0 alerts=599 peak=664MB
+done   attack-bruteforce-smb      L3_pass-flow         34s  sessions=11989 ssn_drop=0 alerts=847 peak=680MB
+done   attack-bruteforce-smb      L3_bypass            34s  sessions=11412 ssn_drop=0 alerts=841 peak=682MB
+done   attack-bruteforce-smb      L4_ignore            36s  sessions=9705 ssn_drop=2284 alerts=812 peak=579MB
+done   attack-bruteforce-smb      L4_drop-packet       33s  sessions=6651 ssn_drop=5338 alerts=180 peak=574MB
+done   attack-bruteforce-smb      L4_drop-flow         35s  sessions=9573 ssn_drop=2416 alerts=259 peak=575MB
+done   attack-bruteforce-smb      L4_pass-flow         33s  sessions=9519 ssn_drop=2470 alerts=265 peak=529MB
+done   attack-bruteforce-smb      L4_bypass            34s  sessions=6627 ssn_drop=4780 alerts=241 peak=556MB
+done   benign-admin-activity      L1_ignore            33s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L1_drop-packet       34s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L1_drop-flow         33s  sessions=35 ssn_drop=0 alerts=6 peak=527MB
+done   benign-admin-activity      L1_pass-flow         34s  sessions=35 ssn_drop=0 alerts=6 peak=539MB
+done   benign-admin-activity      L1_bypass            33s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L2_ignore            34s  sessions=35 ssn_drop=0 alerts=6 peak=537MB
+done   benign-admin-activity      L2_drop-packet       33s  sessions=35 ssn_drop=0 alerts=6 peak=527MB
+done   benign-admin-activity      L2_drop-flow         34s  sessions=35 ssn_drop=0 alerts=6 peak=526MB
+done   benign-admin-activity      L2_pass-flow         38s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L2_bypass            40s  sessions=35 ssn_drop=0 alerts=6 peak=515MB
+done   benign-admin-activity      L3_ignore            41s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L3_drop-packet       41s  sessions=35 ssn_drop=0 alerts=6 peak=545MB
+done   benign-admin-activity      L3_drop-flow         42s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L3_pass-flow         42s  sessions=35 ssn_drop=0 alerts=6 peak=524MB
+done   benign-admin-activity      L3_bypass            42s  sessions=35 ssn_drop=0 alerts=6 peak=512MB
+skip   benign-admin-activity L4_ignore (already done)
+done   benign-admin-activity      L4_drop-packet       41s  sessions=35 ssn_drop=0 alerts=6 peak=529MB
+done   benign-admin-activity      L4_drop-flow         43s  sessions=35 ssn_drop=0 alerts=6 peak=520MB
+done   benign-admin-activity      L4_pass-flow         41s  sessions=35 ssn_drop=0 alerts=6 peak=527MB
+done   benign-admin-activity      L4_bypass            43s  sessions=35 ssn_drop=0 alerts=6 peak=542MB
+done   benign-background-activity L1_ignore            42s  sessions=239 ssn_drop=0 alerts=1 peak=544MB
+done   benign-background-activity L1_drop-packet       41s  sessions=239 ssn_drop=0 alerts=1 peak=523MB
+done   benign-background-activity L1_drop-flow         42s  sessions=239 ssn_drop=0 alerts=1 peak=539MB
+done   benign-background-activity L1_pass-flow         42s  sessions=239 ssn_drop=0 alerts=1 peak=524MB
+done   benign-background-activity L1_bypass            41s  sessions=239 ssn_drop=0 alerts=1 peak=524MB
+done   benign-background-activity L2_ignore            43s  sessions=239 ssn_drop=0 alerts=1 peak=524MB
+done   benign-background-activity L2_drop-packet       42s  sessions=239 ssn_drop=0 alerts=1 peak=557MB
+done   benign-background-activity L2_drop-flow         42s  sessions=239 ssn_drop=0 alerts=1 peak=525MB
+done   benign-background-activity L2_pass-flow         44s  sessions=239 ssn_drop=0 alerts=1 peak=535MB
+done   benign-background-activity L2_bypass            40s  sessions=239 ssn_drop=0 alerts=1 peak=539MB
+done   benign-background-activity L3_ignore            43s  sessions=239 ssn_drop=0 alerts=1 peak=540MB
+done   benign-background-activity L3_drop-packet       41s  sessions=239 ssn_drop=0 alerts=1 peak=549MB
+done   benign-background-activity L3_drop-flow         42s  sessions=239 ssn_drop=0 alerts=1 peak=548MB
+done   benign-background-activity L3_pass-flow         41s  sessions=239 ssn_drop=0 alerts=1 peak=552MB
+done   benign-background-activity L3_bypass            41s  sessions=239 ssn_drop=0 alerts=1 peak=537MB
+done   benign-background-activity L4_ignore            42s  sessions=239 ssn_drop=0 alerts=1 peak=543MB
+done   benign-background-activity L4_drop-packet       43s  sessions=239 ssn_drop=0 alerts=1 peak=538MB
+done   benign-background-activity L4_drop-flow         42s  sessions=239 ssn_drop=0 alerts=1 peak=525MB
+done   benign-background-activity L4_pass-flow         44s  sessions=239 ssn_drop=0 alerts=1 peak=542MB
+done   benign-background-activity L4_bypass            41s  sessions=239 ssn_drop=0 alerts=1 peak=524MB
+done   benign-user-activity       L1_ignore            45s  sessions=1452 ssn_drop=0 alerts=80 peak=526MB
+done   benign-user-activity       L1_drop-packet       44s  sessions=1452 ssn_drop=0 alerts=80 peak=548MB
+done   benign-user-activity       L1_drop-flow         44s  sessions=1452 ssn_drop=0 alerts=80 peak=526MB
+done   benign-user-activity       L1_pass-flow         43s  sessions=1452 ssn_drop=0 alerts=80 peak=525MB
+done   benign-user-activity       L1_bypass            42s  sessions=1452 ssn_drop=0 alerts=80 peak=537MB
+done   benign-user-activity       L2_ignore            42s  sessions=1452 ssn_drop=0 alerts=80 peak=525MB
+done   benign-user-activity       L2_drop-packet       42s  sessions=1452 ssn_drop=0 alerts=80 peak=562MB
+done   benign-user-activity       L2_drop-flow         42s  sessions=1452 ssn_drop=0 alerts=80 peak=538MB
+done   benign-user-activity       L2_pass-flow         45s  sessions=1452 ssn_drop=0 alerts=80 peak=527MB
+done   benign-user-activity       L2_bypass            42s  sessions=1452 ssn_drop=0 alerts=80 peak=539MB
+done   benign-user-activity       L3_ignore            43s  sessions=1452 ssn_drop=0 alerts=80 peak=531MB
+done   benign-user-activity       L3_drop-packet       42s  sessions=1452 ssn_drop=0 alerts=80 peak=512MB
+done   benign-user-activity       L3_drop-flow         42s  sessions=1452 ssn_drop=0 alerts=80 peak=527MB
+done   benign-user-activity       L3_pass-flow         44s  sessions=1452 ssn_drop=0 alerts=80 peak=527MB
+done   benign-user-activity       L3_bypass            41s  sessions=1452 ssn_drop=0 alerts=80 peak=557MB
+done   benign-user-activity       L4_ignore            42s  sessions=1452 ssn_drop=0 alerts=80 peak=555MB
+done   benign-user-activity       L4_drop-packet       43s  sessions=1452 ssn_drop=0 alerts=80 peak=527MB
+done   benign-user-activity       L4_drop-flow         43s  sessions=1452 ssn_drop=0 alerts=80 peak=544MB
+done   benign-user-activity       L4_pass-flow         43s  sessions=1452 ssn_drop=0 alerts=80 peak=526MB
+done   benign-user-activity       L4_bypass            41s  sessions=1452 ssn_drop=0 alerts=7 peak=549MB
