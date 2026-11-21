@@ -1,0 +1,43 @@
+merged_capture,hidden_attack,condition,level,rep,hidden_retention,hidden_retention_et,sessions,ssn_memcap_drop
+cover-hulk-smb,attack-bruteforce-smb,alone,L1,1,1.0,1.0,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L2,1,1.0,1.0,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L3,1,0.9168,0.9136,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L3,2,0.6472,0.6336,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L3,3,0.6625,0.6495,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L3,4,1.0,1.0,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L4,1,0.4302,0.4151,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L4,2,0.4379,0.426,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L4,3,0.412,0.4032,,
+cover-hulk-smb,attack-bruteforce-smb,alone,L4,4,0.4187,0.4062,,
+cover-hulk-smb,attack-bruteforce-smb,with flood,L0,1,1.0,1.0,62812,0
+cover-hulk-smb,attack-bruteforce-smb,with flood,L0,2,1.0,1.0,62812,0
+cover-hulk-smb,attack-bruteforce-smb,with flood,L1,1,1.0,1.0,62812,0
+cover-hulk-smb,attack-bruteforce-smb,with flood,L1,2,1.0,1.0,62812,0
+cover-hulk-smb,attack-bruteforce-smb,with flood,L2,1,1.0,1.0,62812,0
+cover-hulk-smb,attack-bruteforce-smb,with flood,L2,2,1.0,1.0,62812,0
+cover-hulk-smb,attack-bruteforce-smb,with flood,L3,1,0.6788,0.6663,46474,62505
+cover-hulk-smb,attack-bruteforce-smb,with flood,L3,2,0.6434,0.6296,46516,64089
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L1,1,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L1,2,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L2,1,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L2,2,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L2,3,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L3,1,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L3,2,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L3,3,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L4,1,0.9114,0.9067,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L4,2,0.9114,0.9067,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L4,3,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,alone,L4,4,1.0,1.0,,
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L0,1,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L0,2,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L1,1,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L1,2,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L2,1,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L2,2,0.9156,0.9111,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L2,3,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L2,4,1.0,1.0,55057,0
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L3,1,0.8692,0.8978,34873,71647
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L3,2,0.9916,0.9956,38104,63897
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L3,3,0.9916,0.9956,38813,62153
+cover-hulk-ssh,attack-bruteforce-ssh,with flood,L3,4,0.9916,0.9956,38904,63533

@@ -1,0 +1,15 @@
+{
+  "name": "cover-hulk-smb",
+  "flood": "attack-dos-hulk",
+  "hidden": "attack-bruteforce-smb",
+  "window_seconds": 2067.899272,
+  "window_start_epoch": 1739196317.092507,
+  "window_end_epoch": 1739198384.9917789,
+  "window_start_utc": "2025-02-10 14:05:17",
+  "window_end_utc": "2025-02-10 14:39:44",
+  "hidden_alerts_total_L0": 1046,
+  "hidden_alerts_in_window_L0": 1046,
+  "shift_seconds": 181209.365155,
+  "merged_sha256": "61a44413efac11fb8559c81c0711a31869657aaeb06435329f3a5b25b23c84b3",
+  "merged_first_packet_epoch": 1739376911.5756648
+}

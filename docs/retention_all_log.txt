@@ -14,6 +14,8 @@ attack-bruteforce-smb      R4  ignore         2   63.7  67.2   8144 8177
 attack-bruteforce-smb      S3  ignore         2  100.0 100.0   0 0
 attack-bruteforce-smb      S4  ignore         2   42.4  42.7   3139 3074
 attack-bruteforce-ssh      L1  ignore         2  100.0 100.0   0 0
+attack-bruteforce-ssh      L2  ignore         3  100.0 100.0 100.0   0 0 0
+attack-bruteforce-ssh      L3  ignore         3  100.0 100.0 100.0   0 0 0
 attack-bruteforce-ssh      L4  bypass         4  100.0 100.0 100.0 100.0   0 0 0 0
 attack-bruteforce-ssh      L4  drop-flow      4  100.0  82.3 100.0 100.0   0 1714 0 0
 attack-bruteforce-ssh      L4  drop-packet    4   99.4 100.0 100.0 100.0   267 0 0 0
@@ -68,4 +70,4 @@ benign-user-activity       L4  drop-flow      4  100.0 100.0 100.0 100.0   0 0 0
 benign-user-activity       L4  drop-packet    4  100.0 100.0 100.0 100.0   0 860 0 0
 benign-user-activity       L4  ignore         4  100.0 100.0 100.0  15.0   625 0 0 1227
 benign-user-activity       L4  pass-flow      4  100.0   6.2  96.2 100.0   0 1228 1183 0
-Wrote results/retention_all.csv (349 runs)
+Wrote results/retention_all.csv (353 runs)

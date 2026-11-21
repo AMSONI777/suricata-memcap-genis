@@ -1,0 +1,18 @@
+
+cover-hulk-smb: 1046 alerts of attack-bruteforce-smb inside the window 2025-02-10 14:05:17 to 2025-02-10 14:39:44 UTC (1007 ET Open)
+
+cover-hulk-ssh: 237 alerts of attack-bruteforce-ssh inside the window 2025-02-10 09:11:31 to 2025-02-10 09:45:59 UTC (225 ET Open)
+
+merged capture       level hidden attack alone                hidden attack with flood          
+cover-hulk-smb       L0    -                                  100.0-100.0 %  lost in 0/2        
+cover-hulk-smb       L1    100.0-100.0 %  lost in 0/1         100.0-100.0 %  lost in 0/2        
+cover-hulk-smb       L2    100.0-100.0 %  lost in 0/1         100.0-100.0 %  lost in 0/2        
+cover-hulk-smb       L3     64.7-100.0 %  lost in 3/4          64.3- 67.9 %  lost in 2/2        
+cover-hulk-smb       L4     41.2- 43.8 %  lost in 4/4         -                                 
+cover-hulk-ssh       L0    -                                  100.0-100.0 %  lost in 0/2        
+cover-hulk-ssh       L1    100.0-100.0 %  lost in 0/2         100.0-100.0 %  lost in 0/2        
+cover-hulk-ssh       L2    100.0-100.0 %  lost in 0/1          91.6-100.0 %  lost in 1/2        
+cover-hulk-ssh       L3    100.0-100.0 %  lost in 0/1          86.9- 99.2 %  lost in 2/2        
+cover-hulk-ssh       L4     91.1-100.0 %  lost in 2/4         -                                 
+
+Wrote results/cover.csv (34 runs)

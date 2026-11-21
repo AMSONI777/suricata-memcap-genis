@@ -1,0 +1,15 @@
+{
+  "name": "cover-hulk-ssh",
+  "flood": "attack-dos-hulk",
+  "hidden": "attack-bruteforce-ssh",
+  "window_seconds": 2067.899272,
+  "window_start_epoch": 1739178691.702541,
+  "window_end_epoch": 1739180759.601813,
+  "window_start_utc": "2025-02-10 09:11:31",
+  "window_end_utc": "2025-02-10 09:45:59",
+  "hidden_alerts_total_L0": 644,
+  "hidden_alerts_in_window_L0": 237,
+  "shift_seconds": 198834.755121,
+  "merged_sha256": "015f0c46a17f00137d7c23d1b4d80f98e27b13f00eb8500525efcd5b991253a7",
+  "merged_first_packet_epoch": 1739376572.6580255
+}

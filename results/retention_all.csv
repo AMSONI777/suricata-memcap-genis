@@ -75,11 +75,15 @@ attack-bruteforce-ssh,L2,bypass,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L2,drop-flow,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L2,drop-packet,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L2,ignore,1,644,644,644,0,1.0,629,629,1.0,11,0,0
+attack-bruteforce-ssh,L2,ignore,2,644,644,644,0,1.0,629,629,1.0,11,0,0
+attack-bruteforce-ssh,L2,ignore,3,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L2,pass-flow,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L3,bypass,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L3,drop-flow,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L3,drop-packet,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L3,ignore,1,644,644,644,0,1.0,629,629,1.0,11,0,0
+attack-bruteforce-ssh,L3,ignore,2,644,644,644,0,1.0,629,629,1.0,11,0,0
+attack-bruteforce-ssh,L3,ignore,3,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L3,pass-flow,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L4,bypass,1,644,644,644,0,1.0,629,629,1.0,11,0,0
 attack-bruteforce-ssh,L4,bypass,2,644,644,644,0,1.0,629,629,1.0,11,0,0

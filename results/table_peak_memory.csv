@@ -9,6 +9,8 @@ attack-bruteforce-smb,R4,2,557
 attack-bruteforce-smb,S3,2,715
 attack-bruteforce-smb,S4,2,676
 attack-bruteforce-ssh,L0,1,503
+attack-bruteforce-ssh,L2,2,519
+attack-bruteforce-ssh,L3,2,523
 attack-bruteforce-ssh,L4,3,535
 attack-bruteforce-ssh-ftp,L0,7,538
 attack-bruteforce-ssh-ftp,L1,1,527

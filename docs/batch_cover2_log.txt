@@ -1,0 +1,9 @@
+nohup: ignoring input
+done   attack-bruteforce-ssh      L2_ignore_r2         37s  sessions=4234 ssn_drop=0 alerts=644 peak=512MB
+done   attack-bruteforce-ssh      L3_ignore_r2         33s  sessions=4234 ssn_drop=0 alerts=644 peak=524MB
+done   attack-bruteforce-ssh      L2_ignore_r3         33s  sessions=4234 ssn_drop=0 alerts=644 peak=525MB
+done   attack-bruteforce-ssh      L3_ignore_r3         33s  sessions=4234 ssn_drop=0 alerts=644 peak=522MB
+done   cover-hulk-ssh             L2_ignore_r3         38s  sessions=55057 ssn_drop=0 alerts=7783 peak=715MB
+done   cover-hulk-ssh             L3_ignore_r3         37s  sessions=38813 ssn_drop=62153 alerts=3575 peak=588MB
+done   cover-hulk-ssh             L2_ignore_r4         39s  sessions=55057 ssn_drop=0 alerts=7736 peak=733MB
+done   cover-hulk-ssh             L3_ignore_r4         38s  sessions=38904 ssn_drop=63533 alerts=3570 peak=605MB

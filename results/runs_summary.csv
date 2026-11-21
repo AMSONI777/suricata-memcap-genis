@@ -348,3 +348,7 @@ attack-dos-slowloris,S3,ignore,2,0,44,701787,17315,0,0,649,285,595192
 attack-dos-slowloris,R3,ignore,2,0,41,701787,17315,0,0,649,285,561372
 attack-dos-slowloris,S4,ignore,2,0,41,701787,17315,0,0,649,285,543464
 attack-dos-slowloris,R4,ignore,2,0,38,701787,17315,0,10264,2228,168,566704
+attack-bruteforce-ssh,L2,ignore,2,0,37,88342,4234,0,0,3,644,524368
+attack-bruteforce-ssh,L3,ignore,2,0,33,88342,4234,0,0,3,644,536584
+attack-bruteforce-ssh,L2,ignore,3,0,33,88342,4234,0,0,3,644,538264
+attack-bruteforce-ssh,L3,ignore,3,0,33,88342,4234,0,0,3,644,535092
