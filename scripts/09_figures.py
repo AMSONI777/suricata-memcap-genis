@@ -304,3 +304,34 @@ ax.set_title('Memory saved vs detection kept (ignore policy)')
 fig.text(0.0, -0.05, 'About 0.5 GB of the peak is the loaded ruleset, which no stream setting can reduce. '
          'Hulk has no peak value at L1 (recorded before peak tracking was added).', fontsize=7, color=TEXT2)
 save(fig, 'fig5_memory_vs_retention.png')
+
+# Figure 6: Experiment D, hidden attack alone vs under the Hulk flood
+cover_path = os.path.join(RES, 'cover.csv')
+if os.path.exists(cover_path):
+    cov = read('cover.csv')
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4), sharey=True)
+    for ax, hid in zip(axes, ['attack-bruteforce-ssh', 'attack-bruteforce-smb']):
+        lvls = ['L0', 'L1', 'L2', 'L3']
+        for x, lv in enumerate(lvls):
+            for cond, col, mk, dx in [('alone', BLUE, 'o', -0.15), ('with flood', ORANGE, 'D', 0.15)]:
+                vals = [100 * float(r['hidden_retention']) for r in cov
+                        if r['hidden_attack'] == hid and r['level'] == lv and r['condition'] == cond]
+                n = len(vals)
+                xs = [x + dx + (i - (n - 1) / 2) * 0.06 for i in range(n)]
+                ax.scatter(xs, vals, s=34, color=col, marker=mk, edgecolor=SURFACE, linewidth=1, zorder=3,
+                           label=({'alone': 'Attack alone', 'with flood': 'Attack under the Hulk flood'}[cond]
+                                  if x == 1 else None))
+        ax.set_xticks(range(len(lvls)))
+        ax.set_xticklabels([lv if lv == 'L0' else LEVEL_LABEL[lv] for lv in lvls], fontsize=7.5)
+        ax.set_ylim(50, 102)
+        ax.yaxis.grid(True)
+        ax.set_axisbelow(True)
+        ax.set_title('Hidden attack: ' + SHORT[hid], fontsize=9)
+    axes[0].set_ylabel("Hidden attack's alerts kept in the flood window (%)")
+    axes[0].legend(loc='lower left', fontsize=8)
+    fig.suptitle('Experiment D: does a DoS flood hide another attack? (ignore policy, one marker per run)',
+                 x=0.01, ha='left', fontweight='bold', fontsize=11)
+    fig.text(0.01, -0.04, 'L0 under the flood is the control (merging alone changes nothing). There is no "alone" '
+             'marker at L0 because the alone L0 run is the reference. Y axis starts at 50 %.', fontsize=7, color=TEXT2)
+    fig.tight_layout()
+    save(fig, 'fig6_flood_cover.png')
