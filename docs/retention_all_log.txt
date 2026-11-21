@@ -1,0 +1,59 @@
+capture                    lvl policy      runs  retention % per run (run 1, 2, ...)   memcap flows
+attack-bruteforce-smb      L3  bypass         4   51.3  50.8  51.4  52.6   1465 1596 1673 1514
+attack-bruteforce-smb      L3  drop-flow      4   47.6  47.4  47.3  76.6   4669 4684 4690 2282
+attack-bruteforce-smb      L3  drop-packet    4   49.0  47.9  49.3  49.3   2217 4687 2181 2251
+attack-bruteforce-smb      L3  ignore         4   91.7  64.7  66.2 100.0   2178 2162 2136 4697
+attack-bruteforce-smb      L3  pass-flow      4   48.7  48.5  48.0  49.4   2672 2214 4675 2155
+attack-bruteforce-smb      L4  bypass         4   12.5  13.0  13.2  12.2   7360 7286 7237 7467
+attack-bruteforce-smb      L4  drop-flow      4   16.2  14.2  14.0  14.1   8949 8929 8878 8951
+attack-bruteforce-smb      L4  drop-packet    4   12.4  15.1  11.7  15.5   8381 8893 8391 8897
+attack-bruteforce-smb      L4  ignore         4   43.0  43.8  41.2  41.9   8900 8893 8882 8916
+attack-bruteforce-smb      L4  pass-flow      4   14.6  12.3  16.4  14.0   9023 8398 9017 8978
+attack-bruteforce-ssh      L1  ignore         2  100.0 100.0   0 0
+attack-bruteforce-ssh      L4  bypass         4  100.0 100.0 100.0 100.0   0 0 0 0
+attack-bruteforce-ssh      L4  drop-flow      4  100.0  82.3 100.0 100.0   0 1714 0 0
+attack-bruteforce-ssh      L4  drop-packet    4   99.4 100.0 100.0 100.0   267 0 0 0
+attack-bruteforce-ssh      L4  ignore         4   83.5  83.9 100.0 100.0   1758 1762 0 0
+attack-bruteforce-ssh      L4  pass-flow      4  100.0  83.4  66.8 100.0   0 1598 1750 0
+attack-bruteforce-ssh-ftp  L3  bypass         4  100.0 100.0 100.0  86.9   0 0 0 1887
+attack-bruteforce-ssh-ftp  L3  drop-flow      4   82.9 100.0 100.0  82.4   2223 0 0 2242
+attack-bruteforce-ssh-ftp  L3  drop-packet    4  100.0 100.0 100.0 100.0   0 0 0 0
+attack-bruteforce-ssh-ftp  L3  ignore         4  100.0  99.5 100.0 100.0   0 1214 0 0
+attack-bruteforce-ssh-ftp  L3  pass-flow      4  100.0 100.0  82.0 100.0   0 0 2265 0
+attack-bruteforce-ssh-ftp  L4  bypass         4   86.6  19.1  21.6  99.9   7059 9986 11902 6839
+attack-bruteforce-ssh-ftp  L4  drop-flow      4   90.7  91.5  99.9  17.0   7871 7790 6750 11727
+attack-bruteforce-ssh-ftp  L4  drop-packet    4   78.9  78.9  99.6  93.1   6079 6952 8024 7261
+attack-bruteforce-ssh-ftp  L4  ignore         4   79.1  92.1 100.0  79.1   7958 5907 7343 5099
+attack-bruteforce-ssh-ftp  L4  pass-flow      4   94.6  91.2  99.4  99.9   7071 6994 6991 6033
+attack-dos-hulk            L1  ignore         2  100.0 100.0   0 0
+attack-dos-hulk            L2  bypass         2   84.7  86.1   8105 7183
+attack-dos-hulk            L2  drop-flow      2   82.8  82.7   15805 15818
+attack-dos-hulk            L2  drop-packet    2   91.4  90.0   15586 16714
+attack-dos-hulk            L2  ignore         2   89.1  89.0   17339 17339
+attack-dos-hulk            L2  pass-flow      2   82.9  79.6   15756 17333
+attack-dos-hulk            L3  bypass         2   15.8  16.0   80845 80823
+attack-dos-hulk            L3  drop-flow      2   12.2  11.7   91737 89757
+attack-dos-hulk            L3  drop-packet    2   21.1  20.5   90606 90148
+attack-dos-hulk            L3  ignore         2   20.7  20.8   89798 90315
+attack-dos-hulk            L3  pass-flow      2   11.8  11.8   90231 90310
+attack-dos-hulk            L4  bypass         2    2.8   2.9   130970 131075
+attack-dos-hulk            L4  drop-flow      2    2.4   2.3   129207 132544
+attack-dos-hulk            L4  drop-packet    2    4.5   4.6   133838 133022
+attack-dos-hulk            L4  ignore         2    4.6   4.7   133268 133404
+attack-dos-hulk            L4  pass-flow      2    2.4   2.6   132358 134087
+attack-dos-slowloris       L4  bypass         4  100.0 100.0 100.0 100.0   0 0 0 0
+attack-dos-slowloris       L4  drop-flow      4  100.0 100.0  22.8 100.0   0 0 26862 0
+attack-dos-slowloris       L4  drop-packet    4  100.0 100.0 100.0  89.8   0 0 0 704
+attack-dos-slowloris       L4  ignore         4   50.2  24.6  66.7  24.6   16754 23491 15114 23160
+attack-dos-slowloris       L4  pass-flow      4   22.5  86.3 100.0 100.0   22278 17258 0 0
+benign-user-activity       L3  bypass         2  100.0 100.0   275 0
+benign-user-activity       L3  drop-flow      2  100.0 100.0   0 0
+benign-user-activity       L3  drop-packet    2  100.0 100.0   0 0
+benign-user-activity       L3  ignore         2  100.0 100.0   0 0
+benign-user-activity       L3  pass-flow      2  100.0 100.0   0 0
+benign-user-activity       L4  bypass         4    8.8 100.0 100.0  13.8   475 0 0 1071
+benign-user-activity       L4  drop-flow      4  100.0 100.0 100.0 100.0   0 0 0 0
+benign-user-activity       L4  drop-packet    4  100.0 100.0 100.0 100.0   0 860 0 0
+benign-user-activity       L4  ignore         4  100.0 100.0 100.0  15.0   625 0 0 1227
+benign-user-activity       L4  pass-flow      4  100.0   6.2  96.2 100.0   0 1228 1183 0
+Wrote results/retention_all.csv (325 runs)
