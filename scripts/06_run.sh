@@ -23,6 +23,8 @@ SUMMARY="$ROOT/${SUMMARY_FILE:-results/runs_summary.csv}"
 
 [ -f "$ROOT/configs/suricata.yaml" ] || { echo "Missing configs/suricata.yaml. Run scripts/05_make_config.sh first."; exit 1; }
 [ -s "$ROOT/rules/rules/suricata.rules" ] || { echo "Missing rules. Run scripts/04_rules.sh first."; exit 1; }
+# Option 1 Step C: SP<n>K sets an exact session limit of <n> KB (reassembly at 4gb), e.g. SP43158K.
+for lv in $LEVELS; do if [[ $lv =~ ^SP([0-9]+)K$ ]] && [ -z "${SM[$lv]:-}" ]; then SM[$lv]="${BASH_REMATCH[1]}kb"; RM[$lv]=4gb; fi; done
 for lv in $LEVELS; do [ -n "${SM[$lv]:-}" ] || { echo "Unknown level: $lv"; exit 1; }; done
 for pol in $POLICIES; do
   case "$pol" in ignore|drop-packet|drop-flow|pass-flow|bypass) ;; *) echo "Unknown policy: $pol"; exit 1;; esac
