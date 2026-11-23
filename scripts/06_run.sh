@@ -14,6 +14,10 @@ REP="${REP:-}"
 
 declare -A SM=([L0]=1gb [L1]=64mb [L2]=16mb [L3]=4mb [L4]=1mb [S3]=4mb [R3]=1gb [S4]=1mb [R4]=1gb)
 declare -A RM=([L0]=4gb [L1]=256mb [L2]=64mb [L3]=16mb [L4]=4mb [S3]=4gb [R3]=16mb [S4]=4gb [R4]=4mb)
+# Option 1 Step B (memory-sizing sweeps): SP* lowers only the session pool (reassembly at 4gb),
+# RP* lowers only the reassembly pool (sessions at 1gb).
+for v in 512kb 1mb 2mb 4mb 8mb 16mb 32mb 64mb; do n="SP${v%b}"; n="${n^^}"; SM[$n]=$v; RM[$n]=4gb; done
+for v in 2mb 4mb 8mb 16mb 32mb 64mb 128mb 256mb; do n="RP${v%b}"; n="${n^^}"; SM[$n]=1gb; RM[$n]=$v; done
 RUNS_SUB="${RUNS_SUB:-results/runs}"
 SUMMARY="$ROOT/${SUMMARY_FILE:-results/runs_summary.csv}"
 
