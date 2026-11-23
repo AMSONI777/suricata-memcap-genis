@@ -39,7 +39,7 @@ All numbers come from the files in `results/` and are drawn in `figures/`.
 | Exception policies | `ignore`, `drop-packet`, `drop-flow`, `pass-flow`, `bypass` |
 | Metric | Alert retention: alerts of a run that match the capture's L0 alerts by signature, protocol, client, server and server port, divided by the L0 alert count; also reported for ET Open rules only |
 | Loss | Retention below 99.9 % (outside the 0.08 % noise floor) |
-| Runs | 353 runs on the 8 captures (grid, repeats, separate limits) and 20 runs on the 2 merged flood captures |
+| Runs | 550 in total: 506 on the 8 captures (grid, repeats, separate limits, memory-sizing sweeps and rule test), 20 on the 2 merged flood captures and 24 multi-threaded (autofp) runs |
 
 ## Requirements
 
@@ -85,6 +85,11 @@ Do not re-download the rules: `scripts/04_rules.sh` would fetch today's ET Open,
 | `scripts/14_cover.py` | Experiment D: `build <capture>` makes the merged flood capture, `analyze` writes `results/cover.csv` |
 | `scripts/09_figures.py` | All figures and the summary tables (`results/table_*.csv`) |
 | `scripts/12_verify.py`, `scripts/13_demo_report.py` | Comparison and report steps of `reproduce.sh` and `demo.sh` |
+| `scripts/15_peak_sessions.py` | Peak held and active TCP sessions per capture from the L0 flow records; writes `results/peak_sessions.csv` |
+| `scripts/16_sizing_sweep.py` | Session-only (SP*) and reassembly-only (RP*) sweeps, safe limits and the 1 KB rule test; writes `results/sizing_*.csv` |
+| `scripts/17_autofp.py` | Single-threaded against multi-threaded (`RUNMODE=autofp`, runs in `results/runs_autofp/`); writes `results/autofp.csv` |
+| `scripts/18_key_sensitivity.py` | Rescores every run with the endpoint and host-pair alert keys; writes `results/key_sensitivity.csv` |
+| `scripts/19_option_figures.py` | Figures 7-12 for the sizing model, the multi-threaded check and the key check |
 | `scripts/patch_*.py` | One-off patches applied during the study, kept for the record |
 
 The full grid takes several hours. Every run directory gets a `DONE` marker, so an interrupted batch resumes where it
