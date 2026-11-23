@@ -1,0 +1,112 @@
+capture                    pool        limitMB  retain%     ET%  lost  sess_hit  reas_hit
+attack-bruteforce-smb      reassembly        2     65.0    63.6     0         0      9117
+attack-bruteforce-smb      reassembly        4    100.0   100.0     0         0      8477
+attack-bruteforce-smb      reassembly        8     93.1    92.8     0         0      6652
+attack-bruteforce-smb      reassembly       16     64.6    63.3     0         0      2241
+attack-bruteforce-smb      reassembly       32    100.0   100.0     0         0         0
+attack-bruteforce-smb      reassembly       64    100.0   100.0     0         0         0
+attack-bruteforce-smb      reassembly      128    100.0   100.0     0         0         0
+attack-bruteforce-smb      reassembly      256    100.0   100.0     0         0         0
+attack-bruteforce-smb      session         0.5      5.8     4.5     3      6805         0
+attack-bruteforce-smb      session           1     45.3    44.3     0      3180         0
+attack-bruteforce-smb      session           2    100.0   100.0     0         0         0
+attack-bruteforce-smb      session           4    100.0   100.0     0         0         0
+attack-bruteforce-smb      session           8    100.0   100.0     0         0         0
+attack-bruteforce-smb      session          16    100.0   100.0     0         0         0
+attack-bruteforce-smb      session          32    100.0   100.0     0         0         0
+attack-bruteforce-smb      session          64    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly        2    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly        4    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly        8    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly       16    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly       32    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly       64    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly      128    100.0   100.0     0         0         0
+attack-bruteforce-ssh      reassembly      256    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session         0.5     99.8    99.8     0       981         0
+attack-bruteforce-ssh      session           1    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session           2    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session           4    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session           8    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session          16    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session          32    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session          64    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  reassembly        2     98.8    98.8     0         0      3024
+attack-bruteforce-ssh-ftp  reassembly        4    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  reassembly        8    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  reassembly       16    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  reassembly       32     99.9    99.9     0         0         0
+attack-bruteforce-ssh-ftp  reassembly       64    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  reassembly      128     99.9    99.9     0         0         0
+attack-bruteforce-ssh-ftp  reassembly      256    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session         0.5     91.4    91.3     0      9627         0
+attack-bruteforce-ssh-ftp  session           1     99.6    99.6     0      6435         0
+attack-bruteforce-ssh-ftp  session           2     79.1    79.0     0      2275         0
+attack-bruteforce-ssh-ftp  session           4    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session           8    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session          16     99.9    99.9     0         0         0
+attack-bruteforce-ssh-ftp  session          32    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session          64    100.0   100.0     0         0         0
+attack-dos-hulk            reassembly        2     50.1     3.9     0         0     43202
+attack-dos-hulk            reassembly        4     52.7     8.9     0         0     43003
+attack-dos-hulk            reassembly        8     56.1    15.6     0         0     41963
+attack-dos-hulk            reassembly       16     63.9    30.7     0         0     39744
+attack-dos-hulk            reassembly       32     77.5    56.8     0         0     33840
+attack-dos-hulk            reassembly       64     91.3    83.4     0         0     15753
+attack-dos-hulk            reassembly      128    100.0   100.0     0         0         0
+attack-dos-hulk            reassembly      256    100.0   100.0     0         0         0
+attack-dos-hulk            session         0.5      4.6     7.6    10    140121         0
+attack-dos-hulk            session           1      8.8    15.5    10    126351         0
+attack-dos-hulk            session           2     19.1    32.8     1    103919         0
+attack-dos-hulk            session           4     38.9    63.2     0     73722         0
+attack-dos-hulk            session           8     75.8    98.2     0      5939         0
+attack-dos-hulk            session          16    100.0   100.0     0         0         0
+attack-dos-hulk            session          32    100.0   100.0     0         0         0
+attack-dos-hulk            session          64    100.0   100.0     0         0         0
+attack-dos-slowloris       reassembly        2    100.0   100.0     0         0         0
+attack-dos-slowloris       reassembly        4     34.7    34.0     1         0     12269
+attack-dos-slowloris       reassembly        8     41.0    40.4     0         0     10286
+attack-dos-slowloris       reassembly       16    100.0   100.0     0         0         0
+attack-dos-slowloris       reassembly       32    100.0   100.0     0         0         0
+attack-dos-slowloris       reassembly       64    100.0   100.0     0         0         0
+attack-dos-slowloris       reassembly      128    100.0   100.0     0         0         0
+attack-dos-slowloris       reassembly      256    100.0   100.0     0         0         0
+attack-dos-slowloris       session         0.5     96.1    96.1     0      1877         0
+attack-dos-slowloris       session           1    100.0   100.0     0         0         0
+attack-dos-slowloris       session           2    100.0   100.0     0         0         0
+attack-dos-slowloris       session           4    100.0   100.0     0         0         0
+attack-dos-slowloris       session           8    100.0   100.0     0         0         0
+attack-dos-slowloris       session          16    100.0   100.0     0         0         0
+attack-dos-slowloris       session          32    100.0   100.0     0         0         0
+attack-dos-slowloris       session          64    100.0   100.0     0         0         0
+benign-user-activity       reassembly        2    100.0   100.0     0         0         0
+benign-user-activity       reassembly        4    100.0   100.0     0         0         0
+benign-user-activity       reassembly        8    100.0   100.0     0         0         0
+benign-user-activity       reassembly       16    100.0   100.0     0         0         0
+benign-user-activity       reassembly       32    100.0   100.0     0         0         0
+benign-user-activity       reassembly       64    100.0   100.0     0         0         0
+benign-user-activity       reassembly      128    100.0   100.0     0         0         0
+benign-user-activity       reassembly      256    100.0   100.0     0         0         0
+benign-user-activity       session         0.5    100.0   100.0     0         0         0
+benign-user-activity       session           1    100.0   100.0     0         0         0
+benign-user-activity       session           2    100.0   100.0     0         0         0
+benign-user-activity       session           4    100.0   100.0     0         0         0
+benign-user-activity       session           8    100.0   100.0     0         0         0
+benign-user-activity       session          16    100.0   100.0     0         0         0
+benign-user-activity       session          32    100.0   100.0     0         0         0
+benign-user-activity       session          64    100.0   100.0     0         0         0
+
+capture                    pool       peak_held   safeMB  lossy<=MB  nonmono  B/held@safe
+attack-bruteforce-smb      session         5917        2          1       no          354
+attack-bruteforce-smb      reassembly      5917       32         16      yes         5671
+attack-bruteforce-ssh      session         1990        1        0.5       no          527
+attack-bruteforce-ssh      reassembly      1990        2       none       no         1054
+attack-bruteforce-ssh-ftp  session         9028        4          2       no          465
+attack-bruteforce-ssh-ftp  reassembly      9028        4          2       no          465
+attack-dos-hulk            session        43158       16          8       no          389
+attack-dos-hulk            reassembly     43158      128         64       no         3110
+attack-dos-slowloris       session         2256        1        0.5       no          465
+attack-dos-slowloris       reassembly      2256       16          8      yes         7437
+benign-user-activity       session           60      0.5       none       no         8738
+benign-user-activity       reassembly        60        2       none       no        34953
+Wrote results/sizing_sweep.csv (96 runs) and results/sizing_safe_limits.csv
