@@ -1,0 +1,10 @@
+TCP flow timeouts from configs/suricata.yaml (s): bypassed=100, closed=60, emergency-bypassed=50, emergency-closed=10, emergency-established=100, emergency-new=5, established=600, new=60
+attack-dos-hulk              flows= 50841  active_min=   6.81  peak_active= 8492  peak_held= 43158  at 2025-02-12 16:41:20
+attack-dos-slowloris         flows= 17409  active_min= 275.04  peak_active=  274  peak_held=  2256  at 2025-02-11 10:35:59
+attack-bruteforce-ssh        flows=  4236  active_min=  104.9  peak_active=   16  peak_held=  1990  at 2025-02-10 09:05:06
+attack-bruteforce-ssh-ftp    flows= 14828  active_min=  45.11  peak_active=   50  peak_held=  9028  at 2025-02-10 12:06:16
+attack-bruteforce-smb        flows= 11990  active_min=   6.77  peak_active=    4  peak_held=  5917  at 2025-02-10 14:11:43
+benign-admin-activity        flows=    35  active_min= 433.77  peak_active=    6  peak_held=     6  at 2025-02-06 09:30:04
+benign-background-activity   flows=   243  active_min= 479.94  peak_active=    6  peak_held=     8  at 2025-02-08 13:14:56
+benign-user-activity         flows=  1454  active_min= 479.97  peak_active=   54  peak_held=    60  at 2025-02-07 09:30:07
+wrote results/peak_sessions.csv

@@ -46,7 +46,12 @@ All numbers come from the files in `results/` and are drawn in `figures/`.
 Ubuntu 20.04 or later, Docker, Python 3, `wireshark-common` (for `capinfos`, `editcap`, `mergecap`), and matplotlib for
 the figures (`pip3 install --user matplotlib`). Free disk for the GeNIS archive (its 12 captures total
 3.9 GB uncompressed; 8 are extracted, about 0.7 GB) plus the two merged captures (about 0.4 GB). Runs were made on a VM
-with 8 GB RAM; Suricata's peak resident memory was 0.5-0.9 GB.
+with 8 GB RAM; Suricata's peak resident memory was 0.5-0.9 GB. `reproduce.sh` was also checked on a fresh VM with
+4 GB RAM and 3 CPUs; a 2 GB VM ran out of memory, so 4 GB is the practical minimum.
+
+On Ubuntu 20.04 the GeNIS download can fail with a certificate error, because the old CA bundle cannot verify
+Zenodo's current certificate chain. Run `export WGET_OPTS=--no-check-certificate` before `scripts/01_setup.sh`; the
+script's MD5 check still verifies the archive.
 
 ## Quick start
 
@@ -59,7 +64,7 @@ scripts/02_extract_manifest.sh # extract the 8 captures, check sizes, write docs
 
 `reproduce.sh` checks the image digest, the ruleset hash and the capture hashes first, then compares three L0 reference
 runs exactly and four DoS Hulk runs (L1, L4, S4, R4) against the recorded ranges. Its output on the study VM is in
-`docs/reproduce_log.txt`. It writes to `verify/` and `demo.sh` writes to `demo/`; neither touches `results/`.
+`docs/reproduce_log.txt`, and on a fresh VM with a clean clone in `docs/reproduce_fresh_vm_log.txt` (8 of 8 matched). It writes to `verify/` and `demo.sh` writes to `demo/`; neither touches `results/`.
 
 Do not re-download the rules: `scripts/04_rules.sh` would fetch today's ET Open, which differs from the snapshot used.
 
