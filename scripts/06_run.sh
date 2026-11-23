@@ -2,6 +2,7 @@
 # Usage: scripts/06_run.sh "<captures>" "<levels>" "<policies>"
 # Example: scripts/06_run.sh "attack-dos-hulk" "L0 L4" "ignore"
 # Environment: REP=2 (repeat reference runs), FORCE=1 (redo finished runs),
+#   RUNMODE=autofp (multi-threaded offline mode; default single),
 #   RUNS_SUB / SUMMARY_FILE (output folder and summary file, relative to the repo; used by reproduce.sh and demo.sh)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -11,6 +12,9 @@ CAPS="${1:-$ALL_CAPS}"
 LEVELS="${2:-L0 L1 L2 L3 L4}"
 POLICIES="${3:-ignore drop-packet drop-flow pass-flow bypass}"
 REP="${REP:-}"
+# Option 2: RUNMODE=autofp runs the multi-threaded offline mode (default single, as in the main study).
+RUNMODE="${RUNMODE:-single}"
+case "$RUNMODE" in single|autofp) ;; *) echo "Unknown RUNMODE: $RUNMODE (use single or autofp)"; exit 1;; esac
 
 declare -A SM=([L0]=1gb [L1]=64mb [L2]=16mb [L3]=4mb [L4]=1mb [S3]=4mb [R3]=1gb [S4]=1mb [R4]=1gb)
 declare -A RM=([L0]=4gb [L1]=256mb [L2]=64mb [L3]=16mb [L4]=4mb [S3]=4gb [R3]=16mb [S4]=4gb [R4]=4mb)
@@ -58,7 +62,7 @@ for cap in $CAPS; do
          echo "$peak" > "$OUTDIR/peak_mem_kb.txt"
          chown -R "$OWN" "$OUTDIR"; exit $rc' sh
         -r "/work/data/raw/$cap.pcapng" -c /work/configs/suricata.yaml -S /work/rules/rules/suricata.rules
-        -k none --runmode single -l "/work/$RUNS_SUB/$cap/$name"
+        -k none --runmode "$RUNMODE" -l "/work/$RUNS_SUB/$cap/$name"
         --set "classification-file=/work/rules/rules/classification.config"
         --set "stream.memcap=${SM[$lv]}" --set "stream.reassembly.memcap=${RM[$lv]}"
         --set "stream.memcap-policy=$pol" --set "stream.reassembly.memcap-policy=$pol"
