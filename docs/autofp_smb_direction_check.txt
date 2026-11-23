@@ -1,0 +1,39 @@
+results/runs/attack-bruteforce-smb/L0_ignore
+   sid 2002910  no445  -              1
+   sid 2010935  no445  -              2
+   sid 2010936  no445  -              2
+   sid 2010937  no445  -              2
+   sid 2010939  no445  -              2
+   sid 2102924  src445 -            998
+   sid 2210010  dst445 -             13
+   sid 2210010  src445 -             20
+   sid 2210038  dst445 -              3
+   sid 2210044  src445 -              1
+   sid 2210045  src445 -              1
+   sid 2210046  src445 -              1
+results/runs_autofp/attack-bruteforce-smb/L0_ignore
+   sid 2002910  no445  -              1
+   sid 2010935  no445  -              2
+   sid 2010936  no445  -              2
+   sid 2010937  no445  -              2
+   sid 2010939  no445  -              2
+   sid 2102924  src445 -            998
+   sid 2210010  dst445 -             13
+   sid 2210010  src445 -             20
+   sid 2210038  dst445 -              3
+   sid 2210044  src445 -              1
+   sid 2210045  src445 -              1
+   sid 2210046  src445 -              1
+results/runs_autofp/attack-bruteforce-smb/L0_ignore_r2
+   sid 2002910  no445  -              1
+   sid 2010935  no445  -              2
+   sid 2010936  no445  -              2
+   sid 2010937  no445  -              2
+   sid 2010939  no445  -              2
+   sid 2102924  src445 -            998
+   sid 2210010  dst445 -             13
+   sid 2210010  src445 -             20
+   sid 2210038  dst445 -              3
+   sid 2210044  src445 -              1
+   sid 2210045  src445 -              1
+   sid 2210046  src445 -              1

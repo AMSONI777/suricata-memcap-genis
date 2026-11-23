@@ -4,18 +4,18 @@
 The main study used --runmode single. This script reads the autofp runs in results/runs_autofp/ and answers:
   1. Does autofp at L0 raise the same alerts as single at L0? (both directions, same alert key as 07_analyze.py)
   2. Under memory pressure, is retention under autofp similar to single for the same capture, level and policy?
-     Retention is computed against the autofp L0 reference (same engine mode) and, for comparison, against the
-     single-thread L0 reference used everywhere else in the study.
+     Retention is computed against the L0 reference of the same engine mode.
   3. Does the policy ranking (ignore vs drop-flow) still hold?
 
-Single-thread retention for the same cell comes from results/retention_all.csv (all reps: min-max).
-Writes results/autofp.csv.
+Alerts are matched with two keys: the main study's endpoint key, and a hosts key without ports (see hosts()).
+Single-thread runs of the same cells are read from results/runs/ and scored the same way, so both modes are
+compared like for like. Writes results/autofp.csv.
 """
 import csv
 import glob
 import importlib.util
 import os
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 spec = importlib.util.spec_from_file_location('an', os.path.join(HERE, '07_analyze.py'))
@@ -27,58 +27,86 @@ OUT = os.path.join(an.ROOT, 'results', 'autofp.csv')
 LOSS = 0.999
 
 
-def ref(path):
-    c, names, _, _ = an.load_run(path)
+def hosts(counter):
+    """Collapse the endpoint key (sid, proto, src_ip, dest_ip, dest_port) to (sid, proto, src_ip, dest_ip).
+
+    Needed because some ET rules are thresholded (they alert on every Nth matching event). Under autofp, which
+    session becomes the Nth one depends on thread timing, so the alert can land on another session of the same
+    host pair, whose client port differs, although the alert total is unchanged."""
+    out = Counter()
+    for k, n in counter.items():
+        out[k[:4]] += n
+    return out
+
+
+def load(path):
+    c, names, _, ep = an.load_run(path)
     p = c[an.PRIMARY]
-    et = {s for s, nm in names.items() if not nm.startswith('SURICATA')}
-    return p, et
+    sess = sum(n for k, n in ep.items() if k.startswith('stream_memcap:'))
+    reas = sum(n for k, n in ep.items() if k.startswith('stream_reassembly_memcap:'))
+    return p, names, sess, reas
+
+
+def ret(run, ref):
+    tot = sum(ref.values())
+    return an.matched_count(run, ref) / tot if tot else 1.0
+
+
+def runs_in(base, cap):
+    out = []
+    for d in sorted(glob.glob(os.path.join(base, cap, '*'))):
+        if os.path.exists(os.path.join(d, 'DONE')):
+            level, policy, rep = an.parse_name(os.path.basename(d))
+            out.append((level, policy, rep, os.path.join(d, 'eve.json.gz')))
+    return out
+
+
+def rng(v):
+    return '%5.1f-%5.1f' % (100 * min(v), 100 * max(v)) if v else '      -    '
+
+
+def med(v):
+    v = sorted(v)
+    return v[len(v) // 2] if len(v) % 2 else (v[len(v) // 2 - 1] + v[len(v) // 2]) / 2
 
 
 def main():
-    single = defaultdict(list)
-    p = os.path.join(an.ROOT, 'results', 'retention_all.csv')
-    if os.path.exists(p):
-        for r in csv.DictReader(open(p)):
-            single[(r['capture'], r['level'], r['policy'])].append(float(r['retention']))
-
     rows = []
-    print('1. L0 reference: autofp against single (alerts matched by signature, protocol, client, server, port)')
-    for cap_dir in sorted(glob.glob(os.path.join(AUTO, '*'))):
-        cap = os.path.basename(cap_dir)
-        a_ref_path = os.path.join(cap_dir, 'L0_ignore', 'eve.json.gz')
-        s_ref_path = os.path.join(an.RUNS, cap, 'L0_ignore', 'eve.json.gz')
-        if not (os.path.exists(a_ref_path) and os.path.exists(s_ref_path)):
-            print('  %s: L0 reference missing (autofp or single), skipped' % cap)
+    print('1. L0 agreement (alerts in both runs / alerts in the reference), by key')
+    print('   endpoint = signature, protocol, source, destination, destination port (as in the main study)')
+    print('   hosts    = signature, protocol, source, destination (no ports)')
+    caps = sorted(os.path.basename(d) for d in glob.glob(os.path.join(AUTO, '*')))
+    for cap in caps:
+        a_runs, s_runs = runs_in(AUTO, cap), runs_in(an.RUNS, cap)
+        a0 = {r: p for lv, po, r, p in a_runs if lv == 'L0' and po == 'ignore'}
+        s0 = {r: p for lv, po, r, p in s_runs if lv == 'L0' and po == 'ignore'}
+        if 1 not in a0 or 1 not in s0:
+            print('   %s: an L0 reference is missing, skipped' % cap)
             continue
-        a_ref, et = ref(a_ref_path)
-        s_ref, _ = ref(s_ref_path)
-        a_tot, s_tot = sum(a_ref.values()), sum(s_ref.values())
-        both = an.matched_count(a_ref, s_ref)
-        print('  %-24s autofp %5d alerts, single %5d alerts, in both %5d (%.2f %% of single, %.2f %% of autofp)'
-              % (cap, a_tot, s_tot, both, 100 * both / s_tot, 100 * both / a_tot))
-        et_ref = sum(n for k, n in a_ref.items() if k[0] in et)
-        for d in sorted(glob.glob(os.path.join(cap_dir, '*'))):
-            if not os.path.exists(os.path.join(d, 'DONE')):
-                continue
-            level, policy, rep = an.parse_name(os.path.basename(d))
-            c, _n, _f, ep = an.load_run(os.path.join(d, 'eve.json.gz'))
-            run_p = c[an.PRIMARY]
-            m_a = an.matched_count(run_p, a_ref)
-            m_s = an.matched_count(run_p, s_ref)
-            m_et = an.matched_count(run_p, a_ref, et)
-            sess = sum(n for k, n in ep.items() if k.startswith('stream_memcap:'))
-            reas = sum(n for k, n in ep.items() if k.startswith('stream_reassembly_memcap:'))
-            st = single.get((cap, level, policy), [])
-            rows.append({
-                'capture': cap, 'level': level, 'policy': policy, 'rep': rep,
-                'alerts': sum(run_p.values()),
-                'retention_vs_autofp_L0': round(m_a / a_tot, 4),
-                'retention_vs_single_L0': round(m_s / s_tot, 4),
-                'retention_et_vs_autofp_L0': round(m_et / et_ref, 4) if et_ref else '',
-                'flows_hit_session_limit': sess, 'flows_hit_reassembly_limit': reas,
-                'single_runs': len(st),
-                'single_min': round(min(st), 4) if st else '', 'single_max': round(max(st), 4) if st else '',
-            })
+        A, _, _, _ = load(a0[1])
+        S, names, _, _ = load(s0[1])
+        pairs = [('single r1 vs autofp r1', S, A)]
+        if 2 in a0:
+            pairs.append(('autofp r1 vs autofp r2', A, load(a0[2])[0]))
+        if 2 in s0:
+            pairs.append(('single r1 vs single r2', S, load(s0[2])[0]))
+        for label, X, Y in pairs:
+            print('   %-24s %-24s alerts %5d / %5d   endpoint %6.2f %%   hosts %6.2f %%' % (
+                cap, label, sum(X.values()), sum(Y.values()), 100 * ret(Y, X), 100 * ret(hosts(Y), hosts(X))))
+
+        # Every cell (level, policy) that has autofp runs, compared with single runs of the same cell.
+        cells = sorted({(lv, po) for lv, po, _, _ in a_runs if lv != 'L0'})
+        for lv, po in cells:
+            for mode, runs, ref in (('single', s_runs, S), ('autofp', a_runs, A)):
+                for l2, p2, rep, path in runs:
+                    if (l2, p2) != (lv, po):
+                        continue
+                    R, _, sess, reas = load(path)
+                    rows.append({'capture': cap, 'level': lv, 'policy': po, 'mode': mode, 'rep': rep,
+                                 'alerts': sum(R.values()),
+                                 'retention_endpoint': round(ret(R, ref), 4),
+                                 'retention_hosts': round(ret(hosts(R), hosts(ref)), 4),
+                                 'flows_hit_session_limit': sess, 'flows_hit_reassembly_limit': reas})
     if not rows:
         raise SystemExit('No autofp runs found under results/runs_autofp/.')
     with open(OUT, 'w', newline='') as fh:
@@ -87,31 +115,34 @@ def main():
         w.writerows(rows)
 
     print()
-    print('2. Retention under autofp (vs autofp L0 and vs single L0) next to single-thread runs of the same cell')
-    print('%-24s %-3s %-10s %3s %9s %9s %9s %9s  %s' % ('capture', 'lvl', 'policy', 'rep', 'vsAutoL0', 'vsSingL0',
-                                                      'sess_hit', 'reas_hit', 'single (min-max, n)'))
-    for r in sorted(rows, key=lambda r: (r['capture'], r['level'], r['policy'], r['rep'])):
-        sg = ('%.1f-%.1f, %d' % (100 * r['single_min'], 100 * r['single_max'], r['single_runs'])
-              if r['single_runs'] else '-')
-        print('%-24s %-3s %-10s %3d %9.1f %9.1f %9d %9d  %s' % (
-            r['capture'], r['level'], r['policy'], r['rep'], 100 * r['retention_vs_autofp_L0'],
-            100 * r['retention_vs_single_L0'], r['flows_hit_session_limit'], r['flows_hit_reassembly_limit'], sg))
+    print('2. Retention against the L0 reference of the same mode (min-max over runs)')
+    print('%-24s %-3s %-10s | %-12s %-12s | %-12s %-12s' % ('capture', 'lvl', 'policy', 'single endpt',
+                                                         'single hosts', 'autofp endpt', 'autofp hosts'))
+    grp = defaultdict(lambda: defaultdict(list))
+    for r in rows:
+        g = grp[(r['capture'], r['level'], r['policy'])]
+        g[r['mode'] + '_e'].append(r['retention_endpoint'])
+        g[r['mode'] + '_h'].append(r['retention_hosts'])
+        g[r['mode'] + '_n'].append(1)
+    for (cap, lv, po), g in sorted(grp.items()):
+        print('%-24s %-3s %-10s | %-12s %-12s | %-12s %-12s  (runs: single %d, autofp %d)' % (
+            cap, lv, po, rng(g['single_e']), rng(g['single_h']), rng(g['autofp_e']), rng(g['autofp_h']),
+            len(g['single_n']), len(g['autofp_n'])))
 
     print()
-    print('3. ignore vs drop-flow under autofp (median retention vs autofp L0)')
-    cells = defaultdict(list)
-    for r in rows:
-        cells[(r['capture'], r['level'], r['policy'])].append(r['retention_vs_autofp_L0'])
-    for cap, lv in sorted({(c, l) for c, l, _ in cells if l != 'L0'}):
-        def med(v):
-            v = sorted(v)
-            return v[len(v) // 2] if len(v) % 2 else (v[len(v) // 2 - 1] + v[len(v) // 2]) / 2
-        i, d = cells.get((cap, lv, 'ignore')), cells.get((cap, lv, 'drop-flow'))
-        if i and d:
-            print('  %-24s %-3s ignore %5.1f %%   drop-flow %5.1f %%   %s' % (
-                cap, lv, 100 * med(i), 100 * med(d), 'ignore higher' if med(i) > med(d) else
-                ('equal' if med(i) == med(d) else 'drop-flow higher')))
-    print('Wrote results/autofp.csv (%d runs)' % len(rows))
+    print('3. ignore vs drop-flow, median retention (hosts key)')
+    for cap, lv in sorted({(c, l) for c, l, _ in grp}):
+        i, d = grp.get((cap, lv, 'ignore')), grp.get((cap, lv, 'drop-flow'))
+        if not (i and d):
+            continue
+        parts = []
+        for mode in ('single', 'autofp'):
+            if i[mode + '_h'] and d[mode + '_h']:
+                mi, md = med(i[mode + '_h']), med(d[mode + '_h'])
+                parts.append('%s: ignore %5.1f %% vs drop-flow %5.1f %% (%s)' % (
+                    mode, 100 * mi, 100 * md, 'ignore higher' if mi > md else ('equal' if mi == md else 'drop-flow higher')))
+        print('  %-24s %-3s %s' % (cap, lv, '   '.join(parts)))
+    print('Wrote results/autofp.csv (%d runs: single and autofp runs of the same cells)' % len(rows))
 
 
 if __name__ == '__main__':

@@ -1,38 +1,30 @@
-1. L0 reference: autofp against single (alerts matched by signature, protocol, client, server, port)
-  attack-bruteforce-smb    autofp  1046 alerts, single  1046 alerts, in both   202 (19.31 % of single, 19.31 % of autofp)
-  attack-dos-hulk          autofp  6116 alerts, single  6116 alerts, in both  6114 (99.97 % of single, 99.97 % of autofp)
+1. L0 agreement (alerts in both runs / alerts in the reference), by key
+   endpoint = signature, protocol, source, destination, destination port (as in the main study)
+   hosts    = signature, protocol, source, destination (no ports)
+   attack-bruteforce-smb    single r1 vs autofp r1   alerts  1046 /  1046   endpoint  19.31 %   hosts 100.00 %
+   attack-bruteforce-smb    autofp r1 vs autofp r2   alerts  1046 /  1046   endpoint  17.78 %   hosts 100.00 %
+   attack-bruteforce-smb    single r1 vs single r2   alerts  1046 /  1046   endpoint 100.00 %   hosts 100.00 %
+   attack-dos-hulk          single r1 vs autofp r1   alerts  6116 /  6116   endpoint  99.97 %   hosts 100.00 %
+   attack-dos-hulk          autofp r1 vs autofp r2   alerts  6116 /  6116   endpoint  99.97 %   hosts 100.00 %
+   attack-dos-hulk          single r1 vs single r2   alerts  6116 /  6116   endpoint 100.00 %   hosts 100.00 %
 
-2. Retention under autofp (vs autofp L0 and vs single L0) next to single-thread runs of the same cell
-capture                  lvl policy     rep  vsAutoL0  vsSingL0  sess_hit  reas_hit  single (min-max, n)
-attack-bruteforce-smb    L0  ignore       1     100.0      19.3         0         0  100.0-100.0, 4
-attack-bruteforce-smb    L0  ignore       2      17.8      19.5         0         0  100.0-100.0, 4
-attack-bruteforce-smb    L3  drop-flow    1      11.6      11.6         0      5164  47.3-76.6, 4
-attack-bruteforce-smb    L3  drop-flow    2      11.6      11.6         0      5163  47.3-76.6, 4
-attack-bruteforce-smb    L3  ignore       1      18.7      20.1         0      5376  64.7-100.0, 4
-attack-bruteforce-smb    L3  ignore       2      18.1      18.4         0      5276  64.7-100.0, 4
-attack-bruteforce-smb    L4  drop-flow    1       4.0       4.6      7515       902  14.0-16.2, 4
-attack-bruteforce-smb    L4  drop-flow    2       3.6       5.1      7517       925  14.0-16.2, 4
-attack-bruteforce-smb    L4  ignore       1       5.8       4.9      7527       934  41.2-43.8, 4
-attack-bruteforce-smb    L4  ignore       2       4.3       3.4      7521       928  41.2-43.8, 4
-attack-dos-hulk          L0  ignore       1     100.0     100.0         0         0  100.0-100.0, 4
-attack-dos-hulk          L0  ignore       2     100.0     100.0         0         0  100.0-100.0, 4
-attack-dos-hulk          L2  drop-flow    1      82.5      82.5         0     15811  82.7-82.8, 2
-attack-dos-hulk          L2  drop-flow    2      81.7      81.7         0     16328  82.7-82.8, 2
-attack-dos-hulk          L2  ignore       1      91.0      91.0         0     17138  89.0-89.1, 2
-attack-dos-hulk          L2  ignore       2      90.9      90.9         0     17357  89.0-89.1, 2
-attack-dos-hulk          L3  drop-flow    1       9.2       9.2     85106     18176  11.7-12.2, 2
-attack-dos-hulk          L3  drop-flow    2      11.0      11.0     79286     18295  11.7-12.2, 2
-attack-dos-hulk          L3  ignore       1      18.3      18.3     78424     18679  20.7-20.8, 2
-attack-dos-hulk          L3  ignore       2      17.2      17.2     85559     18037  20.7-20.8, 2
-attack-dos-hulk          L4  drop-flow    1       2.7       2.7    133838       835  2.3-2.4, 2
-attack-dos-hulk          L4  drop-flow    2       2.5       2.5    132750       903  2.3-2.4, 2
-attack-dos-hulk          L4  ignore       1       3.0       3.0    140015        10  4.6-4.7, 2
-attack-dos-hulk          L4  ignore       2       3.5       3.6    134055      1398  4.6-4.7, 2
+2. Retention against the L0 reference of the same mode (min-max over runs)
+capture                  lvl policy     | single endpt single hosts | autofp endpt autofp hosts
+attack-bruteforce-smb    L3  drop-flow  |  47.3- 76.6   57.1- 83.2  |  11.6- 11.6   51.6- 51.8   (runs: single 4, autofp 2)
+attack-bruteforce-smb    L3  ignore     |  64.7-100.0  100.0-100.0  |  18.1- 18.7  100.0-100.0   (runs: single 4, autofp 2)
+attack-bruteforce-smb    L4  drop-flow  |  14.0- 16.2   24.8- 25.4  |   3.6-  4.0   16.7- 16.8   (runs: single 4, autofp 2)
+attack-bruteforce-smb    L4  ignore     |  41.2- 43.8   76.9- 77.6  |   4.3-  5.8   24.7- 25.2   (runs: single 4, autofp 2)
+attack-dos-hulk          L2  drop-flow  |  82.7- 82.8   82.7- 82.8  |  81.7- 82.5   81.7- 82.6   (runs: single 2, autofp 2)
+attack-dos-hulk          L2  ignore     |  89.0- 89.1   89.2- 89.3  |  90.9- 91.0   91.2- 91.2   (runs: single 2, autofp 2)
+attack-dos-hulk          L3  drop-flow  |  11.7- 12.2   11.7- 12.2  |   9.2- 11.0    9.2- 11.0   (runs: single 2, autofp 2)
+attack-dos-hulk          L3  ignore     |  20.7- 20.8   21.6- 21.6  |  17.2- 18.3   18.1- 19.2   (runs: single 2, autofp 2)
+attack-dos-hulk          L4  drop-flow  |   2.3-  2.4    2.3-  2.4  |   2.5-  2.7    2.5-  2.7   (runs: single 2, autofp 2)
+attack-dos-hulk          L4  ignore     |   4.6-  4.7    5.5-  5.6  |   3.0-  3.5    3.0-  4.3   (runs: single 2, autofp 2)
 
-3. ignore vs drop-flow under autofp (median retention vs autofp L0)
-  attack-bruteforce-smb    L3  ignore  18.4 %   drop-flow  11.6 %   ignore higher
-  attack-bruteforce-smb    L4  ignore   5.1 %   drop-flow   3.8 %   ignore higher
-  attack-dos-hulk          L2  ignore  91.0 %   drop-flow  82.1 %   ignore higher
-  attack-dos-hulk          L3  ignore  17.8 %   drop-flow  10.1 %   ignore higher
-  attack-dos-hulk          L4  ignore   3.3 %   drop-flow   2.6 %   ignore higher
-Wrote results/autofp.csv (24 runs)
+3. ignore vs drop-flow, median retention (hosts key)
+  attack-bruteforce-smb    L3  single: ignore 100.0 % vs drop-flow  57.2 % (ignore higher)   autofp: ignore 100.0 % vs drop-flow  51.7 % (ignore higher)
+  attack-bruteforce-smb    L4  single: ignore  77.2 % vs drop-flow  25.2 % (ignore higher)   autofp: ignore  25.0 % vs drop-flow  16.8 % (ignore higher)
+  attack-dos-hulk          L2  single: ignore  89.2 % vs drop-flow  82.7 % (ignore higher)   autofp: ignore  91.2 % vs drop-flow  82.1 % (ignore higher)
+  attack-dos-hulk          L3  single: ignore  21.6 % vs drop-flow  12.0 % (ignore higher)   autofp: ignore  18.7 % vs drop-flow  10.1 % (ignore higher)
+  attack-dos-hulk          L4  single: ignore   5.5 % vs drop-flow   2.3 % (ignore higher)   autofp: ignore   3.7 % vs drop-flow   2.6 % (ignore higher)
+Wrote results/autofp.csv (48 runs: single and autofp runs of the same cells)

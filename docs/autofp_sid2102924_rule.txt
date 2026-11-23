@@ -1,0 +1,2 @@
+msg:"GPL NETBIOS SMB-DS repeated logon failure"
+threshold:type threshold,track by_dst,count 10,seconds 60
