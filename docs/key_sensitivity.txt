@@ -1,0 +1,84 @@
+A. L0 repeats against the L0 reference (determinism), lowest retention per key
+   attack-bruteforce-smb        4 runs   endpoint 100.00 %   hosts 100.00 %
+   attack-bruteforce-ssh        4 runs   endpoint 100.00 %   hosts 100.00 %
+   attack-bruteforce-ssh-ftp    10 runs   endpoint  99.92 %   hosts  99.92 %
+   attack-dos-hulk              4 runs   endpoint 100.00 %   hosts 100.00 %
+   attack-dos-slowloris         4 runs   endpoint 100.00 %   hosts 100.00 %
+   benign-admin-activity        4 runs   endpoint 100.00 %   hosts 100.00 %
+   benign-background-activity   4 runs   endpoint 100.00 %   hosts 100.00 %
+   benign-user-activity         4 runs   endpoint 100.00 %   hosts 100.00 %
+
+B. Runs below L0 whose loss verdict (retention < 99.9 %) differs between the keys
+   15 of 468 runs differ
+   attack-bruteforce-smb        L3       ignore      r1  endpoint  91.68 %  hosts 100.00 %  memcap flows 2178
+   attack-bruteforce-smb        L3       ignore      r2  endpoint  64.72 %  hosts 100.00 %  memcap flows 2162
+   attack-bruteforce-smb        L3       ignore      r3  endpoint  66.25 %  hosts 100.00 %  memcap flows 2136
+   attack-bruteforce-smb        R3       ignore      r1  endpoint  63.10 %  hosts 100.00 %  memcap flows 2166
+   attack-bruteforce-smb        R3       ignore      r2  endpoint  89.96 %  hosts 100.00 %  memcap flows 2168
+   attack-bruteforce-smb        R4       ignore      r1  endpoint  63.67 %  hosts 100.00 %  memcap flows 8144
+   attack-bruteforce-smb        R4       ignore      r2  endpoint  67.21 %  hosts 100.00 %  memcap flows 8177
+   attack-bruteforce-smb        RP2M     ignore      r1  endpoint  65.01 %  hosts 100.00 %  memcap flows 9117
+   attack-bruteforce-smb        RP4M     ignore      r2  endpoint  67.69 %  hosts 100.00 %  memcap flows 8160
+   attack-bruteforce-smb        RP4M     ignore      r3  endpoint  64.82 %  hosts 100.00 %  memcap flows 8168
+   attack-bruteforce-smb        RP8M     ignore      r1  endpoint  93.12 %  hosts 100.00 %  memcap flows 6652
+   attack-bruteforce-smb        RP16M    ignore      r1  endpoint  64.63 %  hosts 100.00 %  memcap flows 2241
+   attack-bruteforce-smb        RP16M    ignore      r2  endpoint  66.06 %  hosts 100.00 %  memcap flows 2278
+   attack-bruteforce-smb        RP16M    ignore      r3  endpoint  63.29 %  hosts 100.00 %  memcap flows 2201
+   attack-bruteforce-ssh-ftp    L4       ignore      r2  endpoint  92.12 %  hosts  99.98 %  memcap flows 5907
+
+C. Finding: the defaults (L1) lose no alerts
+   endpoint 0 of 42 L1 runs lossy; lowest retention 99.95 %
+   hosts    0 of 42 L1 runs lossy; lowest retention 99.95 %
+
+D. Finding: loss only when a memory limit was hit (all runs below L0 in results/runs)
+   endpoint no limit hit: 284 runs, 0 lossy (lowest 99.90 %)   limit hit: 184 runs, 175 lossy
+   hosts    no limit hit: 284 runs, 0 lossy (lowest 99.90 %)   limit hit: 184 runs, 160 lossy
+
+E. Finding: loss onset per capture, ignore policy (first grid level with a lossy run, k of n)
+   attack-bruteforce-smb        endpoint L3 (3/4)     hosts L4 (4/4)  
+   attack-bruteforce-ssh        endpoint L4 (2/4)     hosts L4 (2/4)  
+   attack-bruteforce-ssh-ftp    endpoint L3 (1/4)     hosts L3 (1/4)  
+   attack-dos-hulk              endpoint L2 (2/2)     hosts L2 (2/2)  
+   attack-dos-slowloris         endpoint L4 (4/4)     hosts L4 (4/4)  
+   benign-admin-activity        endpoint none         hosts none      
+   benign-background-activity   endpoint none         hosts none      
+   benign-user-activity         endpoint L4 (1/4)     hosts L4 (1/4)  
+
+F. Median retention per grid cell (L1-L4, all policies) where the keys differ by more than 1 point
+   attack-bruteforce-smb        L3  bypass      n=4  endpoint   51.4 %  hosts   79.3 %
+   attack-bruteforce-smb        L3  drop-flow   n=4  endpoint   47.5 %  hosts   57.2 %
+   attack-bruteforce-smb        L3  drop-packet n=4  endpoint   49.2 %  hosts   84.3 %
+   attack-bruteforce-smb        L3  ignore      n=4  endpoint   79.0 %  hosts  100.0 %
+   attack-bruteforce-smb        L3  pass-flow   n=4  endpoint   48.6 %  hosts   82.6 %
+   attack-bruteforce-smb        L4  bypass      n=4  endpoint   12.8 %  hosts   23.3 %
+   attack-bruteforce-smb        L4  drop-flow   n=4  endpoint   14.2 %  hosts   25.2 %
+   attack-bruteforce-smb        L4  drop-packet n=4  endpoint   13.8 %  hosts   21.1 %
+   attack-bruteforce-smb        L4  ignore      n=4  endpoint   42.4 %  hosts   77.2 %
+   attack-bruteforce-smb        L4  pass-flow   n=4  endpoint   14.3 %  hosts   25.1 %
+   attack-bruteforce-ssh-ftp    L4  bypass      n=4  endpoint   54.1 %  hosts   61.0 %
+   attack-bruteforce-ssh-ftp    L4  drop-flow   n=4  endpoint   91.1 %  hosts   98.8 %
+   attack-bruteforce-ssh-ftp    L4  drop-packet n=4  endpoint   86.0 %  hosts   99.4 %
+   attack-bruteforce-ssh-ftp    L4  ignore      n=4  endpoint   85.6 %  hosts   99.8 %
+   attack-bruteforce-ssh-ftp    L4  pass-flow   n=4  endpoint   97.0 %  hosts   99.2 %
+
+G. Finding: SMB at L4, ignore against the other policies (min-max per key)
+   ignore      n=4  endpoint  41.2- 43.8 %   hosts  76.9- 77.6 %
+   drop-packet n=4  endpoint  11.7- 15.5 %   hosts  16.9- 25.1 %
+   drop-flow   n=4  endpoint  14.0- 16.2 %   hosts  24.8- 25.4 %
+   pass-flow   n=4  endpoint  12.3- 16.4 %   hosts  17.0- 25.3 %
+   bypass      n=4  endpoint  12.2- 13.2 %   hosts  21.6- 23.8 %
+
+H. Separate limits and sizing runs (median retention per key where the keys differ by more than 1 point)
+   attack-bruteforce-smb        R3       ignore  n=2  endpoint   76.5 % (2 lossy)  hosts  100.0 % (0 lossy)
+   attack-bruteforce-smb        S4       ignore  n=2  endpoint   42.6 % (2 lossy)  hosts   77.3 % (2 lossy)
+   attack-bruteforce-smb        R4       ignore  n=2  endpoint   65.4 % (2 lossy)  hosts  100.0 % (0 lossy)
+   attack-bruteforce-smb        SP512K   ignore  n=1  endpoint    5.8 % (1 lossy)  hosts   41.2 % (1 lossy)
+   attack-bruteforce-smb        SP1M     ignore  n=3  endpoint   43.2 % (3 lossy)  hosts   76.8 % (3 lossy)
+   attack-bruteforce-smb        RP2M     ignore  n=1  endpoint   65.0 % (1 lossy)  hosts  100.0 % (0 lossy)
+   attack-bruteforce-smb        RP4M     ignore  n=3  endpoint   67.7 % (2 lossy)  hosts  100.0 % (0 lossy)
+   attack-bruteforce-smb        RP8M     ignore  n=1  endpoint   93.1 % (1 lossy)  hosts  100.0 % (0 lossy)
+   attack-bruteforce-smb        RP16M    ignore  n=3  endpoint   64.6 % (3 lossy)  hosts  100.0 % (0 lossy)
+   attack-bruteforce-ssh-ftp    SP512K   ignore  n=1  endpoint   91.4 % (1 lossy)  hosts   99.0 % (1 lossy)
+   attack-bruteforce-ssh-ftp    SP1M     ignore  n=3  endpoint   79.1 % (3 lossy)  hosts   99.6 % (3 lossy)
+   attack-bruteforce-ssh-ftp    SP2M     ignore  n=3  endpoint   95.5 % (3 lossy)  hosts   99.6 % (3 lossy)
+Wrote results/key_sensitivity.csv (506 runs)
