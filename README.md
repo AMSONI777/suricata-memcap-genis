@@ -220,6 +220,15 @@ with a clean clone:
 
 ## 5. Reproduce it yourself
 
+**One command** (about 20 minutes; ends with `REPRODUCED` and the demo):
+
+```bash
+git clone https://github.com/AMSONI777/suricata-memcap-genis.git && cd suricata-memcap-genis && ./quickstart.sh
+```
+
+`quickstart.sh` checks the machine, then runs the four steps below in order. It also handles the Ubuntu 20.04
+certificate issue described below on its own.
+
 **Requirements.** Ubuntu 20.04 or later, Docker, Python 3, `wireshark-common` (for `capinfos`, `editcap`,
 `mergecap`) and matplotlib (`pip3 install --user matplotlib`). Disk: the GeNIS archive (3.9 GB uncompressed; the 8
 captures used are about 0.7 GB) plus the two merged captures (about 0.4 GB). **At least 4 GB of RAM**: the study ran
@@ -242,6 +251,7 @@ the snapshot used.
 
 | Script | Purpose |
 |---|---|
+| `quickstart.sh` | One command: checks the machine, then runs `01_setup.sh`, `02_extract_manifest.sh`, `reproduce.sh` and `demo.sh` |
 | `scripts/01_setup.sh` | Pull the Suricata image, download and verify the GeNIS archive |
 | `scripts/02_extract_manifest.sh` | Extract the 8 captures and record their size, packets, duration and SHA-256 |
 | `scripts/03_feasibility.sh` | First check that the container runs and that the memory settings take effect; writes `configs/base_image.yaml` |
