@@ -21,6 +21,9 @@ attack-bruteforce-smb,session,SP2M,2,2097152,1,1046,1046,1.0,1.0,0,0,0
 attack-bruteforce-smb,session,SP2M,2,2097152,2,1046,747,0.7141,0.712,0,1895,0
 attack-bruteforce-smb,session,SP2M,2,2097152,3,1046,1046,1.0,1.0,0,0,0
 attack-bruteforce-smb,session,SP4M,4,4194304,1,1046,1046,1.0,1.0,0,0,0
+attack-bruteforce-smb,session,SP5917K,5.77832,6059008,1,1046,1046,1.0,1.0,0,0,0
+attack-bruteforce-smb,session,SP5917K,5.77832,6059008,2,1046,1046,1.0,1.0,0,0,0
+attack-bruteforce-smb,session,SP5917K,5.77832,6059008,3,1046,1046,1.0,1.0,0,0,0
 attack-bruteforce-smb,session,SP8M,8,8388608,1,1046,1046,1.0,1.0,0,0,0
 attack-bruteforce-smb,session,SP16M,16,16777216,1,1046,1046,1.0,1.0,0,0,0
 attack-bruteforce-smb,session,SP32M,32,33554432,1,1046,1046,1.0,1.0,0,0,0
@@ -39,6 +42,9 @@ attack-bruteforce-ssh,session,SP512K,0.5,524288,3,644,643,0.9984,0.9984,0,346,0
 attack-bruteforce-ssh,session,SP1M,1,1048576,1,644,644,1.0,1.0,0,0,0
 attack-bruteforce-ssh,session,SP1M,1,1048576,2,644,644,1.0,1.0,0,0,0
 attack-bruteforce-ssh,session,SP1M,1,1048576,3,644,644,1.0,1.0,0,0,0
+attack-bruteforce-ssh,session,SP1990K,1.94336,2037760,1,644,644,1.0,1.0,0,0,0
+attack-bruteforce-ssh,session,SP1990K,1.94336,2037760,2,644,644,1.0,1.0,0,0,0
+attack-bruteforce-ssh,session,SP1990K,1.94336,2037760,3,644,644,1.0,1.0,0,0,0
 attack-bruteforce-ssh,session,SP2M,2,2097152,1,644,644,1.0,1.0,0,0,0
 attack-bruteforce-ssh,session,SP4M,4,4194304,1,644,644,1.0,1.0,0,0,0
 attack-bruteforce-ssh,session,SP8M,8,8388608,1,644,644,1.0,1.0,0,0,0
@@ -68,6 +74,9 @@ attack-bruteforce-ssh-ftp,session,SP4M,4,4194304,1,5963,5963,1.0,1.0,0,0,0
 attack-bruteforce-ssh-ftp,session,SP4M,4,4194304,2,5963,5957,0.999,0.999,0,0,0
 attack-bruteforce-ssh-ftp,session,SP4M,4,4194304,3,5963,5957,0.999,0.999,0,0,0
 attack-bruteforce-ssh-ftp,session,SP8M,8,8388608,1,5963,5963,1.0,1.0,0,0,0
+attack-bruteforce-ssh-ftp,session,SP9028K,8.81641,9244672,1,5963,5963,1.0,1.0,0,0,0
+attack-bruteforce-ssh-ftp,session,SP9028K,8.81641,9244672,2,5963,5962,0.9998,0.9998,0,0,0
+attack-bruteforce-ssh-ftp,session,SP9028K,8.81641,9244672,3,5963,5961,0.9997,0.9997,0,0,0
 attack-bruteforce-ssh-ftp,session,SP16M,16,16777216,1,5963,5958,0.9992,0.9992,0,0,0
 attack-bruteforce-ssh-ftp,session,SP32M,32,33554432,1,5963,5963,1.0,1.0,0,0,0
 attack-bruteforce-ssh-ftp,session,SP64M,64,67108864,1,5963,5963,1.0,1.0,0,0,0
@@ -94,6 +103,9 @@ attack-dos-hulk,session,SP16M,16,16777216,1,6116,6116,1.0,1.0,0,0,0
 attack-dos-hulk,session,SP16M,16,16777216,2,6116,6116,1.0,1.0,0,0,0
 attack-dos-hulk,session,SP16M,16,16777216,3,6116,6116,1.0,1.0,0,0,0
 attack-dos-hulk,session,SP32M,32,33554432,1,6116,6116,1.0,1.0,0,0,0
+attack-dos-hulk,session,SP43158K,42.1465,44193792,1,6116,6116,1.0,1.0,0,0,0
+attack-dos-hulk,session,SP43158K,42.1465,44193792,2,6116,6116,1.0,1.0,0,0,0
+attack-dos-hulk,session,SP43158K,42.1465,44193792,3,6116,6116,1.0,1.0,0,0,0
 attack-dos-hulk,session,SP64M,64,67108864,1,6116,6116,1.0,1.0,0,0,0
 attack-dos-slowloris,reassembly,RP2M,2,2097152,1,285,285,1.0,1.0,0,0,0
 attack-dos-slowloris,reassembly,RP2M,2,2097152,2,285,178,0.6246,0.6206,0,0,9676
@@ -116,6 +128,9 @@ attack-dos-slowloris,session,SP1M,1,1048576,1,285,285,1.0,1.0,0,0,0
 attack-dos-slowloris,session,SP1M,1,1048576,2,285,285,1.0,1.0,0,0,0
 attack-dos-slowloris,session,SP1M,1,1048576,3,285,180,0.6316,0.6348,0,17513,0
 attack-dos-slowloris,session,SP2M,2,2097152,1,285,285,1.0,1.0,0,0,0
+attack-dos-slowloris,session,SP2256K,2.20312,2310144,1,285,285,1.0,1.0,0,1506,0
+attack-dos-slowloris,session,SP2256K,2.20312,2310144,2,285,285,1.0,1.0,0,0,0
+attack-dos-slowloris,session,SP2256K,2.20312,2310144,3,285,285,1.0,1.0,0,0,0
 attack-dos-slowloris,session,SP4M,4,4194304,1,285,285,1.0,1.0,0,0,0
 attack-dos-slowloris,session,SP8M,8,8388608,1,285,285,1.0,1.0,0,0,0
 attack-dos-slowloris,session,SP16M,16,16777216,1,285,285,1.0,1.0,0,0,0

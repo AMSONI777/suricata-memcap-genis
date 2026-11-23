@@ -1,0 +1,16 @@
+capture,pool,level,limit_mb,limit_bytes,rep,ref_alerts,matched,retention,retention_et,signatures_lost,flows_hit_session_limit,flows_hit_reassembly_limit
+attack-bruteforce-smb,session,SP5917K,5.77832,6059008,1,1046,1046,1.0,1.0,0,0,0
+attack-bruteforce-smb,session,SP5917K,5.77832,6059008,2,1046,1046,1.0,1.0,0,0,0
+attack-bruteforce-smb,session,SP5917K,5.77832,6059008,3,1046,1046,1.0,1.0,0,0,0
+attack-bruteforce-ssh,session,SP1990K,1.94336,2037760,1,644,644,1.0,1.0,0,0,0
+attack-bruteforce-ssh,session,SP1990K,1.94336,2037760,2,644,644,1.0,1.0,0,0,0
+attack-bruteforce-ssh,session,SP1990K,1.94336,2037760,3,644,644,1.0,1.0,0,0,0
+attack-bruteforce-ssh-ftp,session,SP9028K,8.81641,9244672,1,5963,5963,1.0,1.0,0,0,0
+attack-bruteforce-ssh-ftp,session,SP9028K,8.81641,9244672,2,5963,5962,0.9998,0.9998,0,0,0
+attack-bruteforce-ssh-ftp,session,SP9028K,8.81641,9244672,3,5963,5961,0.9997,0.9997,0,0,0
+attack-dos-hulk,session,SP43158K,42.1465,44193792,1,6116,6116,1.0,1.0,0,0,0
+attack-dos-hulk,session,SP43158K,42.1465,44193792,2,6116,6116,1.0,1.0,0,0,0
+attack-dos-hulk,session,SP43158K,42.1465,44193792,3,6116,6116,1.0,1.0,0,0,0
+attack-dos-slowloris,session,SP2256K,2.20312,2310144,1,285,285,1.0,1.0,0,1506,0
+attack-dos-slowloris,session,SP2256K,2.20312,2310144,2,285,285,1.0,1.0,0,0,0
+attack-dos-slowloris,session,SP2256K,2.20312,2310144,3,285,285,1.0,1.0,0,0,0

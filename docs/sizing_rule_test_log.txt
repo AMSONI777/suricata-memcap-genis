@@ -1,0 +1,15 @@
+done   attack-dos-hulk            SP43158K_ignore      88s  sessions=50823 ssn_drop=0 alerts=6116 peak=806MB
+done   attack-bruteforce-ssh-ftp  SP9028K_ignore       72s  sessions=14324 ssn_drop=0 alerts=5966 peak=540MB
+done   attack-bruteforce-smb      SP5917K_ignore       71s  sessions=11989 ssn_drop=0 alerts=1046 peak=742MB
+done   attack-dos-slowloris       SP2256K_ignore       81s  sessions=16816 ssn_drop=1212 alerts=285 peak=556MB
+done   attack-bruteforce-ssh      SP1990K_ignore       69s  sessions=4234 ssn_drop=0 alerts=644 peak=527MB
+done   attack-dos-hulk            SP43158K_ignore_r2   85s  sessions=50823 ssn_drop=0 alerts=6116 peak=788MB
+done   attack-bruteforce-ssh-ftp  SP9028K_ignore_r2    73s  sessions=14324 ssn_drop=0 alerts=5963 peak=525MB
+done   attack-bruteforce-smb      SP5917K_ignore_r2    75s  sessions=11989 ssn_drop=0 alerts=1046 peak=724MB
+done   attack-dos-slowloris       SP2256K_ignore_r2    78s  sessions=17315 ssn_drop=0 alerts=285 peak=534MB
+done   attack-bruteforce-ssh      SP1990K_ignore_r2    70s  sessions=4234 ssn_drop=0 alerts=644 peak=536MB
+done   attack-dos-hulk            SP43158K_ignore_r3   85s  sessions=50823 ssn_drop=0 alerts=6116 peak=787MB
+done   attack-bruteforce-ssh-ftp  SP9028K_ignore_r3    70s  sessions=14324 ssn_drop=0 alerts=5961 peak=541MB
+done   attack-bruteforce-smb      SP5917K_ignore_r3    72s  sessions=11989 ssn_drop=0 alerts=1046 peak=740MB
+done   attack-dos-slowloris       SP2256K_ignore_r3    55s  sessions=17315 ssn_drop=0 alerts=285 peak=539MB
+done   attack-bruteforce-ssh      SP1990K_ignore_r3    38s  sessions=4234 ssn_drop=0 alerts=644 peak=540MB

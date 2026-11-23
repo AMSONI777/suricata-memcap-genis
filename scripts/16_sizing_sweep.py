@@ -10,6 +10,7 @@ how many flows hit each memory limit (flow.exception_policy targets, as in 11_se
 
 Writes
   results/sizing_sweep.csv        one row per run
+  results/sizing_rule_test.csv    Step C: runs with stream.memcap = peak_held KB (1 KB per held session)
   results/sizing_safe_limits.csv  per capture and pool: the smallest limit from which every run at every larger limit kept
                                   >= 99.9 % of alerts and hit no limit ("safe"), the largest limit that lost
                                   alerts, and the safe limit per held session (peak_held from results/peak_sessions.csv)
@@ -149,6 +150,29 @@ def main():
             r['lossy_bytes_per_held_session'], r['safe_bytes_per_held_session']))
     print('safeMB: smallest limit from which every run at every larger limit kept >= 99.9 % and hit no limit; '
           'lossyMB: largest limit with a lossy run (k of n runs lossy); B/held_L and B/held_S: those limits per held session')
+    # Step C: runs whose session limit is exactly peak_held KB (rule: 1 KB per held session)
+    test = [r for r in rows if r['pool'] == 'session' and r['capture'] in peak
+            and r['limit_bytes'] == peak[r['capture']] * 1024]
+    if test:
+        out_t = os.path.join(an.ROOT, 'results', 'sizing_rule_test.csv')
+        with open(out_t, 'w', newline='') as fh:
+            w = csv.DictWriter(fh, fieldnames=list(test[0]))
+            w.writeheader()
+            w.writerows(test)
+        print()
+        print('Step C rule test: stream.memcap = 1 KB x peak_held (reassembly 4gb)')
+        print('%-26s %9s %9s %3s %8s %5s %9s %s' % ('capture', 'peak_held', 'limitMB', 'rep', 'retain%', 'lost',
+                                                  'sess_hit', 'result'))
+        for r in sorted(test, key=lambda r: (r['capture'], r['rep'])):
+            ok = r['retention'] >= LOSS and r['flows_hit_session_limit'] == 0
+            res = 'PASS' if ok else ('limit hit, no loss' if r['retention'] >= LOSS else 'LOSS')
+            print('%-26s %9d %9.1f %3d %8.1f %5d %9d %s' % (r['capture'], peak[r['capture']],
+                  r['limit_bytes'] / 1024 ** 2, r['rep'], 100 * r['retention'], r['signatures_lost'],
+                  r['flows_hit_session_limit'], res))
+        n_ok = sum(r['retention'] >= LOSS and r['flows_hit_session_limit'] == 0 for r in test)
+        n_noloss = sum(r['retention'] >= LOSS for r in test)
+        print('%d of %d runs passed (no loss, no limit hit); %d of %d kept >= 99.9 %% of alerts'
+              % (n_ok, len(test), n_noloss, len(test)))
     print('Wrote results/sizing_sweep.csv (%d runs) and results/sizing_safe_limits.csv' % len(rows))
 
 

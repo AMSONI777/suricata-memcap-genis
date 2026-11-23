@@ -7,7 +7,7 @@ attack-bruteforce-ssh-ftp,session,9028,4,3,2,3/3,no,232,465
 attack-bruteforce-ssh-ftp,reassembly,9028,4,3,2,1/3,no,232,465
 attack-dos-hulk,session,43158,16,3,8,3/3,no,194,389
 attack-dos-hulk,reassembly,43158,128,3,64,3/3,no,1555,3110
-attack-dos-slowloris,session,2256,2,1,1,1/3,no,465,930
+attack-dos-slowloris,session,2256,4,1,1,1/3,no,465,1859
 attack-dos-slowloris,reassembly,2256,32,1,16,1/3,no,7437,14873
 benign-user-activity,session,60,0.5,1,none,,no,,8738
 benign-user-activity,reassembly,60,2,1,none,,no,,34953

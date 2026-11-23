@@ -21,6 +21,9 @@ attack-bruteforce-smb      session           2   1    100.0   100.0     0       
 attack-bruteforce-smb      session           2   2     71.4    71.2     0      1895         0
 attack-bruteforce-smb      session           2   3    100.0   100.0     0         0         0
 attack-bruteforce-smb      session           4   1    100.0   100.0     0         0         0
+attack-bruteforce-smb      session     5.77832   1    100.0   100.0     0         0         0
+attack-bruteforce-smb      session     5.77832   2    100.0   100.0     0         0         0
+attack-bruteforce-smb      session     5.77832   3    100.0   100.0     0         0         0
 attack-bruteforce-smb      session           8   1    100.0   100.0     0         0         0
 attack-bruteforce-smb      session          16   1    100.0   100.0     0         0         0
 attack-bruteforce-smb      session          32   1    100.0   100.0     0         0         0
@@ -39,6 +42,9 @@ attack-bruteforce-ssh      session         0.5   3     99.8    99.8     0       
 attack-bruteforce-ssh      session           1   1    100.0   100.0     0         0         0
 attack-bruteforce-ssh      session           1   2    100.0   100.0     0         0         0
 attack-bruteforce-ssh      session           1   3    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session     1.94336   1    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session     1.94336   2    100.0   100.0     0         0         0
+attack-bruteforce-ssh      session     1.94336   3    100.0   100.0     0         0         0
 attack-bruteforce-ssh      session           2   1    100.0   100.0     0         0         0
 attack-bruteforce-ssh      session           4   1    100.0   100.0     0         0         0
 attack-bruteforce-ssh      session           8   1    100.0   100.0     0         0         0
@@ -68,6 +74,9 @@ attack-bruteforce-ssh-ftp  session           4   1    100.0   100.0     0       
 attack-bruteforce-ssh-ftp  session           4   2     99.9    99.9     0         0         0
 attack-bruteforce-ssh-ftp  session           4   3     99.9    99.9     0         0         0
 attack-bruteforce-ssh-ftp  session           8   1    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session     8.81641   1    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session     8.81641   2    100.0   100.0     0         0         0
+attack-bruteforce-ssh-ftp  session     8.81641   3    100.0   100.0     0         0         0
 attack-bruteforce-ssh-ftp  session          16   1     99.9    99.9     0         0         0
 attack-bruteforce-ssh-ftp  session          32   1    100.0   100.0     0         0         0
 attack-bruteforce-ssh-ftp  session          64   1    100.0   100.0     0         0         0
@@ -94,6 +103,9 @@ attack-dos-hulk            session          16   1    100.0   100.0     0       
 attack-dos-hulk            session          16   2    100.0   100.0     0         0         0
 attack-dos-hulk            session          16   3    100.0   100.0     0         0         0
 attack-dos-hulk            session          32   1    100.0   100.0     0         0         0
+attack-dos-hulk            session     42.1465   1    100.0   100.0     0         0         0
+attack-dos-hulk            session     42.1465   2    100.0   100.0     0         0         0
+attack-dos-hulk            session     42.1465   3    100.0   100.0     0         0         0
 attack-dos-hulk            session          64   1    100.0   100.0     0         0         0
 attack-dos-slowloris       reassembly        2   1    100.0   100.0     0         0         0
 attack-dos-slowloris       reassembly        2   2     62.5    62.1     0         0      9676
@@ -116,6 +128,9 @@ attack-dos-slowloris       session           1   1    100.0   100.0     0       
 attack-dos-slowloris       session           1   2    100.0   100.0     0         0         0
 attack-dos-slowloris       session           1   3     63.2    63.5     0     17513         0
 attack-dos-slowloris       session           2   1    100.0   100.0     0         0         0
+attack-dos-slowloris       session     2.20312   1    100.0   100.0     0      1506         0
+attack-dos-slowloris       session     2.20312   2    100.0   100.0     0         0         0
+attack-dos-slowloris       session     2.20312   3    100.0   100.0     0         0         0
 attack-dos-slowloris       session           4   1    100.0   100.0     0         0         0
 attack-dos-slowloris       session           8   1    100.0   100.0     0         0         0
 attack-dos-slowloris       session          16   1    100.0   100.0     0         0         0
@@ -147,9 +162,28 @@ attack-bruteforce-ssh-ftp  session         9028       4     3         2    3/3  
 attack-bruteforce-ssh-ftp  reassembly      9028       4     3         2    1/3       no       232       465
 attack-dos-hulk            session        43158      16     3         8    3/3       no       194       389
 attack-dos-hulk            reassembly     43158     128     3        64    3/3       no      1555      3110
-attack-dos-slowloris       session         2256       2     1         1    1/3       no       465       930
+attack-dos-slowloris       session         2256       4     1         1    1/3       no       465      1859
 attack-dos-slowloris       reassembly      2256      32     1        16    1/3       no      7437     14873
 benign-user-activity       session           60     0.5     1      none              no                8738
 benign-user-activity       reassembly        60       2     1      none              no               34953
 safeMB: smallest limit from which every run at every larger limit kept >= 99.9 % and hit no limit; lossyMB: largest limit with a lossy run (k of n runs lossy); B/held_L and B/held_S: those limits per held session
-Wrote results/sizing_sweep.csv (138 runs) and results/sizing_safe_limits.csv
+
+Step C rule test: stream.memcap = 1 KB x peak_held (reassembly 4gb)
+capture                    peak_held   limitMB rep  retain%  lost  sess_hit result
+attack-bruteforce-smb           5917       5.8   1    100.0     0         0 PASS
+attack-bruteforce-smb           5917       5.8   2    100.0     0         0 PASS
+attack-bruteforce-smb           5917       5.8   3    100.0     0         0 PASS
+attack-bruteforce-ssh           1990       1.9   1    100.0     0         0 PASS
+attack-bruteforce-ssh           1990       1.9   2    100.0     0         0 PASS
+attack-bruteforce-ssh           1990       1.9   3    100.0     0         0 PASS
+attack-bruteforce-ssh-ftp       9028       8.8   1    100.0     0         0 PASS
+attack-bruteforce-ssh-ftp       9028       8.8   2    100.0     0         0 PASS
+attack-bruteforce-ssh-ftp       9028       8.8   3    100.0     0         0 PASS
+attack-dos-hulk                43158      42.1   1    100.0     0         0 PASS
+attack-dos-hulk                43158      42.1   2    100.0     0         0 PASS
+attack-dos-hulk                43158      42.1   3    100.0     0         0 PASS
+attack-dos-slowloris            2256       2.2   1    100.0     0      1506 limit hit, no loss
+attack-dos-slowloris            2256       2.2   2    100.0     0         0 PASS
+attack-dos-slowloris            2256       2.2   3    100.0     0         0 PASS
+14 of 15 runs passed (no loss, no limit hit); 15 of 15 kept >= 99.9 % of alerts
+Wrote results/sizing_sweep.csv (153 runs) and results/sizing_safe_limits.csv
