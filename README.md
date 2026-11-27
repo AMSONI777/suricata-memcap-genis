@@ -232,7 +232,7 @@ certificate issue described below on its own.
 **Requirements.** Ubuntu 20.04 or later, Docker, Python 3, `wireshark-common` (for `capinfos`, `editcap`,
 `mergecap`) and matplotlib (`pip3 install --user matplotlib`). Disk: the GeNIS archive (3.9 GB uncompressed; the 8
 captures used are about 0.7 GB) plus the two merged captures (about 0.4 GB). **At least 4 GB of RAM**: the study ran
-on 8 GB, `reproduce.sh` was verified on a fresh 4 GB / 3 CPU VM, and a 2 GB VM ran out of memory.
+on 8 GB, `reproduce.sh` was verified on a fresh 4 GB / 3 CPU VM.
 
 ```bash
 git clone https://github.com/AMSONI777/suricata-memcap-genis.git && cd suricata-memcap-genis
