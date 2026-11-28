@@ -319,3 +319,7 @@ GeNIS: M. Silva, D. Pinto, J. Vitorino, J. Goncalves, E. Maia and I. Praca, "GeN
 intrusion detection and classification," *Data in Brief*, vol. 60, 2025, 111487
 ([doi:10.1016/j.dib.2025.111487](https://doi.org/10.1016/j.dib.2025.111487)), CC BY 4.0. ET Open rules by
 Proofpoint Emerging Threats.
+
+## Presentation
+
+Final presentation slides: [PDF](slides/Blind_Under_Load_Final_Presentation.pdf) · [PowerPoint](slides/Blind_Under_Load_Final_Presentation.pptx)
